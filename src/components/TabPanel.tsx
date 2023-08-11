@@ -27,7 +27,6 @@ function CustomTabPanel(props: TabPanelProps) {
           <Typography>{children}</Typography>
         </Box>
       )}
-      {children}
     </div>
   );
 }
@@ -39,6 +38,32 @@ function a11yProps(index: number) {
   };
 }
 
+const transactions = [
+  {
+    transactionType: "debit",
+    amount: 90,
+    category: "groceries",
+    name: "Tomatoes",
+  },
+  {
+    transactionType: "debit",
+    amount: 10,
+    category: "food",
+    name: "Seawise",
+  },
+  {
+    transactionType: "debit",
+    amount: 45,
+    name: "apples",
+    category: "other",
+  },
+  {
+    transactionType: "credit",
+    amount: 45,
+    name: "Vinay",
+    category: "send",
+  },
+];
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
 
@@ -60,14 +85,19 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <TansactionView />
-        <TansactionView />
+        {transactions.map((transaction) => (
+          <TansactionView transaction={transaction} />
+        ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        {transactions.map((transaction) => (
+          <TansactionView transaction={transaction} />
+        ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        {transactions.map((transaction) => (
+          <TansactionView transaction={transaction} />
+        ))}
       </CustomTabPanel>
     </Box>
   );

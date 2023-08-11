@@ -10,6 +10,13 @@ import {
   LineChart,
   Line,
 } from "recharts";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  SelectChangeEvent,
+} from "@mui/material";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 30; // Desired width of each bar
@@ -86,7 +93,7 @@ const ExpenseOverview = ({ data }) => {
   const [gData, setGData] = useState(formatData(data, view));
   const [cWidth, setCWidth] = useState(gData.length * barWidth);
 
-  const handleViewChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleViewChange = (event: SelectChangeEvent<string>) => {
     const newView = event.target.value;
     setView(newView);
     const newGData = formatData(data, newView); // Pass newView directly
@@ -94,38 +101,163 @@ const ExpenseOverview = ({ data }) => {
     setCWidth(newGData.length * barWidth); // Use newGData
   };
   return (
-    <div style={{ position: "relative" }}>
-      {" "}
-      {/* Added color to parent div to make label color white */}
+    <div style={{ position: "relative", padding: "20px", color: "white" }}>
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          right: 0,
           display: "flex",
+          justifyContent: "center",
           alignItems: "center",
+          marginBottom: "20px",
+          position: "relative",
         }}
       >
-        <label htmlFor="view-select" style={{ marginRight: 8 }}>
-          Timeline:
-        </label>
-        <select id="view-select" onChange={handleViewChange}>
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-        </select>
+        <h2 style={{ margin: 0 }}>Income</h2>
+        <FormControl
+          variant="standard"
+          style={{ minWidth: 120, position: "absolute", right: 0 }}
+        >
+          <InputLabel id="view-select-label" style={{ color: "white" }}>
+            Timeline
+          </InputLabel>
+          <Select
+            labelId="view-select-label"
+            id="view-select"
+            value={view}
+            onChange={handleViewChange}
+            label="Timeline"
+            style={{ color: "white" }}
+          >
+            <MenuItem value="daily">Daily</MenuItem>
+            <MenuItem value="weekly">Weekly</MenuItem>
+            <MenuItem value="monthly">Monthly</MenuItem>
+            <MenuItem value="yearly">Yearly</MenuItem>
+          </Select>
+        </FormControl>
       </div>
-      <h2 style={{ textAlign: "center", marginBottom: 16, color: "white" }}>
-        {" "}
-        {/* Update text color */}
-        Income
-      </h2>
-      <div style={{ overflow: "auto" }}>
-        {" "}
-        {/* Add this div */}
+      <div style={{ overflowX: "auto", position: "relative", width: "100%" }}>
         <LineChart
-          width={Math.max(cWidth, 600)} // Make this larger than the container div
+          width={Math.max(cWidth, 600)}
+          height={300}
+          data={gData}
+          margin={{
+            top: 0,
+            right: 0,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <XAxis dataKey="name" stroke="white" />
+          <YAxis
+            stroke="white"
+            tickFormatter={(tickValue) => {
+              return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
+            }}
+            style={{ position: "absolute", left: 0, top: 0, zIndex: 1 }}
+          />
+          <Tooltip
+            contentStyle={{ color: "black", backgroundColor: "wheat" }}
+          />
+          {/* <Legend /> */}
+          <Line type="monotone" dataKey="Expenses" stroke="green" />
+        </LineChart>
+      </div>
+    </div>
+  );
+};
+
+const formatDate = (dateString) => {
+  const day = dateString.split("-")[0];
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const monthName = monthNames[parseInt(dateString.split("-")[1]) - 1];
+  const year = dateString.split("-")[2];
+
+  if (monthName === "Jan") {
+    return `${day}-${monthName}-${year}`;
+  }
+  return `${day}-${monthName}`;
+};
+const data = require("./data.json");
+
+const Graph = () => {
+  return <ExpenseOverview data={data} />;
+};
+
+export default Graph;
+
+/**
+ * 
+To beautify the ExpenseOverview component and make it more suitable for a dark-themed expense tracker app, we'll make the following changes:
+
+Replace the standard dropdown with an MUI dropdown.
+Adjust the positioning of the title, dropdown, and graph for better aesthetics.
+Update the styles to better fit a dark theme.
+Here's the updated code:
+
+tsx
+Copy code
+import React, { useState } from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  LineChart,
+  Line,
+} from "recharts";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+
+const ExpenseOverview = ({ data }) => {
+  // ... (rest of the code remains unchanged)
+
+  return (
+    <div style={{ position: "relative", padding: "20px", color: "white" }}>
+      <h2 style={{ textAlign: "center", marginBottom: 16 }}>Income</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: "20px",
+        }}
+      >
+        <FormControl variant="standard" style={{ minWidth: 120 }}>
+          <InputLabel id="view-select-label" style={{ color: "white" }}>
+            Timeline
+          </InputLabel>
+          <Select
+            labelId="view-select-label"
+            id="view-select"
+            value={view}
+            onChange={handleViewChange}
+            label="Timeline"
+            style={{ color: "white" }}
+          >
+            <MenuItem value="daily">Daily</MenuItem>
+            <MenuItem value="weekly">Weekly</MenuItem>
+            <MenuItem value="monthly">Monthly</MenuItem>
+            <MenuItem value="yearly">Yearly</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
+      <div style={{ overflow: "auto" }}>
+        <LineChart
+          width={Math.max(cWidth, 600)}
           height={300}
           data={gData}
           margin={{
@@ -142,25 +274,14 @@ const ExpenseOverview = ({ data }) => {
             tickFormatter={(tickValue) => {
               return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
             }}
-          />{" "}
-          {/* Update axis color */}
+          />
           <Tooltip
             contentStyle={{ color: "black", backgroundColor: "wheat" }}
           />
           <Legend />
-          {/* <Bar dataKey="Expenses" fill="white" /> Update bar color */}
-          <Line type="monotone" dataKey="Expenses" stroke="white" />{" "}
-          {/* Update Line component */}
+          <Line type="monotone" dataKey="Expenses" stroke="white" />
         </LineChart>
       </div>
     </div>
   );
-};
-
-const data = require("./data.json");
-
-const Graph = () => {
-  return <ExpenseOverview data={data} />;
-};
-
-export default Graph;
+ */

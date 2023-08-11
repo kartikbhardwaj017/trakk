@@ -85,9 +85,7 @@ const ExpenseOverview = ({ data }) => {
     setView(event.target.value);
   };
   return (
-    <div
-      style={{ position: "relative", backgroundColor: "wheat", color: "black" }}
-    >
+    <div style={{ position: "relative", color: "white" }}>
       <div
         style={{
           position: "absolute",
@@ -107,10 +105,10 @@ const ExpenseOverview = ({ data }) => {
           <option value="yearly">Yearly</option>
         </select>
       </div>
-      <h2 style={{ textAlign: "center", marginBottom: 16, color: "black" }}>
+      <h2 style={{ textAlign: "center", marginBottom: 16, color: "white" }}>
         xpenses
       </h2>
-      <div style={{ overflowX: "auto", backgroundColor: "wheat" }}>
+      <div style={{ overflowX: "auto" }}>
         <BarChart
           width={2000}
           height={300}
@@ -122,12 +120,12 @@ const ExpenseOverview = ({ data }) => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="black" />
-          <XAxis stroke="black" />
-          <YAxis stroke="black" />
+          {/* <CartesianGrid strokeDasharray="3 3" stroke="white" /> */}
+          <XAxis stroke="white" />
+          <YAxis stroke="white" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="Expenses" fill="black" />
+          <Bar dataKey="Expenses" fill="red" />
         </BarChart>
       </div>
     </div>
