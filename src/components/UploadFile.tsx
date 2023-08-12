@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
 import { Button, Typography, Box, Input } from "@mui/material";
-import { Image } from "@mui/icons-material";
 import image from "./uploadFile.png";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Layout from "./Layout";
+
+import { TransactionExtractionFactory } from "../services/TransactionExtractionFactory";
 
 export default function LandingPage() {
   const [selectedBank, setSelectedBank] = useState("");
@@ -25,66 +27,110 @@ export default function LandingPage() {
     fileInputRef.current?.click();
   };
 
-  return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <Typography variant="h3">File Processor</Typography>
-      <Typography>Upload your file to extract transaction data</Typography>
-      <img src={image} alt="Graphic  " />
+  const onUpload = async () => {
+    if (selectedFile && selectedBank) {
+      try {
+        const extractor =
+          TransactionExtractionFactory.getExtractor(selectedBank);
+        const transactions = await extractor.extractFromXlsvFile(selectedFile);
+        console.log(transactions);
+      } catch (error) {
+        console.error("Failed to extract transactions:", error);
+      }
+    } else {
+      console.error("No file selected or bank not specified");
+    }
+  };
 
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-helper-label">Bank Name</InputLabel>
-        <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
-          value={selectedBank}
-          label="SBI"
-          onChange={handleBankChange}
-          sx={{ color: "white" }}
+  return (
+    <Layout selectedIcon={"add"}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px",
+        }}
+      >
+        <Typography
+          variant="h4"
+          style={{ color: "white", marginBottom: "20px" }}
         >
-          <MenuItem value={15}>
-            <em>SBI</em>
-          </MenuItem>
-          <MenuItem value={10}>ICICI</MenuItem>
-          <MenuItem value={20}>HDFC</MenuItem>
-          <MenuItem value={30}>AXIS</MenuItem>
-        </Select>
-        <FormHelperText>Choose Bank name </FormHelperText>
-      </FormControl>
-      <Box display="flex" alignItems="center" gap={2}>
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          style={{ display: "none" }} // Hide the default file input
-        />{" "}
-        {/* Styled file picker button */}
+          Upload Transactions
+        </Typography>
+        <Typography style={{ color: "#B0B0B0", marginBottom: "20px" }}>
+          Select your bank and upload the file to process transaction data.
+        </Typography>
+        <img
+          src={image}
+          alt="Upload graphic"
+          style={{ marginBottom: "20px" }}
+        />
+
+        <FormControl sx={{ m: 1, minWidth: 240 }}>
+          <InputLabel
+            id="demo-simple-select-helper-label"
+            style={{ color: "white" }}
+          >
+            Bank Name
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={selectedBank}
+            label="SBI"
+            onChange={handleBankChange}
+            sx={{ color: "white", marginBottom: "10px" }}
+          >
+            <MenuItem value={"SBI"}>
+              <em>SBI</em>
+            </MenuItem>
+            <MenuItem value={"ICICI"}>ICICI</MenuItem>
+            <MenuItem value={"HDFC"}>HDFC</MenuItem>
+            <MenuItem value={"AXIS"}>AXIS</MenuItem>
+          </Select>
+        </FormControl>
+        <Box
+          display="flex"
+          alignItems="center"
+          gap={2}
+          style={{ marginBottom: "20px" }}
+        >
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            style={{ display: "none" }}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleFileButtonClick}
+          >
+            Choose File
+          </Button>
+          {selectedFile && (
+            <Typography
+              variant="body2"
+              style={{ color: "white", marginLeft: 10 }}
+            >
+              {selectedFile.name}
+            </Typography>
+          )}
+        </Box>
         <Button
           variant="contained"
           color="primary"
-          onClick={handleFileButtonClick}
+          style={{
+            width: "calc(100% - 40px)",
+            margin: "10px 20px",
+          }}
+          onClick={onUpload}
         >
-          Choose File
+          Upload
         </Button>
-        {selectedFile && (
-          <span style={{ marginLeft: 10 }}>{selectedFile.name}</span>
-        )}
-      </Box>
-      <Button
-        variant="contained"
-        style={{
-          width: "calc(100% - 20px)",
-          margin: "10px",
-        }}
-      >
-        Upload
-      </Button>
-    </div>
+      </div>
+    </Layout>
   );
 }

@@ -12,6 +12,7 @@ import {
   LocationOn,
   Home as HomeIcon,
   Margin,
+  UploadFile,
 } from "@mui/icons-material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -20,6 +21,7 @@ import BasicTabs from "./TabPanel";
 import Graph from "./Graph";
 import Graph2 from "./Graph2";
 import { useEffect } from "react";
+import Layout from "./Layout";
 
 export default function Home() {
   // useEffect(() => {
@@ -30,114 +32,113 @@ export default function Home() {
   // }, []);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        overflowY: "scroll",
-      }}
-    >
-      <style>
-        {`
-          ::-webkit-scrollbar {
-            display: none;
-          }
-        `}
-      </style>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            TRAKK
-          </Typography>
-        </Toolbar>
-      </AppBar>
-
+    <Layout selectedIcon={"Home"}>
       <div
         style={{
-          flexGrow: 1,
-          display: "flex",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "10px",
+          height: "100vh",
+          overflowY: "scroll",
+          padding: "10px",
         }}
       >
-        <Card variant="outlined">
-          <div
-            style={{
-              width: "400px",
-              backgroundColor: "#f0f0f0",
-              color: "black",
-              display: "flex",
-              flexDirection: "column",
-              padding: "5px",
-            }}
-          >
-            <span>Welcome,</span>
-            <span
-              style={{ fontWeight: 700, fontSize: "32px", marginLeft: "10px" }}
-            >
-              Kartik
-            </span>
-            <span>Available balance</span>
-            <span style={{ fontWeight: 700, fontSize: "32px" }}>
-              USD 80000.00
-            </span>
+        <div
+          style={{
+            flexGrow: 1,
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "10px",
+          }}
+        >
+          <Card variant="outlined">
             <div
               style={{
-                width: "100%",
-                backgroundColor: "#d1d1d1",
-                height: "3px",
-                margin: "2px",
-              }}
-            ></div>
-            <div
-              style={{
+                width: "400px",
+                backgroundColor: "#f0f0f0",
+                color: "black",
                 display: "flex",
-                flexDirection: "row",
-                alignItems: "center", // for vertical centering
-                padding: "10px", // space around the edges
+                flexDirection: "column",
+                padding: "5px",
               }}
             >
-              <div
+              <span>Welcome,</span>
+              <span
                 style={{
-                  flex: 1, // take up equal width
-                  textAlign: "right", // right align the left section for better aesthetics
-                  paddingRight: "15px", // space before the divider
+                  fontWeight: 700,
+                  fontSize: "32px",
+                  marginLeft: "10px",
                 }}
               >
-                <span>income</span>
-                <br />
-                <span>USD 1000</span>
-              </div>
+                Kartik
+              </span>
+              <span>Available balance</span>
+              <span style={{ fontWeight: 700, fontSize: "32px" }}>
+                INR 80000.00
+              </span>
               <div
                 style={{
-                  width: "px",
-                  height: "40px", // reduce the height for aesthetics
-                  backgroundColor: "#d1d1d1", // use a softer color
+                  width: "100%",
+                  backgroundColor: "#d1d1d1",
+                  height: "3px",
+                  margin: "2px",
                 }}
               ></div>
               <div
                 style={{
-                  flex: 1, // take up equal width
-                  paddingLeft: "15px", // space after the divider
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center", // for vertical centering
+                  padding: "10px", // space around the edges
                 }}
               >
-                <span>expense</span>
-                <br />
-                <span>USD 500</span>
+                <div
+                  style={{
+                    flex: 1, // take up equal width
+                    textAlign: "right", // right align the left section for better aesthetics
+                    paddingRight: "15px", // space before the divider
+                  }}
+                >
+                  <span>income</span>
+                  <br />
+                  <span>INR 1000</span>
+                </div>
+                <div
+                  style={{
+                    width: "px",
+                    height: "40px", // reduce the height for aesthetics
+                    backgroundColor: "#d1d1d1", // use a softer color
+                  }}
+                ></div>
+                <div
+                  style={{
+                    flex: 1, // take up equal width
+                    paddingLeft: "15px", // space after the divider
+                  }}
+                >
+                  <span>expense</span>
+                  <br />
+                  <span>INR 500</span>
+                </div>
               </div>
             </div>
-          </div>
-        </Card>
-      </div>
-      <BasicTabs />
+          </Card>
+        </div>
+        <BasicTabs />
 
-      <h2>Expense Overview</h2>
-      <Graph />
-      <Graph2 />
-      <BottomNavigation
+        <h2>Expense Overview</h2>
+        <Graph />
+        <Graph2 />
+        {/* <BottomNavigation
         showLabels
-        style={{ position: "fixed", width: "100%", bottom: 0 }}
+        style={{
+          position: "fixed",
+          width: "100%",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          margin: 0,
+          padding: 0,
+        }}
         value={"recents"}
       >
         <BottomNavigationAction
@@ -145,9 +146,10 @@ export default function Home() {
           value="recents"
           icon={<HomeIcon />}
         />
-        <BottomNavigationAction label="Favorites" icon={<Favorite />} />
+        <BottomNavigationAction label="add Tranx" icon={<UploadFile />} />
         <BottomNavigationAction label="Nearby" icon={<LocationOn />} />
-      </BottomNavigation>
-    </div>
+      </BottomNavigation> */}
+      </div>
+    </Layout>
   );
 }
