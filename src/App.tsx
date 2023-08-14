@@ -30,7 +30,7 @@ function App() {
         <Container maxWidth="md">
           <Router>
             <Routes>
-              <Route path="/home" Component={Home} />
+              <Route path="/" Component={Home} />
               <Route path="/intro" Component={LandingPage} />
               <Route path="/upload" Component={UploadFile} />
               <Route path="/community" Component={Playgoround} />
