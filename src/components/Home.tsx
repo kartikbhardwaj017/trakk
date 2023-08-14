@@ -37,7 +37,7 @@ export default function Home() {
         style={{
           height: "100vh",
           overflowY: "scroll",
-          padding: "10px",
+          padding: "2px",
         }}
       >
         <div

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {
   BarChart,
@@ -10,6 +10,7 @@ import {
   Legend,
   LineChart,
   Line,
+  LabelList,
 } from "recharts";
 import {
   FormControl,
@@ -25,8 +26,17 @@ import {
 } from "../services/ITransactionProps";
 
 const ExpenseOverview = ({ data }) => {
-  const barWidth = 30; // Desired width of each bar
+  const barWidth = 10; // Desired width of each bar
   const [view, setView] = useState("daily");
+
+  const scrollRef = useRef(null); // Create a ref for the container
+  // ... rest of the code remains same
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 100; // Adjust the value as needed
+    }
+  }, []);
 
   const formatData = (data: ITransactionProps[], view) => {
     if (view === "daily") {
@@ -85,6 +95,28 @@ const ExpenseOverview = ({ data }) => {
     }));
   };
 
+  const tickFormatter = (tickValue) => {
+    if (tickValue === 1) return "0";
+    return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
+  };
+
+  // Custom render function for the labels, now using tickFormatter
+  const renderCustomizedLabel = (props) => {
+    const { x, y, value } = props;
+    const formattedValue = tickFormatter(value); // Apply the same formatter
+    return (
+      <text
+        x={x}
+        y={y + 10}
+        dy={-5}
+        fill="white"
+        fontSize={10}
+        textAnchor="middle"
+      >
+        {formattedValue}
+      </text>
+    );
+  };
   useEffect(() => {
     const newGData = formatData(data, view);
     setGData(newGData);
@@ -101,7 +133,7 @@ const ExpenseOverview = ({ data }) => {
     setCWidth(newGData.length * barWidth); // Use newGData
   };
   return (
-    <div style={{ position: "relative", padding: "20px", color: "white" }}>
+    <div style={{ position: "relative", paddingTop: "10px", color: "white" }}>
       <div
         style={{
           display: "flex",
@@ -134,7 +166,15 @@ const ExpenseOverview = ({ data }) => {
           </Select>
         </FormControl>
       </div>
-      <div style={{ overflowX: "auto", position: "relative", width: "100%" }}>
+      <div
+        style={{
+          overflowX: "auto",
+          position: "relative",
+          width: "100%",
+          overflowY: "hidden",
+        }}
+        ref={scrollRef}
+      >
         <BarChart
           width={Math.max(cWidth, 600)}
           height={300}
@@ -163,8 +203,9 @@ const ExpenseOverview = ({ data }) => {
             contentStyle={{ color: "black", backgroundColor: "wheat" }}
           />
           {/* <Legend /> */}
-          <Bar dataKey="Expenses" fill="green" />
-
+          <Bar dataKey="Expenses" fill="green">
+            <LabelList dataKey="Expenses" content={renderCustomizedLabel} />
+          </Bar>
         </BarChart>
       </div>
     </div>

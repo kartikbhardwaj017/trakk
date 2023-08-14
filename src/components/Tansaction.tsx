@@ -42,7 +42,7 @@ export default function TansactionView(props) {
             }}
           >
             <span style={{ fontSize: "16px", color: "#fff" }}>
-              {transaction.remarks}
+              {transaction.remarks.substring(0, 15)}
             </span>
             <span style={{ fontSize: "14px", color: "#aaa", marginTop: "5px" }}>
               {transaction.recipient} on {transaction.date.toLocaleDateString()}
