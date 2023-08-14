@@ -6,6 +6,7 @@ import LandingPage from "./components/Landing";
 import { Container } from "@mui/material";
 import UploadFile from "./components/UploadFile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Playgoround from "./components/Playground";
 
 const darkTheme = createTheme({
   palette: {
@@ -32,6 +33,7 @@ function App() {
               <Route path="/home" Component={Home} />
               <Route path="/intro" Component={LandingPage} />
               <Route path="/upload" Component={UploadFile} />
+              <Route path="/community" Component={Playgoround} />
             </Routes>
           </Router>
         </Container>

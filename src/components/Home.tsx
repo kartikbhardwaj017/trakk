@@ -128,27 +128,6 @@ export default function Home() {
         <h2>Expense Overview</h2>
         <Graph />
         <Graph2 />
-        {/* <BottomNavigation
-        showLabels
-        style={{
-          position: "fixed",
-          width: "100%",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          margin: 0,
-          padding: 0,
-        }}
-        value={"recents"}
-      >
-        <BottomNavigationAction
-          label="Recents"
-          value="recents"
-          icon={<HomeIcon />}
-        />
-        <BottomNavigationAction label="add Tranx" icon={<UploadFile />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOn />} />
-      </BottomNavigation> */}
       </div>
     </Layout>
   );

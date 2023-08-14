@@ -57,7 +57,12 @@ export default function Layout({ children, selectedIcon }) {
           icon={<UploadFile />}
           onClick={() => navigate("/upload")}
         />
-        <BottomNavigationAction label="Community" icon={<People />} />
+        <BottomNavigationAction
+          label="Community"
+          value="Community"
+          icon={<People />}
+          onClick={() => navigate("/community")}
+        />
       </BottomNavigation>
     </div>
   );

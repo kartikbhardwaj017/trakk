@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import {
   BarChart,
   Bar,
@@ -17,58 +18,35 @@ import {
   MenuItem,
   SelectChangeEvent,
 } from "@mui/material";
+import TransactionRepository from "../services/Dexie/DbService";
+import {
+  ETransactionType,
+  ITransactionProps,
+} from "../services/ITransactionProps";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 30; // Desired width of each bar
   const [view, setView] = useState("daily");
 
-  const formatData = (data, view) => {
+  const formatData = (data: ITransactionProps[], view) => {
     if (view === "daily") {
-      return data.map((item) => ({
-        name: item.date,
-        Expenses: item.value,
-      }));
+      return groupBy(data, (item) => item.date.toLocaleDateString(), "amount");
     } else if (view === "weekly") {
-      const weeklyData = {};
-      data.forEach((item) => {
-        const week = `${parseInt(item.date.split("-")[1])} - ${Math.ceil(
-          parseInt(item.date.split("-")[0]) / 7
-        )}`;
-        if (!weeklyData[week]) {
-          weeklyData[week] = 0;
-        }
-        weeklyData[week] += item.value;
-      });
-      return Object.entries(weeklyData).map(([week, value]) => ({
-        name: week,
-        Expenses: value,
-      }));
+      return groupBy(
+        data,
+        (item) =>
+          `${item.date.getMonth() + 1} - ${Math.ceil(item.date.getDate() / 7)}`,
+        "amount"
+      );
     } else if (view === "monthly") {
-      const monthlyData = {};
-      data.forEach((item) => {
-        const month = parseInt(item.date.split("-")[1]);
-        if (!monthlyData[month]) {
-          monthlyData[month] = 0;
-        }
-        monthlyData[month] += item.value;
-      });
-      return Object.entries(monthlyData).map(([month, value]) => ({
-        name: getMonthName(month),
-        Expenses: value,
-      }));
+      return groupBy(
+        data,
+        (item) => item.date.getMonth() + 1,
+        "amount",
+        getMonthName
+      );
     } else if (view === "yearly") {
-      const yearlyData = {};
-      data.forEach((item) => {
-        const year = parseInt(item.date.split("-")[2]);
-        if (!yearlyData[year]) {
-          yearlyData[year] = 0;
-        }
-        yearlyData[year] += item.value;
-      });
-      return Object.entries(yearlyData).map(([year, value]) => ({
-        name: year,
-        Expenses: value,
-      }));
+      return groupBy(data, (item) => item.date.getFullYear(), "amount");
     }
   };
 
@@ -88,10 +66,32 @@ const ExpenseOverview = ({ data }) => {
       "NOV",
       "DEC",
     ];
-    return monthNames[month];
+    return monthNames[parseInt(month)];
   };
-  const [gData, setGData] = useState(formatData(data, view));
-  const [cWidth, setCWidth] = useState(gData.length * barWidth);
+
+  const groupBy = (data, keyFn, valueKey, nameFn = (key) => key) => {
+    const groupedData = data.reduce((acc, item) => {
+      const key = keyFn(item);
+      if (!acc[key]) {
+        acc[key] = 0;
+      }
+      acc[key] += item[valueKey];
+      return acc;
+    }, {});
+
+    return Object.entries(groupedData).map(([key, value]) => ({
+      name: nameFn(key),
+      Expenses: value === 0 ? 1 : value,
+    }));
+  };
+
+  useEffect(() => {
+    const newGData = formatData(data, view);
+    setGData(newGData);
+    setCWidth(newGData.length * barWidth);
+  }, [data, view]);
+  const [gData, setGData] = useState([]);
+  const [cWidth, setCWidth] = useState(0);
 
   const handleViewChange = (event: SelectChangeEvent<string>) => {
     const newView = event.target.value;
@@ -149,8 +149,12 @@ const ExpenseOverview = ({ data }) => {
           {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="name" stroke="white" />
           <YAxis
+            scale="log"
+            domain={["auto", "auto"]}
             stroke="white"
             tickFormatter={(tickValue) => {
+              // If the tick value is the small positive number, display it as "0"
+              if (tickValue === 1) return "0";
               return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
             }}
             style={{ position: "absolute", left: 0, top: 0, zIndex: 1 }}
@@ -161,41 +165,35 @@ const ExpenseOverview = ({ data }) => {
           {/* <Legend /> */}
           <Bar dataKey="Expenses" fill="green" />
 
-          {/* <Line type="monotone" dataKey="Expenses" stroke="green" /> */}
         </BarChart>
       </div>
     </div>
   );
 };
 
-const formatDate = (dateString) => {
-  const day = dateString.split("-")[0];
-  const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const monthName = monthNames[parseInt(dateString.split("-")[1]) - 1];
-  const year = dateString.split("-")[2];
-
-  if (monthName === "Jan") {
-    return `${day}-${monthName}-${year}`;
-  }
-  return `${day}-${monthName}`;
-};
-const data = require("./data.json");
-
 const Graph = () => {
-  return <ExpenseOverview data={data} />;
+  const startTransactionArray: ITransactionProps[] = [];
+  const [transactions, setTransactions] = useState(startTransactionArray);
+  const transactionRepository = new TransactionRepository();
+
+  // Fetch transactions from database when the component mounts
+  useEffect(() => {
+    transactionRepository
+      .readTransactions({}) // Fetch all transactions, or apply filters as needed
+      .then((loadedTransactions) => {
+        setTransactions(
+          loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+        );
+      });
+  }, []); // Empty dependency array ensures this runs once after mount
+
+  return (
+    <ExpenseOverview
+      data={transactions.filter(
+        (transs) => transs.type === ETransactionType.CREDIT
+      )}
+    />
+  );
 };
 
 export default Graph;

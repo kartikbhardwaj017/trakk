@@ -1,6 +1,10 @@
 export enum EPaymentMode {
   UPI = "UPI",
   NEFT = "NEFT",
+  ATM_WITHDRAWAL = "ATM_WITHDRAWL",
+  INTEREST_PAYMENT = "INTEREST_PAYMENT",
+  RTGS = "RTGS",
+  OTHER = "OTHER",
 }
 
 export enum ETransactionType {
@@ -9,7 +13,7 @@ export enum ETransactionType {
 }
 
 export interface ITransactionProps {
-  date: string;
+  date: Date;
   amount: number;
   balance: number;
   mode: EPaymentMode;
@@ -17,4 +21,17 @@ export interface ITransactionProps {
   category: string;
   remarks: string;
   type: ETransactionType;
+}
+
+
+
+export interface ITransactionFilter {
+  startDate?: string;
+  endDate?: string;
+  remarks?: string;
+  type?: "income" | "expense" | "all";
+  category?: string;
+  recipient?: string;
+  amountMin?: number;
+  amountMax?: number;
 }

@@ -9,6 +9,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Layout from "./Layout";
 
 import { TransactionExtractionFactory } from "../services/TransactionExtractionFactory";
+import TransactionRepository from "../services/Dexie/DbService";
 
 export default function LandingPage() {
   const [selectedBank, setSelectedBank] = useState("");
@@ -33,6 +34,8 @@ export default function LandingPage() {
         const extractor =
           TransactionExtractionFactory.getExtractor(selectedBank);
         const transactions = await extractor.extractFromXlsvFile(selectedFile);
+        const repo = new TransactionRepository();
+        repo.bulkInsert(transactions);
         console.log(transactions);
       } catch (error) {
         console.error("Failed to extract transactions:", error);
