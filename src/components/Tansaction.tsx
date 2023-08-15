@@ -10,7 +10,13 @@ import {
 export default function TansactionView(props) {
   const transaction: ITransactionProps = props.transaction;
   return (
-    <div style={{ display: "flex", color: "white" }}>
+    <div
+      style={{
+        display: "flex",
+        color: "white",
+        overflowX: "auto",
+      }}
+    >
       <div
         style={{
           display: "flex",

@@ -26,7 +26,6 @@ function CustomTabPanel(props: TabPanelProps) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
-
     >
       {value === index && (
         <Box sx={{ p: 1 }}>
@@ -64,7 +63,6 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
-
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -91,6 +89,7 @@ export default function BasicTabs() {
       <CustomTabPanel value={value} index={1}>
         {transactions
           .filter((transaction) => transaction.type === ETransactionType.DEBIT)
+          .splice(0, 10)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}
@@ -98,6 +97,7 @@ export default function BasicTabs() {
       <CustomTabPanel value={value} index={2}>
         {transactions
           .filter((transaction) => transaction.type === ETransactionType.CREDIT)
+          .splice(0, 10)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}

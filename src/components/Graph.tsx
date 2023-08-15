@@ -167,7 +167,15 @@ const ExpenseOverview = ({ data }) => {
     setCWidth(newGData.length * barWidth); // Use newGData
   };
   return (
-    <div style={{ position: "relative", paddingTop: "10px", color: "white" }}>
+    <div
+      style={{
+        position: "relative",
+        paddingTop: "10px",
+        color: "white",
+        overflowX: "auto",
+        width: "100%",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -204,7 +212,6 @@ const ExpenseOverview = ({ data }) => {
       <div
         style={{
           overflowX: "auto",
-          position: "relative",
           width: "100%",
           overflowY: "hidden",
         }}
