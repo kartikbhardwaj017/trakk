@@ -67,7 +67,8 @@ export default function Playgoround() {
     <Layout selectedIcon={"Community"}>
       <Filter onFilterChange={onFiltersChange} />
       <Box
-        padding={2}
+        paddingX={2}
+        paddingY={1}
         border={1}
         borderColor="grey.300"
         borderRadius={4}
@@ -80,7 +81,7 @@ export default function Playgoround() {
         </Typography>
         <Typography>Total Income: {totalIncome.toFixed(2)}</Typography>
         <Typography>Total Expense: {totalExpense.toFixed(2)}</Typography>
-        <Typography variant="h5" style={{ fontWeight: "bold" }}>
+        <Typography variant="h6" style={{ fontWeight: "bold" }}>
           Net (Income - Expense):{" "}
           <span
             style={{
@@ -91,9 +92,11 @@ export default function Playgoround() {
           </span>
         </Typography>
       </Box>
-      {currentTransactions.map((transaction) => (
-        <TansactionView transaction={transaction} />
-      ))}
+      {currentTransactions
+        .sort((t1, t2) => (t1.date < t2.date ? 1 : -1))
+        .map((transaction) => (
+          <TansactionView transaction={transaction} />
+        ))}
     </Layout>
   );
 }

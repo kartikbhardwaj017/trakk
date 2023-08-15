@@ -27,7 +27,7 @@ function App() {
           width: "100vw",
         }}
       >
-        <Container maxWidth="md">
+        <Container>
           <Router>
             <Routes>
               <Route path="/" Component={Home} />
@@ -44,7 +44,6 @@ function App() {
 }
 
 export default App;
-
 
 // function App() {
 //   return (
@@ -72,4 +71,3 @@ export default App;
 //     </ThemeProvider>
 //   );
 // }
-

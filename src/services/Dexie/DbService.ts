@@ -121,6 +121,9 @@ class TransactionRepository {
           : transactions
       );
   }
+  purgeDatabase(): Promise<void> {
+    return this.db.table("transactions").clear();
+  }
 }
 
 export default TransactionRepository;

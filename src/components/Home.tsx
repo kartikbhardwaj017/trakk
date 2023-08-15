@@ -37,7 +37,9 @@ export default function Home() {
         style={{
           height: "100vh",
           overflowY: "scroll",
-          padding: "2px",
+          paddingTop: "2px",
+
+          overflowX: "hidden",
         }}
       >
         <div
@@ -87,15 +89,15 @@ export default function Home() {
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  alignItems: "center", // for vertical centering
-                  padding: "10px", // space around the edges
+                  alignItems: "center",
+                  padding: "10px",
                 }}
               >
                 <div
                   style={{
-                    flex: 1, // take up equal width
-                    textAlign: "right", // right align the left section for better aesthetics
-                    paddingRight: "15px", // space before the divider
+                    flex: 1,
+                    textAlign: "right",
+                    paddingRight: "15px",
                   }}
                 >
                   <span>income</span>
@@ -104,15 +106,15 @@ export default function Home() {
                 </div>
                 <div
                   style={{
-                    width: "px",
-                    height: "40px", // reduce the height for aesthetics
-                    backgroundColor: "#d1d1d1", // use a softer color
+                    width: "1px",
+                    height: "40px",
+                    backgroundColor: "#d1d1d1",
                   }}
                 ></div>
                 <div
                   style={{
-                    flex: 1, // take up equal width
-                    paddingLeft: "15px", // space after the divider
+                    flex: 1,
+                    paddingLeft: "15px",
                   }}
                 >
                   <span>expense</span>

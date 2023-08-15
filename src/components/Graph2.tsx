@@ -24,6 +24,7 @@ import {
   ETransactionType,
   ITransactionProps,
 } from "../services/ITransactionProps";
+import { RecipientsPieChart } from "./RecipientChart";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 10; // Desired width of each bar
@@ -133,7 +134,7 @@ const ExpenseOverview = ({ data }) => {
     setCWidth(newGData.length * barWidth); // Use newGData
   };
   return (
-    <div style={{ position: "relative", paddingTop: "10px", color: "white" }}>
+    <div style={{ position: "relative", marginTop: "20px", color: "white" }}>
       <div
         style={{
           display: "flex",
@@ -143,7 +144,7 @@ const ExpenseOverview = ({ data }) => {
           position: "relative",
         }}
       >
-        <h2 style={{ margin: 0 }}>Income</h2>
+        <h2 style={{ margin: 0 }}>Xpenses</h2>
         <FormControl
           variant="standard"
           style={{ minWidth: 120, position: "absolute", right: 0 }}
@@ -229,11 +230,25 @@ const Graph = () => {
   }, []); // Empty dependency array ensures this runs once after mount
 
   return (
-    <ExpenseOverview
-      data={transactions.filter(
-        (transs) => transs.type === ETransactionType.DEBIT
-      )}
-    />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <ExpenseOverview
+        data={transactions.filter(
+          (transs) => transs.type === ETransactionType.DEBIT
+        )}
+      />
+      <RecipientsPieChart
+        data={transactions.filter(
+          (transs) => transs.type === ETransactionType.DEBIT
+        )}
+      />
+    </div>
   );
 };
 

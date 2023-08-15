@@ -1,0 +1,4452 @@
+[
+  {
+    "date": "2023-01-01T18:30:00.000Z",
+    "amount": 23,
+    "balance": 114554,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300157750356/Payment from Ph/paytmqr28100505/Paytm Payments /YBL0ec635d7f5e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-01T18:30:00.000Z",
+    "amount": 454,
+    "balance": 114100,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300293361686/Payment from Ph/paytm-65054339@/Paytm Payments /YBL5dc981765bb",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-01T18:30:00.000Z",
+    "amount": 20000,
+    "balance": 94100,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/336832344804/Payment from Ph/8955785609@ybl/State Bank Of I/YBL14051af7507a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-01T18:30:00.000Z",
+    "amount": 190,
+    "balance": 93910,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/300224958888/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLd55ad86cc84444",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-01T18:30:00.000Z",
+    "amount": 59000,
+    "balance": 34910,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/300215685151/Payment from Ph/ironmanlifestyl/ICICI Bank/YBLf3f6b34fcfd94e59",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-02T18:30:00.000Z",
+    "amount": 300,
+    "balance": 34610,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q836130648",
+    "category": "other",
+    "remarks": "UPI/336993142920/Payment from Ph/Q836130648@ybl/Yes Bank Ltd/YBLb566327b0d424e1",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-03T18:30:00.000Z",
+    "amount": 80,
+    "balance": 34530,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/337066780301/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL5adc07744c154bb",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-03T18:30:00.000Z",
+    "amount": 170,
+    "balance": 34360,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/300479491300/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL0d8c72e14da940",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-04T18:30:00.000Z",
+    "amount": 20,
+    "balance": 34340,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300511589312/Payment from Ph/paytmqr28100505/Paytm Payments /YBL3598a2c25d1",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-04T18:30:00.000Z",
+    "amount": 300,
+    "balance": 34040,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q836130648",
+    "category": "other",
+    "remarks": "UPI/337170195240/Payment from Ph/Q836130648@ybl/Yes Bank Ltd/YBL75ced327fa1f4f1",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-04T18:30:00.000Z",
+    "amount": 11,
+    "balance": 34029,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300560796924/Payment from Ph/paytmqr28100505/Paytm Payments /IBLd2fae4ef39a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-05T18:30:00.000Z",
+    "amount": 12500,
+    "balance": 21529,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/337270473592/Payment from Ph/9036665777@ybl/Axis Bank Ltd./YBLd36428a25ad14",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-05T18:30:00.000Z",
+    "amount": 20,
+    "balance": 21509,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300610561235/Payment from Ph/paytmqr28100505/Paytm Payments /YBL1e156be3e26",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-06T18:30:00.000Z",
+    "amount": 170,
+    "balance": 21339,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/300719148519/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL4dc1fa583e5743",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-06T18:30:00.000Z",
+    "amount": 3000,
+    "balance": 18339,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/337361409852/Payment from Ph/9094495400@ybl/State Bank Of I/YBL9ceacc5369c2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-06T18:30:00.000Z",
+    "amount": 1598,
+    "balance": 16741,
+    "mode": "UPI",
+    "recipient": "Merchant: DECATHLON",
+    "category": "other",
+    "remarks": "UPI/337340901466/Payment for 701/DECATHLON@ybl/Yes Bank Ltd/YBLf7ce2cfa3aca4df2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-06T18:30:00.000Z",
+    "amount": 30,
+    "balance": 16711,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300780791566/Payment from Ph/paytm-65054339@/Paytm Payments /YBL1c2509a812b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-08T18:30:00.000Z",
+    "amount": 24,
+    "balance": 16687,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/300826993442/Payment from Ph/paytmqr28100505/Paytm Payments /YBL0b69d43db3e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-08T18:30:00.000Z",
+    "amount": 170,
+    "balance": 16517,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/300860083413/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLc4889126044e4a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-08T18:30:00.000Z",
+    "amount": 29650,
+    "balance": 46167,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS0092338733663-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS009233873366",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-01-09T18:30:00.000Z",
+    "amount": 20,
+    "balance": 46147,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301021950755/Payment from Ph/paytmqr28100505/Paytm Payments /YBL2ab9856da18",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-09T18:30:00.000Z",
+    "amount": 450,
+    "balance": 45697,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301003221124/Payment from Ph/paytm-65054339@/Paytm Payments /YBLd419faf6773",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-09T18:30:00.000Z",
+    "amount": 170,
+    "balance": 45527,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/301047373878/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL1a2f8051b9c143",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-10T18:30:00.000Z",
+    "amount": 40,
+    "balance": 45487,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/337738267961/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL78a9a6c6332645c9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-10T18:30:00.000Z",
+    "amount": 100,
+    "balance": 45387,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q836130648",
+    "category": "other",
+    "remarks": "UPI/337722255273/Payment from Ph/Q836130648@ybl/Yes Bank Ltd/YBL03881083cbbe439",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-10T18:30:00.000Z",
+    "amount": 144,
+    "balance": 45243,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301184763851/Pay to BharatPe/BHARATPE9072623/Yes Bank Ltd/YBLb26ff1b1ff9748",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-10T18:30:00.000Z",
+    "amount": 1313,
+    "balance": 43930,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/337798275093/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBLa896e7b0da6b4df4aa3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-11T18:30:00.000Z",
+    "amount": 20,
+    "balance": 43910,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301271186948/Payment from Ph/paytmqr28100505/Paytm Payments /YBLa94a6e989dc",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-11T18:30:00.000Z",
+    "amount": 40,
+    "balance": 43870,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/337813235109/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL7da018adbbe7461",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-11T18:30:00.000Z",
+    "amount": 230,
+    "balance": 43640,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301284064818/Payment from Ph/paytmqr28100505/Paytm Payments /YBLac1f32a33ca",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-12T18:30:00.000Z",
+    "amount": 1313,
+    "balance": 44953,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301341840213/R02 PhonePe Rev/phonepemerchant/Yes Bank Ltd/YESBF1C6195446656",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-01-13T18:30:00.000Z",
+    "amount": 45,
+    "balance": 44908,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301420545427/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBLdee2e3f4b1a24b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-13T18:30:00.000Z",
+    "amount": 125,
+    "balance": 44783,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/301467805070/PaymenttoROPPEN/rpy.qrroppentra/ICICI Bank/YBL0ddf0357f93e4273",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-13T18:30:00.000Z",
+    "amount": 125,
+    "balance": 44908,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/301469657014/Razorpay Refund/razorpaybqr@ici/ICICI Bank/ICI40f86f3f7bb14db6",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-01-13T18:30:00.000Z",
+    "amount": 91,
+    "balance": 44817,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301444331450/Pay to BharatPe/BHARATPE9072621/Yes Bank Ltd/YBL25079954647d40",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 20,
+    "balance": 44797,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301552053649/Payment from Ph/paytmqr28100505/Paytm Payments /YBL4d11eb828e8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 220,
+    "balance": 44577,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301523946161/Payment from Ph/gpay-1117988967/Axis Bank Ltd./IBL3c9c96228567",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 55,
+    "balance": 44522,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301523187584/Payment from Ph/paytmqr28100505/Paytm Payments /YBL340af90d991",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 11,
+    "balance": 44511,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301585947545/Payment from Ph/paytmqr28100505/Paytm Payments /YBLd77acd0bf36",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 45,
+    "balance": 44466,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301549126224/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL3179c6564d1a48",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 100,
+    "balance": 44366,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301589755680/Payment from Ph/paytmqr28100505/Paytm Payments /YBL9c6f491f951",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 55,
+    "balance": 44311,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/338248855332/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBLaf1dff6867774a7a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 435.19,
+    "balance": 43875.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301605912754/Payment from Ph/paytm-65054339@/Paytm Payments /YBL8e15b862de4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-15T18:30:00.000Z",
+    "amount": 45,
+    "balance": 43830.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301623859438/Payment from Ph/paytmqr28100505/Paytm Payments /YBLc68812b1d5f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 20,
+    "balance": 43810.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301775971524/Payment from Ph/paytmqr28100505/Paytm Payments /YBL9b342eefad7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 120,
+    "balance": 43690.81,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/338328168100/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBLdbe12ba1b3ff4b0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 80,
+    "balance": 43610.81,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/338376354098/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBLdf510763b5284b8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 110,
+    "balance": 43500.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301705353890/Payment from Ph/paytmqr28100505/Paytm ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 379,
+    "balance": 43121.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301711710208/Payment from Ph/amazonsellerser/HDFC BANK LTD/YBL0a97f855b8284",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 120,
+    "balance": 43001.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301782360434/Payment from Ph/paytm-65054339@/Paytm Payments /IBLcd2c20c0d04",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 1313,
+    "balance": 41688.81,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/338319215097/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBLc0ea2dcbb3c24ab19ef",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-16T18:30:00.000Z",
+    "amount": 170,
+    "balance": 41518.81,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/301746818227/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL5ce95d371a7945",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-17T18:30:00.000Z",
+    "amount": 80,
+    "balance": 41438.81,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/338456607409/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBLfc957d1ca5e94a5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-17T18:30:00.000Z",
+    "amount": 255,
+    "balance": 41183.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301877700149/Payment from Ph/paytmqr28100505/Paytm Payments /YBL98548209d3e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-17T18:30:00.000Z",
+    "amount": 2835,
+    "balance": 38348.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301839738179/Payment from Ph/peppypunjabi@ib/HDFC BANK LTD/IBL702bee18ed7e4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-17T18:30:00.000Z",
+    "amount": 116,
+    "balance": 38232.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/338436855340/Payment from Ph/fasi7160@ybl/Kotak Mahindra /YBLb617fa1cd61a4c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-18T18:30:00.000Z",
+    "amount": 234,
+    "balance": 37998.81,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/301988902765/PaymenttoROPPEN/rpy.qrroppentra/ICICI Bank/YBL0cc196509e1d4276",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-18T18:30:00.000Z",
+    "amount": 20,
+    "balance": 37978.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301942347519/Payment from Ph/paytmqr28100505/Paytm Payments /YBL529ac6ec7fa",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-18T18:30:00.000Z",
+    "amount": 80,
+    "balance": 37898.81,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/338557613933/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL5fb02aef50cc4fb",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-18T18:30:00.000Z",
+    "amount": 50,
+    "balance": 37848.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/301925360678/Payment from Ph/paytmqr28100505/Paytm Payments /YBLc550b1c6441",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-18T18:30:00.000Z",
+    "amount": 310,
+    "balance": 37538.81,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/301988732860/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLf430fc8ed33346",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-19T18:30:00.000Z",
+    "amount": 80,
+    "balance": 37458.81,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/338653929376/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL972885bae4824b5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-20T18:30:00.000Z",
+    "amount": 170,
+    "balance": 37288.81,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/302131119985/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLbbe3ad2f34814a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-20T18:30:00.000Z",
+    "amount": 24,
+    "balance": 37264.81,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302143983045/Payment from Ph/paytmqr28100505/Paytm Payments /YBL9d9feb046c2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-20T18:30:00.000Z",
+    "amount": 51.79,
+    "balance": 37213.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302106014813/Payment from Ph/paytm-65054339@/Paytm Payments /YBL8d938831ee8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 40,
+    "balance": 37173.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302232580225/Payment from Ph/paytmqr28100505/Paytm Payments /YBLfdfcd770aee",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 170,
+    "balance": 37003.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302241067338/Pay to BharatPe/BHARATPE9072623/Yes Bank Ltd/YBL1a4b62d446404e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 36,
+    "balance": 36967.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302231256532/Pay to BharatPe/BHARATPE9072623/Yes Bank Ltd/YBL7ca9e0c3fe5349",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 22,
+    "balance": 36945.02,
+    "mode": "UPI",
+    "recipient": "Merchant: VIKRAM",
+    "category": "other",
+    "remarks": "UPI/302250104313/Pay To VIKRAM/BHARATPE0989913/Yes Bank Ltd/YBL5a25191cdb544274",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 70,
+    "balance": 36875.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q906334336",
+    "category": "other",
+    "remarks": "UPI/338869815804/Payment from Ph/Q906334336@ybl/Yes Bank Ltd/YBL97bdd981ecb24f2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 190,
+    "balance": 36685.02,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/302276796888/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL78a4582ae33040",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 1000,
+    "balance": 35685.02,
+    "mode": "UPI",
+    "recipient": "Merchant: FIRST",
+    "category": "other",
+    "remarks": "UPI/302202434236/Payment from Ph/akshaykothari67/IDFC FIRST Bank/YBL834f38c2a9f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 20,
+    "balance": 35665.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302382724584/Payment from Ph/paytmqr28100505/Paytm Payments /YBLcb0feca6970",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 80,
+    "balance": 35585.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/338975881932/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBLbb645952ccc445e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 178,
+    "balance": 35407.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302301483990/Payment from Ph/amazonsellerser/HDFC BANK LTD/YBLc1e7d8b127ae4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 30,
+    "balance": 35377.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302356666615/Payment from Ph/paytmqr28100505/Paytm Payments /YBL55ea2b4ebdf",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-22T18:30:00.000Z",
+    "amount": 25,
+    "balance": 35352.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302370748255/Payment from Ph/paytmqr28100505/Paytm Payments /IBLf6542d3701d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-23T18:30:00.000Z",
+    "amount": 45,
+    "balance": 35307.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302425822181/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBLcdfd5bebce8946",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-23T18:30:00.000Z",
+    "amount": 90,
+    "balance": 35217.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q060575629",
+    "category": "other",
+    "remarks": "UPI/339017166221/Payment from Ph/Q060575629@ybl/Yes Bank Ltd/YBLc4025feda52d479",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-24T18:30:00.000Z",
+    "amount": 80,
+    "balance": 35137.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/339191578843/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL2386ee21870a4ec",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-24T18:30:00.000Z",
+    "amount": 1000,
+    "balance": 34137.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302506002535/Payment from Ph/paytm-311057@pa/Paytm Payments /YBL109333a4f50",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-26T18:30:00.000Z",
+    "amount": 50,
+    "balance": 34087.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302648280057/Payment from Ph/paytmqr28100505/HDFC BANK LTD/YBLb1c038241ae94",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-26T18:30:00.000Z",
+    "amount": 30,
+    "balance": 34057.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302689040309/Pay To BharatPe/BHARATPE0990685/Yes Bank Ltd/IBL4cde120c28294e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-27T18:30:00.000Z",
+    "amount": 839,
+    "balance": 33218.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/339332407185/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP4b98b0a6808f46f7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-27T18:30:00.000Z",
+    "amount": 424,
+    "balance": 32794.02,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/302802778191/Payment for Swi/upiswiggy@icici/ICICI Bank/ICI82147d879b3d4771",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-27T18:30:00.000Z",
+    "amount": 222,
+    "balance": 32572.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302872921013/Debit Money Usi/swiggyinstamart/Yes Bank Ltd/YJPffe0e827de5e4b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-29T18:30:00.000Z",
+    "amount": 818,
+    "balance": 31754.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/302948629435/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV37f9494",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-29T18:30:00.000Z",
+    "amount": 80,
+    "balance": 31674.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/339632946188/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL376365de4b914a7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-29T18:30:00.000Z",
+    "amount": 70,
+    "balance": 31604.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q950727383",
+    "category": "other",
+    "remarks": "UPI/339629644280/Payment from Ph/Q950727383@ybl/Yes Bank Ltd/YBLb05339ff3ec04de",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-29T18:30:00.000Z",
+    "amount": 120,
+    "balance": 31484.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303089802307/Payment from Ph/paytmqr28100505/Paytm Payments /YBL47b4bde4394",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-30T18:30:00.000Z",
+    "amount": 80,
+    "balance": 31404.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/339755531285/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBL513512d30eb2411",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-30T18:30:00.000Z",
+    "amount": 300,
+    "balance": 31104.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q393092970",
+    "category": "other",
+    "remarks": "UPI/303105425475/Payment from Ph/Q393092970@ybl/HDFC BANK LTD/YBL1e4ad303abc240",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-30T18:30:00.000Z",
+    "amount": 100,
+    "balance": 31004.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q634100232",
+    "category": "other",
+    "remarks": "UPI/303169395055/Payment from Ph/Q634100232@ybl/Bank of Baroda/YBL3937770c9f064",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-30T18:30:00.000Z",
+    "amount": 380,
+    "balance": 30624.02,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/303118379385/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL6312e34b48db4b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-31T18:30:00.000Z",
+    "amount": 80,
+    "balance": 30544.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q617194316",
+    "category": "other",
+    "remarks": "UPI/339837840721/Payment from Ph/Q617194316@ybl/Yes Bank Ltd/YBLe57d85598c9f46c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-01-31T18:30:00.000Z",
+    "amount": 130033,
+    "balance": 160577.02,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS0322341505055-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS032234150505",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-02-01T18:30:00.000Z",
+    "amount": 80,
+    "balance": 160497.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303384163502/Payment from Ph/paytmqr28100505/Paytm Payments /YBL789e2637377",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-01T18:30:00.000Z",
+    "amount": 170,
+    "balance": 160327.02,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/303314541337/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLbb87c863ad574d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-02T18:30:00.000Z",
+    "amount": 80,
+    "balance": 160247.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303477089281/Payment from Ph/paytmqr28100505/Paytm Payments /YBL37e28640e47",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-02T18:30:00.000Z",
+    "amount": 90,
+    "balance": 160157.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q395081273",
+    "category": "other",
+    "remarks": "UPI/340040353774/Payment from Ph/Q395081273@ybl/Yes Bank Ltd/YBLad9d57c3c9fd49e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-03T18:30:00.000Z",
+    "amount": 24,
+    "balance": 160133.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303526880595/Payment from Ph/paytmqr28100505/Paytm Payments /YBL3ea923657fb",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-03T18:30:00.000Z",
+    "amount": 300,
+    "balance": 159833.02,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q060575629",
+    "category": "other",
+    "remarks": "UPI/340191266471/Payment from Ph/Q060575629@ybl/Yes Bank Ltd/YBL00e159bc0f9a4b4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-03T18:30:00.000Z",
+    "amount": 410,
+    "balance": 159423.02,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/303588248643/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLcd70b23b191747",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 60,
+    "balance": 159363.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303691400184/Payment from Ph/paytmqr28100505/Paytm Payments /IBLd46a4330c7a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 12500,
+    "balance": 146863.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/340249213272/Payment from Ph/9036665777@ybl/Axis Bank ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 360,
+    "balance": 146503.02,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/303607346901/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLf8179027f8e441",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 150,
+    "balance": 146353.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303665288771/Payment from Ph/paytmqr28100505/Paytm Payments /YBLf90a6d616ad",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 567,
+    "balance": 145786.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303609820802/Payment from Ph/paytmqr28100505/Paytm Payments /YBL0badedbdf90",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 144,
+    "balance": 145642.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303790394128/Payment from Ph/paytmqr28100505/Paytm Payments /YBLd80108e8d43",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 5000,
+    "balance": 140642.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/340338380438/Payment from Ph/9094495400@ybl/State Bank Of I/YBL9d9d354b7a44",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 80,
+    "balance": 140562.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303744815411/Payment from Ph/paytmqr28100505/Paytm Payments /YBL24f8b7cb014",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-05T18:30:00.000Z",
+    "amount": 40,
+    "balance": 140522.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303741177743/Payment from Ph/paytmqr28100505/Paytm Payments /YBL30981b5aa22",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-06T18:30:00.000Z",
+    "amount": 80,
+    "balance": 140442.02,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303875698268/Payment from Ph/paytmqr28100505/Paytm Payments /YBL0b171258d52",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-06T18:30:00.000Z",
+    "amount": 758.5,
+    "balance": 139683.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303861350327/Payment from Ph/paytm-51827377@/Paytm Payments /IBL38ceb7626f5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-06T18:30:00.000Z",
+    "amount": 40,
+    "balance": 139643.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303837163303/Payment from Ph/paytmqr28100505/Paytm Payments /YBL4de1c86ae63",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-06T18:30:00.000Z",
+    "amount": 298,
+    "balance": 139345.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303876708963/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPf7460a96e3444dc0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-07T18:30:00.000Z",
+    "amount": 35,
+    "balance": 139310.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/303954949859/Payment from Ph/paytmqr28100505/Paytm Payments /YBLe22c2ee25e3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-08T18:30:00.000Z",
+    "amount": 80,
+    "balance": 139230.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304030037826/Payment from Ph/paytmqr28100505/Paytm Payments /IBL433b4fb970a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-08T18:30:00.000Z",
+    "amount": 55,
+    "balance": 139175.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304022731785/Payment from Ph/paytmqr28100505/Paytm Payments /YBL95af228e1c0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-09T18:30:00.000Z",
+    "amount": 80,
+    "balance": 139095.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304101342944/Payment from Ph/paytmqr28100505/Paytm Payments /YBL7350d32e4a9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-09T18:30:00.000Z",
+    "amount": 140,
+    "balance": 138955.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304136245709/Payment from Ph/paytmqr28100505/Paytm Payments /IBL068c232c0fc",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-10T18:30:00.000Z",
+    "amount": 637,
+    "balance": 138318.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/340855355583/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPf7bd435330f0456b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-10T18:30:00.000Z",
+    "amount": 650,
+    "balance": 137668.52,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/304220512021/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBL29a7cbb4ed954f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-12T18:30:00.000Z",
+    "amount": 1030,
+    "balance": 136638.52,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q065503397",
+    "category": "other",
+    "remarks": "UPI/340964119415/Payment from Ph/Q065503397@ybl/Yes Bank Ltd/YBL5c85d59d27a9430",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-12T18:30:00.000Z",
+    "amount": 553,
+    "balance": 136085.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304365039255/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3ba7dde",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-12T18:30:00.000Z",
+    "amount": 80,
+    "balance": 136005.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304497452985/Payment from Ph/paytmqr28100505/Paytm Payments /IBL985fa42010d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-13T18:30:00.000Z",
+    "amount": 80,
+    "balance": 135925.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304503480354/Payment from Ph/paytmqr28100505/Paytm Payments /YBL5156ef248fc",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-13T18:30:00.000Z",
+    "amount": 60,
+    "balance": 135865.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304576540681/Payment from Ph/paytmqr28100505/Paytm Payments /IBL531837b9fa5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-13T18:30:00.000Z",
+    "amount": 120,
+    "balance": 135745.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304503026485/Payment from Ph/paytmqr28100505/Paytm Payments /YBL16b416bf0c9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-14T18:30:00.000Z",
+    "amount": 2000,
+    "balance": 133745.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/341294759883/Payment from Ph/9094495400@ybl/State Bank Of I/YBLdea8ea8efa7c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-14T18:30:00.000Z",
+    "amount": 80,
+    "balance": 133665.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304609928489/Payment from Ph/paytmqr28100505/Paytm Payments /YBL7ecfd43a04a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-14T18:30:00.000Z",
+    "amount": 60,
+    "balance": 133605.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304644966634/Payment from Ph/paytmqr28100505/Paytm Payments /IBLf4540b85f9e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-15T18:30:00.000Z",
+    "amount": 80,
+    "balance": 133525.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304728130129/Payment from Ph/paytmqr28100505/Paytm Payments /YBLd78d83df74f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-15T18:30:00.000Z",
+    "amount": 776,
+    "balance": 132749.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304719151670/Payment from Ph/8588052810@payt/Canara Bank/IBL35da2a14f431426",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 90,
+    "balance": 132659.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304876685789/Payment from Ph/paytmqr28100505/Paytm Payments /YBLa066698ff91",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 15000,
+    "balance": 117659.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304872393227/Payment from Ph/7688920911@ybl/Bank of India/YBL90416873781c4f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 65,
+    "balance": 117594.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/341477759738/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL1059d1d5705f4f71",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 45,
+    "balance": 117549.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304823868148/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL9adb47c6922a4e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 124,
+    "balance": 117425.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304886148173/Payment from Ph/paytmqr28100505/Paytm Payments /YBL9d86a49efa9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 20,
+    "balance": 117405.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304804044373/Payment from Ph/paytmqr28100505/Paytm Payments /YBL6d6d7734103",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 75,
+    "balance": 117330.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304852686028/Payment from Ph/paytmqr28100505/Paytm Payments /YBL64d684102bf",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-16T18:30:00.000Z",
+    "amount": 239,
+    "balance": 117091.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304838719165/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPf5a1b37561494d2d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-17T18:30:00.000Z",
+    "amount": 55,
+    "balance": 117036.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304981887832/Payment from Ph/paytmqr28100505/Paytm Payments /IBL6ba3de85849",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-17T18:30:00.000Z",
+    "amount": 120,
+    "balance": 116916.52,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304963633455/Payment from Ph/paytmqr28100505/Paytm Payments /IBLfac0404c3cb",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-17T18:30:00.000Z",
+    "amount": 100,
+    "balance": 116816.52,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/304948953323/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLb053adf395fb44",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-17T18:30:00.000Z",
+    "amount": 827.06,
+    "balance": 115989.46,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304954857394/Payment from Ph/paytm-65054339@/Paytm Payments /YBL8f495dc6c30",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-17T18:30:00.000Z",
+    "amount": 190,
+    "balance": 115799.46,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/304905624789/Payment from Ph/paytmqr28100505/Paytm Payments /YBL6830d530def",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 1700,
+    "balance": 114099.46,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305029952772/Payment from Ph/paytm-60016911@/Paytm Payments /YBLc87b50e7b7f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 78,
+    "balance": 114021.46,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305012774555/Payment from Ph/paytmqr28100505/Paytm Payments /IBL4749ddbf984",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 100,
+    "balance": 113921.46,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/305054542863/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLd14d25e6cfe248",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 269,
+    "balance": 113652.46,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305002674218/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP8655bd5f71ec4c63",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 100,
+    "balance": 113552.46,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305140277799/Payment from Ph/paytmqr28100505/Paytm Payments /YBLa6ccbc30228",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 298.88,
+    "balance": 113253.58,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/341731045801/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBLc2d9a837c89546",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 269,
+    "balance": 112984.58,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/305171616063/Payment for Swi/upiswiggy@icici/ICICI Bank/ICIda1a04ba0c5741dc",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-19T18:30:00.000Z",
+    "amount": 1000,
+    "balance": 111984.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/341736654050/Payment from Ph/9360576320@ybl/HDFC BANK LTD/YBLe5fcf5750f7f46",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-21T18:30:00.000Z",
+    "amount": 145,
+    "balance": 111839.58,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q836130648",
+    "category": "other",
+    "remarks": "UPI/341974035872/Payment from Ph/Q836130648@ybl/Yes Bank Ltd/YBL54e6befeb3564a5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-21T18:30:00.000Z",
+    "amount": 60,
+    "balance": 111779.58,
+    "mode": "UPI",
+    "recipient": "Merchant: VIKRAM",
+    "category": "other",
+    "remarks": "UPI/305324621440/Pay To VIKRAM/BHARATPE0989913/Yes Bank Ltd/YBLaa826a640c004be3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-22T18:30:00.000Z",
+    "amount": 30,
+    "balance": 111749.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305405214898/Payment from Ph/paytmqr28100505/Paytm Payments /IBL272fbd54271",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-23T18:30:00.000Z",
+    "amount": 45,
+    "balance": 111704.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305539573835/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL787ffc193e734e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-23T18:30:00.000Z",
+    "amount": 27,
+    "balance": 111677.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305589346069/Payment from Ph/paytmqr28100505/Paytm Payments /YBL20175dd6aff",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-24T18:30:00.000Z",
+    "amount": 249,
+    "balance": 111428.58,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/305682604344/Payment for Swi/upiswiggy@icici/ICICI Bank/ICIe61790a632664c6a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-24T18:30:00.000Z",
+    "amount": 175,
+    "balance": 111253.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/342269500346/Debit Money Usi/swiggy@yespay/Yes Bank ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-24T18:30:00.000Z",
+    "amount": 269,
+    "balance": 110984.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305690417206/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3a2fce7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-24T18:30:00.000Z",
+    "amount": 183,
+    "balance": 110801.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/342215571898/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPa9f2188cc84e48be",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 284,
+    "balance": 110517.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305723830434/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV335b46f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 310,
+    "balance": 110207.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305726690149/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3d0fb95",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 227,
+    "balance": 109980.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305727550018/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3f1d0b2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 394,
+    "balance": 109586.58,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/305785614480/Payment for Swi/upiswiggy@icici/ICICI Bank/ICI448720ac10e14e90",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 45,
+    "balance": 109541.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305873536211/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL358328fdc90149",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 100,
+    "balance": 109441.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305833784330/Payment from Ph/paytmqr28100505/Paytm Payments /YBL579ed521a05",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 76,
+    "balance": 109365.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305896281157/Payment from Ph/paytmqr28100505/Paytm Payments /YBL51ecbce9b97",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-26T18:30:00.000Z",
+    "amount": 573,
+    "balance": 108792.58,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/305887994562/Payment for Swi/swiggystores@ic/ICICI Bank/ICIdd11e9b49e574f32",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-27T18:30:00.000Z",
+    "amount": 123,
+    "balance": 108669.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/305943159466/Payment from Ph/paytmqr28100505/Paytm Payments /YBL9495587c24f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-27T18:30:00.000Z",
+    "amount": 221,
+    "balance": 108448.58,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/342582376879/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP96431da2fcec4b1d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-02-27T18:30:00.000Z",
+    "amount": 130052,
+    "balance": 238500.58,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS0592344582375-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS059234458237",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-03-01T18:30:00.000Z",
+    "amount": 50,
+    "balance": 238450.58,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/306183821679/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/IBLcf4e6f40ae874f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-01T18:30:00.000Z",
+    "amount": 573.5,
+    "balance": 237877.08,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/306122204503/Payment from Ph/paytm-65054339@/Paytm Payments /IBL06098db19f4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-02T18:30:00.000Z",
+    "amount": 500,
+    "balance": 237377.08,
+    "mode": "UPI",
+    "recipient": "Merchant: RAMESHWARAMCAFE",
+    "category": "other",
+    "remarks": "UPI/342839681716/Payment for 640/RAMESHWARAMCAFE/Yes Bank Ltd/YBL198bb7c0d30f4e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-03T18:30:00.000Z",
+    "amount": 25,
+    "balance": 237352.08,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/306332677571/Payment from Ph/paytmqr28100505/Paytm Payments /YBL7add29f1a1d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-03T18:30:00.000Z",
+    "amount": 579.28,
+    "balance": 236772.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/306376200898/Payment from Ph/paytm-65054339@/Paytm Payments /IBLd3e5f74db6e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-03T18:30:00.000Z",
+    "amount": 280,
+    "balance": 236492.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/306340678416/Payment from Ph/paytmqr28100505/Paytm Payments /YBL95546c2649f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-05T18:30:00.000Z",
+    "amount": 20,
+    "balance": 236472.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/306440720834/Payment from Ph/paytmqr28100505/Paytm Payments /YBL9de50d9cd03",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-05T18:30:00.000Z",
+    "amount": 526,
+    "balance": 235946.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/343124990562/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP88ed359a424e4eec",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-09T18:30:00.000Z",
+    "amount": 23,
+    "balance": 235923.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/306908875915/Payment from Ph/paytmqr28100505/Paytm Payments /YBLdcf7fec1a25",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-09T18:30:00.000Z",
+    "amount": 1026,
+    "balance": 234897.8,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/343525775539/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL77890227dc1a4a97834",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-12T18:30:00.000Z",
+    "amount": 300,
+    "balance": 234597.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307187684724/Payment from Ph/Q26674492@ybl/HDFC BANK LTD/YBL94c811fb0f604fd",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-12T18:30:00.000Z",
+    "amount": 124,
+    "balance": 234473.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/343732205987/Payment from Ph/9663722258@ybl/State Bank Of I/YBL5c6e605b9e6e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-12T18:30:00.000Z",
+    "amount": 21,
+    "balance": 234452.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307113191998/Payment from Ph/paytmqr28100505/Paytm Payments /YBLc4d3166dfa8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-12T18:30:00.000Z",
+    "amount": 45,
+    "balance": 234407.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/343707731472/Payment from Ph/Q06225398@ybl/Yes Bank Ltd/YBL836b816c07ff4292",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-12T18:30:00.000Z",
+    "amount": 24,
+    "balance": 234383.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307296254796/Payment from Ph/paytmqr28100505/Paytm Payments /YBL7f31d60c38b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-12T18:30:00.000Z",
+    "amount": 12500,
+    "balance": 221883.8,
+    "mode": "OTHER",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "CAM/36941SRY/CASH WDL/13-03-23                    ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-13T18:30:00.000Z",
+    "amount": 261,
+    "balance": 221622.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307300587134/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPa1c47ba70d4142d0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-14T18:30:00.000Z",
+    "amount": 24,
+    "balance": 221598.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307462650891/Payment from Ph/paytmqr28100505/Paytm Payments /YBLba1f18a678d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-14T18:30:00.000Z",
+    "amount": 436,
+    "balance": 221162.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/344016431076/Payment from Ph/9036665777@ybl/Axis Bank Ltd./YBLc348ab2906524",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-14T18:30:00.000Z",
+    "amount": 1180,
+    "balance": 219982.8,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/344008003312/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL5c4e5a0afe2e4206aee",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-14T18:30:00.000Z",
+    "amount": 552,
+    "balance": 219430.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307412669140/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPd87d7f8d4b0a4195",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-15T18:30:00.000Z",
+    "amount": 65,
+    "balance": 219365.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/344149713881/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL79b51ad40ce047d6",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-15T18:30:00.000Z",
+    "amount": 830,
+    "balance": 218535.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307526414950/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPde33854d4a054b4f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-16T18:30:00.000Z",
+    "amount": 24,
+    "balance": 218511.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307650153079/Payment from Ph/paytmqr28100505/Paytm Payments /YBL8208b550692",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-17T18:30:00.000Z",
+    "amount": 257,
+    "balance": 218254.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307713692245/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3790f32",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-17T18:30:00.000Z",
+    "amount": 25,
+    "balance": 218229.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307734939747/Payment from Ph/paytmqr28100505/Paytm Payments /YBLae62e76f418",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 257,
+    "balance": 217972.8,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/307841170248/Payment for Swi/upiswiggy@icici/ICICI Bank/ICIeddfa2f8309441b4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 669,
+    "balance": 217303.8,
+    "mode": "UPI",
+    "recipient": "Merchant: BILLDESKPP",
+    "category": "other",
+    "remarks": "UPI/344429836374/Payment from Ph/BILLDESKPP@ybl/Yes Bank Ltd/YBL77b15e5d7e3f469",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 176,
+    "balance": 217127.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307828403077/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP44c15b35dd6e432e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 179,
+    "balance": 216948.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/344424898883/Debit Money Usi/swiggyinstamart/Yes Bank Ltd/YJP09b36dc5480d41",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 65,
+    "balance": 216883.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307937660632/Payment from Ph/paytmqr28100505/Paytm Payments /YBLbb06d1f326e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 520,
+    "balance": 216363.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307930031063/Payment from Ph/paytm-65054339@/Paytm Payments /YBL569045b4e45",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-19T18:30:00.000Z",
+    "amount": 366,
+    "balance": 215997.8,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/307986349625/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3392e88",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-20T18:30:00.000Z",
+    "amount": 797.8,
+    "balance": 215200,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/344673534306/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL0f2d573061e94d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-21T18:30:00.000Z",
+    "amount": 7686,
+    "balance": 207514,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308143826386/UPI Transaction/policybazaar.pa/Axis Bank Ltd./AXI4c0dd96fd552",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-22T18:30:00.000Z",
+    "amount": 20,
+    "balance": 207494,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308210870488/Payment from Ph/paytm-65054339@/Paytm Payments /YBLb6fe64418ff",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-23T18:30:00.000Z",
+    "amount": 25,
+    "balance": 207469,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308398373498/Payment from Ph/paytmqr28100505/Paytm Payments /YBLe097b53177f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-24T18:30:00.000Z",
+    "amount": 45,
+    "balance": 207424,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308459487390/Payment from Ph/paytmqr28100505/Paytm Payments /YBL8569073d37d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-24T18:30:00.000Z",
+    "amount": 249,
+    "balance": 207175,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/308455839130/Payment for Swi/upiswiggy@icici/ICICI Bank/ICI626de4305569460d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-24T18:30:00.000Z",
+    "amount": 350.35,
+    "balance": 206824.65,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/345001738944/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL97421fbd9d9543",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-24T18:30:00.000Z",
+    "amount": 57,
+    "balance": 206767.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/345066424695/Payment from Ph/9148390581@ybl/Bank of Baroda/YBLd5d83f5c54674",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-26T18:30:00.000Z",
+    "amount": 150,
+    "balance": 206617.65,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q936493929",
+    "category": "other",
+    "remarks": "UPI/345100896905/Payment from Ph/Q936493929@ybl/Yes Bank Ltd/YBLed6c256e3c7140a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-26T18:30:00.000Z",
+    "amount": 240,
+    "balance": 206377.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308566621902/Swiggy Order Id/swiggy.stores@a/Axis Bank Ltd./AXISSDKV3295ce3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-26T18:30:00.000Z",
+    "amount": 280,
+    "balance": 206097.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308552338321/Payment from Ph/amazonsellerser/HDFC BANK LTD/YBLfca783de37ed4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-27T18:30:00.000Z",
+    "amount": 513,
+    "balance": 205584.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308739706601/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3212135",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-28T18:30:00.000Z",
+    "amount": 24,
+    "balance": 205560.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308889850169/Payment from Ph/paytmqr28100505/Paytm Payments /YBLceb7d4b4b0c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-28T18:30:00.000Z",
+    "amount": 418,
+    "balance": 205142.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308898997254/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPe952b13e34174da9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-29T18:30:00.000Z",
+    "amount": 947,
+    "balance": 206089.65,
+    "mode": "INTEREST_PAYMENT",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "728101503150:Int.Pd:31-12-2022 to 29-03-2023      ",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-03-29T18:30:00.000Z",
+    "amount": 40,
+    "balance": 206049.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/308938318813/Payment from Ph/paytmqr28100505/Paytm Payments /YBL780a4162faf",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-30T18:30:00.000Z",
+    "amount": 130053,
+    "balance": 336102.65,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS0902348457382-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS090234845738",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 200,
+    "balance": 335902.65,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/345735526480/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBLf5c8631f82644fea869",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 180,
+    "balance": 335722.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309113756969/Payment from Ph/paytmqr28100505/Paytm Payments /YBL81569a979a9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 50,
+    "balance": 335672.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309160744873/Payment from Ph/MAB.03724401996/Axis Bank Ltd./YBL92ecbd45ff1f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 2000,
+    "balance": 333672.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309174291618/Payment from Ph/paytmqr28100505/Paytm Payments /YBL3f2b3440768",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 80,
+    "balance": 333592.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309168738350/Payment from Ph/paytmqr28100505/Paytm Payments /YBLb157ca77915",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 165,
+    "balance": 333427.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309128065544/Payment from Ph/MAB.03724401996/Axis Bank Ltd./YBLc79cbd4751f3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 175,
+    "balance": 333252.65,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/309176352313/Payment for Swi/upiswiggy@icici/ICICI Bank/ICI70a0951bc89e493d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-03-31T18:30:00.000Z",
+    "amount": 186,
+    "balance": 333066.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309142323645/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP88081de69d3b41ce",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-02T18:30:00.000Z",
+    "amount": 201,
+    "balance": 332865.65,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/309277885050/Payment for Swi/upiswiggy@icici/ICICI Bank/ICIc71847f0bcd64ddc",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-02T18:30:00.000Z",
+    "amount": 194,
+    "balance": 332671.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309299915455/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPddccf0d6dc9a4ff6",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-02T18:30:00.000Z",
+    "amount": 110,
+    "balance": 332561.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309213155781/Payment from Ph/paytmqr28100505/Paytm Payments /YBLf7a718aa198",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-02T18:30:00.000Z",
+    "amount": 228,
+    "balance": 332333.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309275689764/Payment from Ph/paytmqr28100505/Paytm Payments /YBLa365ee9a453",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-02T18:30:00.000Z",
+    "amount": 210,
+    "balance": 332123.65,
+    "mode": "UPI",
+    "recipient": "Merchant: NARINDER",
+    "category": "other",
+    "remarks": "UPI/309269839381/Pay To NARINDER/BHARATPE0990292/Yes Bank Ltd/YBLe284048506104b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-03T18:30:00.000Z",
+    "amount": 120,
+    "balance": 332003.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309481175627/Payment from Ph/paytmqr28100505/Paytm Payments /YBLe547a1e75d3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-05T18:30:00.000Z",
+    "amount": 45,
+    "balance": 331958.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309637210186/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL0894ece4cc184a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-05T18:30:00.000Z",
+    "amount": 60,
+    "balance": 331898.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/346238651609/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBLa08fa197b9de4c18",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-05T18:30:00.000Z",
+    "amount": 378,
+    "balance": 331520.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309660055615/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV33093e2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-06T18:30:00.000Z",
+    "amount": 45,
+    "balance": 331475.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309705915702/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBLbb9ade57ebed4f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-06T18:30:00.000Z",
+    "amount": 188,
+    "balance": 331287.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309779843765/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV30ed718",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-06T18:30:00.000Z",
+    "amount": 110,
+    "balance": 331177.65,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309712518299/Payment from Ph/paytmqr28100505/Paytm Payments /YBL0faaf2bfbfb",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-06T18:30:00.000Z",
+    "amount": 768.58,
+    "balance": 330409.07,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309748113099/Payment from Ph/paytm-65054339@/Paytm Payments /YBL6de07cc0b4f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-06T18:30:00.000Z",
+    "amount": 10,
+    "balance": 330399.07,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309720887243/Payment from Ph/paytmqr28100505/Paytm Payments /YBL8a1277605a2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-06T18:30:00.000Z",
+    "amount": 2016.77,
+    "balance": 328382.3,
+    "mode": "OTHER",
+    "recipient": "Merchant: CHATGPT",
+    "category": "other",
+    "remarks": "VSI/CHATGPT SUB/202304072245/309717761946/        ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-07T18:30:00.000Z",
+    "amount": 60,
+    "balance": 328322.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309843414825/Payment from Ph/paytmqr28100505/Paytm Payments /YBL24b764355f8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-07T18:30:00.000Z",
+    "amount": 1360,
+    "balance": 326962.3,
+    "mode": "UPI",
+    "recipient": "Merchant: IKEAINDIAPVTLTD",
+    "category": "other",
+    "remarks": "UPI/309875197567/Payment from Ph/IKEAINDIAPVTLTD/HDFC BANK LTD/YBL4f0cd237760c4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-07T18:30:00.000Z",
+    "amount": 60,
+    "balance": 326902.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309878107452/Payment from Ph/paytmqr28100505/Paytm Payments /IBL14a8a574ed5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-09T18:30:00.000Z",
+    "amount": 55,
+    "balance": 326847.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/309907930014/Payment from Ph/paytmqr28100505/Paytm Payments /YBL3385a6b6dc5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-09T18:30:00.000Z",
+    "amount": 277,
+    "balance": 326570.3,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/346542781075/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBLdfd1b9b0421a42",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-09T18:30:00.000Z",
+    "amount": 45,
+    "balance": 326525.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310036325790/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/IBL449a716b4f954e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-09T18:30:00.000Z",
+    "amount": 20000,
+    "balance": 306525.3,
+    "mode": "ATM_WITHDRAWL",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "ATM/SPCNG362/CASH WDL/10-04-23                    ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-09T18:30:00.000Z",
+    "amount": 200,
+    "balance": 306325.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310002605584/Payment from Ph/paytm-65054339@/Paytm Payments /YBL9049bf1df4a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-09T18:30:00.000Z",
+    "amount": 150,
+    "balance": 306175.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310089790717/Payment from Ph/paytmqr28100505/Paytm Payments /YBL35d8bf2f013",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-10T18:30:00.000Z",
+    "amount": 45,
+    "balance": 306130.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310159899572/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL50211d24673449",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-10T18:30:00.000Z",
+    "amount": 65,
+    "balance": 306065.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310105734280/Payment from Ph/paytm-65054339@/Paytm Payments /YBL3880eb3c92f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-10T18:30:00.000Z",
+    "amount": 140,
+    "balance": 305925.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310181206375/Payment from Ph/paytmqr28100505/Paytm Payments /IBL28430f9eaf1",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-10T18:30:00.000Z",
+    "amount": 299,
+    "balance": 305626.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310157583415/IntentflowforUP/decathlon.rzp@h/HDFC BANK LTD/YBL86661921eb994",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-10T18:30:00.000Z",
+    "amount": 1062,
+    "balance": 304564.3,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/346794641693/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL2fe5f033f88f4a69b11",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-12T18:30:00.000Z",
+    "amount": 20,
+    "balance": 304544.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310390522608/Payment from Ph/paytmqr28100505/Paytm Payments /YBL8b532abde58",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-12T18:30:00.000Z",
+    "amount": 140,
+    "balance": 304404.3,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310392291544/Payment from Ph/paytmqr28100505/Paytm Payments /YBL5fed61c0c89",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-12T18:30:00.000Z",
+    "amount": 139.26,
+    "balance": 304265.04,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/346925875072/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL7db949ef1ade46",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-12T18:30:00.000Z",
+    "amount": 308,
+    "balance": 303957.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310313857259/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV303a4f0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-12T18:30:00.000Z",
+    "amount": 308,
+    "balance": 304265.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310314886644/Refund from Swi/swiggy.refunds@/Axis Bank Ltd./AXISSDKV3eabfc1",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-04-13T18:30:00.000Z",
+    "amount": 177,
+    "balance": 304088.04,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q641552876",
+    "category": "other",
+    "remarks": "UPI/310436533785/Payment from Ph/Q641552876@ybl/IDBI Bank Limit/YBLf1f6bc6c3308",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-13T18:30:00.000Z",
+    "amount": 412,
+    "balance": 303676.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310424897261/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJPfe25822b2cb446ed",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-13T18:30:00.000Z",
+    "amount": 210,
+    "balance": 303466.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/347053537099/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP0081a196d546481e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-14T18:30:00.000Z",
+    "amount": 176,
+    "balance": 303290.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310556790854/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV366cf8f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-14T18:30:00.000Z",
+    "amount": 40,
+    "balance": 303250.04,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q677528470",
+    "category": "other",
+    "remarks": "UPI/347124273604/Payment from Ph/Q677528470@ybl/Yes Bank Ltd/YBLd9c4124d8d7a452",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-14T18:30:00.000Z",
+    "amount": 80,
+    "balance": 303170.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310551138052/Pay to BharatPe/BHARATPE9072561/Yes Bank Ltd/YBLd6934e15dd4243",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-14T18:30:00.000Z",
+    "amount": 72,
+    "balance": 303098.04,
+    "mode": "UPI",
+    "recipient": "Merchant: CHAIPOINT",
+    "category": "other",
+    "remarks": "UPI/310597612442/Payment from Ph/CHAIPOINT.27274/HDFC BANK LTD/YBL25e329a4cf4d4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-14T18:30:00.000Z",
+    "amount": 170,
+    "balance": 302928.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310573935031/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3a13e3a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-16T18:30:00.000Z",
+    "amount": 83,
+    "balance": 302845.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310628231296/Payment from Ph/mdabdullah10159/State Bank Of I/YBLccc31eb2cba",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-16T18:30:00.000Z",
+    "amount": 45,
+    "balance": 302800.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310655773289/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL0cfe969d9ff94d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-16T18:30:00.000Z",
+    "amount": 21,
+    "balance": 302779.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310600843584/Payment from Ph/paytmqr28100505/Paytm Payments /YBL3d0c9b7a96e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-16T18:30:00.000Z",
+    "amount": 260,
+    "balance": 302519.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/347326877700/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL2edf19e8b30f449a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-16T18:30:00.000Z",
+    "amount": 150,
+    "balance": 302369.04,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310741803148/Payment from Ph/fcbizxd7dd1@fre/Axis Bank Ltd./YBL825ace92660a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-17T18:30:00.000Z",
+    "amount": 7685.2,
+    "balance": 294683.84,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/347472620834/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL35724cc32ff84029ac6",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-17T18:30:00.000Z",
+    "amount": 202,
+    "balance": 294481.84,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/310874895874/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV366bbf4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-18T18:30:00.000Z",
+    "amount": 75,
+    "balance": 294406.84,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/347569295371/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBLfc16e7b01b31499a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-19T18:30:00.000Z",
+    "amount": 1.7,
+    "balance": 294408.54,
+    "mode": "OTHER",
+    "recipient": "Merchant: MOBIKWIK",
+    "category": "other",
+    "remarks": "MMT/IMPS/311010676635/w2b/MOBIKWIK  /Axis Bank    ",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-04-19T18:30:00.000Z",
+    "amount": 500,
+    "balance": 293908.54,
+    "mode": "UPI",
+    "recipient": "Merchant: PVRCINEMASOFFLI",
+    "category": "other",
+    "remarks": "UPI/347614087827/Payment for 501/PVRCINEMASOFFLI/Yes Bank Ltd/YBLd08f98f191c249",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-19T18:30:00.000Z",
+    "amount": 99,
+    "balance": 293809.54,
+    "mode": "UPI",
+    "recipient": "Merchant: PVRCINEMASOFFLI",
+    "category": "other",
+    "remarks": "UPI/347684677040/Payment for 501/PVRCINEMASOFFLI/Yes Bank Ltd/YBL07a43f613cef4b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-19T18:30:00.000Z",
+    "amount": 30,
+    "balance": 293779.54,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q364620701",
+    "category": "other",
+    "remarks": "UPI/347619375972/Payment from Ph/Q364620701@ybl/Yes Bank Ltd/YBLfa12326716494e0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-19T18:30:00.000Z",
+    "amount": 170,
+    "balance": 293609.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311036489517/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV39ff7b7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-19T18:30:00.000Z",
+    "amount": 20,
+    "balance": 293589.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311052558718/Payment from Ph/paytmqr6m5nrz2g/Paytm Payments /YBLfe78986960e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-20T18:30:00.000Z",
+    "amount": 178,
+    "balance": 293411.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/347750240382/Payment from Ph/Q06012720@ybl/Indian Bank/YBL3611640a96884bb29",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-21T18:30:00.000Z",
+    "amount": 1218,
+    "balance": 292193.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311246448741/Payment from Ph/paytm-76163989@/Paytm Payments /YBL980a7a39163",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-21T18:30:00.000Z",
+    "amount": 220,
+    "balance": 291973.54,
+    "mode": "UPI",
+    "recipient": "Merchant: AUROVI",
+    "category": "other",
+    "remarks": "UPI/311219735618/Payment from Ph/AUROVI@icici/ICICI Bank/YBL2c40aa1478a145378de",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-21T18:30:00.000Z",
+    "amount": 69,
+    "balance": 291904.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311213528750/Payment from Ph/paytmqrlv0e8v9e/Paytm Payments /YBLc0e6e1a81ce",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-21T18:30:00.000Z",
+    "amount": 30,
+    "balance": 291874.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311215650780/Payment from Ph/paytmqr28100505/Paytm Payments /YBL8d1697ae5a5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-23T18:30:00.000Z",
+    "amount": 53,
+    "balance": 291821.54,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/311337856263/PaymenttoROPPEN/rpy.qrroppentra/ICICI Bank/YBL3dcba521de5a4d6c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-23T18:30:00.000Z",
+    "amount": 196,
+    "balance": 291625.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311387648171/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV382a401",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-23T18:30:00.000Z",
+    "amount": 233,
+    "balance": 291392.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311395937438/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3c2702f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-23T18:30:00.000Z",
+    "amount": 415,
+    "balance": 290977.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311402132841/Payment from Ph/paytm-65054339@/Paytm Payments /YBL067735cad9d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-24T18:30:00.000Z",
+    "amount": 428,
+    "balance": 290549.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311544818954/Payment from Ph/paytm-65054339@/Paytm Payments /YBL5d2607f7b3c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-25T18:30:00.000Z",
+    "amount": 240,
+    "balance": 290309.54,
+    "mode": "UPI",
+    "recipient": "Merchant: CHAIPOINT",
+    "category": "other",
+    "remarks": "UPI/311655405878/Payment from Ph/CHAIPOINT.27274/HDFC BANK LTD/YBLb266d0e4f8aa4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-26T18:30:00.000Z",
+    "amount": 100,
+    "balance": 290209.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/348317275827/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL08af4412480b468f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-26T18:30:00.000Z",
+    "amount": 190,
+    "balance": 290019.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311753557161/Payment from Ph/paytmqr28100505/Paytm Payments /YBL32ff123c2fa",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-26T18:30:00.000Z",
+    "amount": 72,
+    "balance": 289947.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311780283304/Payment from Ph/paytm-76880981@/Paytm Payments /PYTM3042726288",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 127334,
+    "balance": 417281.54,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS1192352035208-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS119235203520",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 2209,
+    "balance": 415072.54,
+    "mode": "UPI",
+    "recipient": "Merchant: TRENTZUDIO",
+    "category": "other",
+    "remarks": "UPI/348550536980/Payment for 501/TRENTZUDIO@ybl/Yes Bank Ltd/YBL9b907b0327e441d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 799,
+    "balance": 414273.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311953500300/Payment from Ph/paytm-70634714@/Paytm Payments /IBLa768b3f8001",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 25,
+    "balance": 414248.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311996609725/Payment from Ph/paytmqr28100505/Paytm Payments /IBLe9d7247f21f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 669,
+    "balance": 413579.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311907636376/IntentflowforUP/decathlon.rzp@h/HDFC BANK LTD/YBLbebbe267e5754",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 136,
+    "balance": 413443.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311938505207/Payment from Ph/rapido.rzp@axis/Axis Bank Ltd./YBL2d23e630e69a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-28T18:30:00.000Z",
+    "amount": 88,
+    "balance": 413355.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/311973080329/Payment from Ph/himankubordoloi/Paytm Payments /YBLf1a83aa5539",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 2000,
+    "balance": 411355.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/312085993464/Payment from Ph/9741525074@payt/Canara Bank/YBLe9188c6789a54ec",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 20,
+    "balance": 411335.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/312015387514/Payment from Ph/paytmqr28100505/Paytm Payments /YBLaaeed09a54f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 1000,
+    "balance": 410335.54,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/312037875642/NA/mobikwikxtra@ic/ICICI Bank/HDF45AE7D28489045DA8EAE304CE04A6",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 20000,
+    "balance": 390335.54,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/312038226280/NA/mobikwikxtra@ic/ICICI Bank/HDFFC7B762C70ED48C7B1AC38654F391",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 40,
+    "balance": 390295.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/312030816876/Payment from Ph/paytmqr28100505/Paytm Payments /IBL73b1f834341",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 20,
+    "balance": 390275.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/312078393895/Payment from Ph/paytmqr28100505/Paytm Payments /YBL7390d7548d9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 4000,
+    "balance": 386275.54,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q115511533",
+    "category": "other",
+    "remarks": "UPI/348679819532/Payment from Ph/Q115511533@ybl/Yes Bank Ltd/YBL42a2e0da1bb44f2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-04-30T18:30:00.000Z",
+    "amount": 1000,
+    "balance": 385275.54,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q844966653",
+    "category": "other",
+    "remarks": "UPI/348781987145/Payment from Ph/Q844966653@ybl/Yes Bank Ltd/YBL4ec844003caf4ef",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-02T18:30:00.000Z",
+    "amount": 70,
+    "balance": 385205.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/348911239451/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL470c2e2b63f34631",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-03T18:30:00.000Z",
+    "amount": 70,
+    "balance": 385135.54,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/349074784253/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL15fd8b88f678447b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-07T18:30:00.000Z",
+    "amount": 7685.6,
+    "balance": 377449.94,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/349334187597/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL69c269ae9f8d4efb973",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-07T18:30:00.000Z",
+    "amount": 20000,
+    "balance": 357449.94,
+    "mode": "ATM_WITHDRAWL",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "ATM/SPCNG362/CASH WDL/08-05-23                    ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-07T18:30:00.000Z",
+    "amount": 20000,
+    "balance": 337449.94,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/349459739445/Payment from Ph/9094495400@ybl/State Bank Of I/YBL9574c9138f78",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-08T18:30:00.000Z",
+    "amount": 2011.3,
+    "balance": 335438.64,
+    "mode": "OTHER",
+    "recipient": "Merchant: CHATGPT",
+    "category": "other",
+    "remarks": "VSI/CHATGPT SUB/202305090140/312820487937/        ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-08T18:30:00.000Z",
+    "amount": 75,
+    "balance": 335363.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/349504281646/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBLd9ed25aafd9b445f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-08T18:30:00.000Z",
+    "amount": 20000,
+    "balance": 315363.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/349567799239/Payment from Ph/8955785609@ybl/State Bank Of I/YBLc2ea5e442367",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-08T18:30:00.000Z",
+    "amount": 587,
+    "balance": 314776.64,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/349536151214/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL2d5d90f8ff5c4a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-09T18:30:00.000Z",
+    "amount": 278,
+    "balance": 314498.64,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/349620057554/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL406c2f8bf35e4d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-09T18:30:00.000Z",
+    "amount": 5000,
+    "balance": 309498.64,
+    "mode": "ATM_WITHDRAWL",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "ATM/SPCNG362/CASH WDL/10-05-23                    ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-10T18:30:00.000Z",
+    "amount": 1079,
+    "balance": 308419.64,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/349784129847/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBLae7143c6ac4f47898f9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-10T18:30:00.000Z",
+    "amount": 10,
+    "balance": 308409.64,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q534830915",
+    "category": "other",
+    "remarks": "UPI/349722299527/Payment from Ph/Q534830915@ybl/Yes Bank Ltd/YBLf2a4f9e6496f4cd",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-12T18:30:00.000Z",
+    "amount": 96,
+    "balance": 308313.64,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q331805025",
+    "category": "other",
+    "remarks": "UPI/349967483015/Payment from Ph/Q331805025@ybl/Yes Bank Ltd/YBL1f301902c2b5490",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-12T18:30:00.000Z",
+    "amount": 882,
+    "balance": 307431.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/349973240909/Payment from Ph/Q57215218@ybl/Yes Bank Ltd/YBL3689df0cd5aa44f5",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-15T18:30:00.000Z",
+    "amount": 584,
+    "balance": 306847.64,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/350239031774/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBLa11c911abd4a4b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-17T18:30:00.000Z",
+    "amount": 634,
+    "balance": 306213.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/350454484391/Payment from Ph/9036665777@ybl/Axis Bank ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-17T18:30:00.000Z",
+    "amount": 50,
+    "balance": 306163.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/313855350928/Payment from Ph/paytmqr28100505/Paytm Payments /YBL6056567125b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-18T18:30:00.000Z",
+    "amount": 20,
+    "balance": 306143.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/313914810323/Payment from Ph/paytmqr28100505/Paytm Payments /YBL6b0d425a257",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-18T18:30:00.000Z",
+    "amount": 45,
+    "balance": 306098.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/313927139471/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/IBLfad927fc91304b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-19T18:30:00.000Z",
+    "amount": 69,
+    "balance": 306029.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314026043659/Payment from Ph/paytm-76881028@/Paytm Payments /YBL609cb498131",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-19T18:30:00.000Z",
+    "amount": 25,
+    "balance": 306004.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314050492873/Payment from Ph/paytmqr28100505/Paytm Payments /YBL63d7b819f6d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-21T18:30:00.000Z",
+    "amount": 2835,
+    "balance": 303169.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/350772012390/Payment from Ph/peppypunjabi@yb/HDFC BANK LTD/YBLca6a1efb640d4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-21T18:30:00.000Z",
+    "amount": 75,
+    "balance": 303094.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/350868595351/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL73712b3293ac4025",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-22T18:30:00.000Z",
+    "amount": 50000,
+    "balance": 253094.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/350943559182/Payment from Ph/9996153751@ybl/HDFC BANK LTD/YBL421590aca87e41",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-24T18:30:00.000Z",
+    "amount": 130,
+    "balance": 252964.64,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/351119740073/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBLd059944757794927",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-24T18:30:00.000Z",
+    "amount": 135.36,
+    "balance": 252829.28,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/351115584943/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL0ef48cc2fb5a4a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-24T18:30:00.000Z",
+    "amount": 5911.5,
+    "balance": 246917.78,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/314594295785/Payment from Ph/makemytrip@icic/ICICI Bank/YBLf474a8ae70a342b3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-24T18:30:00.000Z",
+    "amount": 3748.5,
+    "balance": 243169.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314522769495/PayviaRazorpay/makemytrip.rzp@/Axis Bank Ltd./YBLc5395d568f694",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 100,
+    "balance": 243069.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314664748749/Payment from Ph/8792528042@payt/Paytm Payments /YBLd03d6a1795f",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 45,
+    "balance": 243024.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314613908084/Pay to BharatPe/BHARATPE9072524/Yes Bank Ltd/YBL42134eb2fa3343",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 80,
+    "balance": 242944.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314683213964/Payment from Ph/paytmqr28100505/Paytm Payments /YBLed066e4ba70",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 70,
+    "balance": 242874.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/351247379988/Payment from Ph/Q49476350@ybl/Yes Bank Ltd/YBL8e1e9c9577dd4b73",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 401,
+    "balance": 242473.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314608638218/Payment from Ph/paytm-65054339@/Paytm Payments /IBL0ae7741f06e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 899,
+    "balance": 241574.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314659542548/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3aa5d2a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 312,
+    "balance": 241262.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/351228873393/Debit Money Usi/swiggy@yespay/Yes Bank Ltd/YJP8b5754834f6c4935",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-25T18:30:00.000Z",
+    "amount": 64,
+    "balance": 241198.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314614225691/Payment from Ph/9632713151@ybl/Indian Overseas/YBL70ad065c9f35",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 36,
+    "balance": 241162.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314768593661/Payment from Ph/paytmqr28100505/Paytm Payments /YBLf19838fc260",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 40,
+    "balance": 241122.28,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/314783437099/Payment from Ph/gpay-1122230393/ICICI Bank/YBLca67e25c7cfc4b37",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 25,
+    "balance": 241097.28,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/314757748893/Payment from Ph/gpay-1122230393/ICICI Bank/IBL7541c48c3f084f34",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 4800,
+    "balance": 236297.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314772265535/Pay to Merchant/311845474996498/Canara Bank/YBL762441f371d24db",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 230,
+    "balance": 236067.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314714040177/Payment from Ph/paytmqr28100505/Paytm Payments /YBL942003b893d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 300,
+    "balance": 235767.28,
+    "mode": "OTHER",
+    "recipient": "Merchant: CANARA",
+    "category": "other",
+    "remarks": "VPS/THE CANARA /202305270917/314703018312/MADIKERI",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 600,
+    "balance": 235167.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314757319340/Payment from Ph/paytmqr28100505/Paytm Payments /YBLe10e0f33207",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 410,
+    "balance": 234757.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314752888587/Payment from Ph/paytm-46925351@/Paytm Payments /YBLe652121c845",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-26T18:30:00.000Z",
+    "amount": 1229,
+    "balance": 233528.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314710534495/Payment from Ph/Mswipe.14003011/Kotak Mahindra /YBLde38577ebe3",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-28T18:30:00.000Z",
+    "amount": 20,
+    "balance": 233508.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314851997375/Payment from Ph/paytmqr28100505/Paytm Payments /YBLc0893bddc02",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-28T18:30:00.000Z",
+    "amount": 6,
+    "balance": 233502.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314855681608/Payment from Ph/paytmqr28100505/Paytm Payments /IBLcd99e502e31",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-28T18:30:00.000Z",
+    "amount": 126,
+    "balance": 233376.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/314976353605/Payment from Ph/9036070716@ybl/Federal Bank/YBL1df4f168c0da408",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-31T18:30:00.000Z",
+    "amount": 90,
+    "balance": 233286.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/315214116527/Payment from Ph/7795606979@ibl/Bank of Baroda/IBLff7b4b05a3d04",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-05-31T18:30:00.000Z",
+    "amount": 182280,
+    "balance": 415566.28,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS1522356330645-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS152235633064",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-06-02T18:30:00.000Z",
+    "amount": 124,
+    "balance": 415442.28,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q331805025",
+    "category": "other",
+    "remarks": "UPI/352037234222/Payment from Ph/Q331805025@ybl/Yes Bank Ltd/YBL232a6bea66fb4c4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-02T18:30:00.000Z",
+    "amount": 25,
+    "balance": 415417.28,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/315466882687/Payment from Ph/paytmqr28100505/Paytm Payments /YBL77ba0980dee",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-02T18:30:00.000Z",
+    "amount": 154.49,
+    "balance": 415262.79,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/315492126581/Payment from Ph/paytm-65054339@/Paytm Payments /YBLf889c436668",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-04T18:30:00.000Z",
+    "amount": 2600,
+    "balance": 412662.79,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/315676114822/Payment from Ph/9360576320@ibl/HDFC BANK LTD/IBL7d11fd6e89fb46",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-06T18:30:00.000Z",
+    "amount": 115,
+    "balance": 412547.79,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/352418726805/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL4e0a7caa94c74e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-07T18:30:00.000Z",
+    "amount": 180,
+    "balance": 412367.79,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/352536274701/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL5d7eedb2acab4a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-08T18:30:00.000Z",
+    "amount": 2029.24,
+    "balance": 410338.55,
+    "mode": "OTHER",
+    "recipient": "Merchant: CHATGPT",
+    "category": "other",
+    "remarks": "VSI/CHATGPT SUB/202306090158/315920510963/        ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-09T18:30:00.000Z",
+    "amount": 10000,
+    "balance": 400338.55,
+    "mode": "ATM_WITHDRAWL",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "ATM/SPCNG362/CASH WDL/10-06-23                    ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-09T18:30:00.000Z",
+    "amount": 400,
+    "balance": 399938.55,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/352788540655/Payment from Ph/Q26674492@ybl/HDFC BANK LTD/YBLc6cffb58f5fb4d0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-11T18:30:00.000Z",
+    "amount": 669,
+    "balance": 399269.55,
+    "mode": "UPI",
+    "recipient": "Merchant: JIOINAPPDIRECT",
+    "category": "other",
+    "remarks": "UPI/352871582728/Payment from Ph/JIOINAPPDIRECT@/Yes Bank Ltd/YBL441e5f06588847",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-12T18:30:00.000Z",
+    "amount": 40.48,
+    "balance": 399229.07,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/353099592950/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBL6691602ec6be45",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-12T18:30:00.000Z",
+    "amount": 7685.6,
+    "balance": 391543.47,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/353039556867/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL14cecbddfdac4726844",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-19T18:30:00.000Z",
+    "amount": 20,
+    "balance": 391523.47,
+    "mode": "UPI",
+    "recipient": "Merchant: RATNADEEPSUPERM",
+    "category": "other",
+    "remarks": "UPI/353797726671/Payment for 2F0/RATNADEEPSUPERM/Yes Bank Ltd/YBLe04463073f0f4a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-19T18:30:00.000Z",
+    "amount": 1458,
+    "balance": 390065.47,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/353747003564/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBLd89f82f8bdf140e69db",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-19T18:30:00.000Z",
+    "amount": 310,
+    "balance": 389755.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317118986935/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV3dbd733",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-20T18:30:00.000Z",
+    "amount": 20,
+    "balance": 389735.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317244819894/Payment from Ph/paytmqr28100505/Paytm Payments /YBL6ee8961a3a0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-20T18:30:00.000Z",
+    "amount": 80,
+    "balance": 389655.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317245504639/Payment from Ph/paytmqr28100505/Paytm Payments /YBL5a25e14baa8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-20T18:30:00.000Z",
+    "amount": 195,
+    "balance": 389460.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317255017525/Payment from Ph/paytm-65054339@/Paytm Payments /IBL0d35bc8dc7c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-25T18:30:00.000Z",
+    "amount": 249,
+    "balance": 389211.47,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/317607243723/Payment for Swi/upiswiggy@icici/ICICI Bank/ICI138389e24d68447b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-25T18:30:00.000Z",
+    "amount": 20,
+    "balance": 389191.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317734556769/Payment from Ph/paytmqrnjhknu5j/Paytm Payments /YBL632d4e125d7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-25T18:30:00.000Z",
+    "amount": 17,
+    "balance": 389174.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317764001425/Pay to BharatPe/BHARATPE9072623/Yes Bank Ltd/YBL425b080d01f24d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-25T18:30:00.000Z",
+    "amount": 10,
+    "balance": 389164.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317725325974/Payment from Ph/paytmqr28100505/Paytm Payments /YBL35067672e50",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-25T18:30:00.000Z",
+    "amount": 30,
+    "balance": 389134.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317750556780/Payment from Ph/paytmqr28100505/Paytm Payments /YBL3cbe453024b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 28,
+    "balance": 389106.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317840476025/Payment from Ph/paytmqr28100505/Paytm Payments /YBLc3acce8e137",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 17,
+    "balance": 389089.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317831518859/Payment from Ph/paytmqr28100505/Paytm Payments /YBL0ecaec1dc0b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 54,
+    "balance": 389035.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317866172071/Payment from Ph/paytmqr28100505/Paytm Payments /YBL645f2491dc7",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 6240,
+    "balance": 382795.47,
+    "mode": "UPI",
+    "recipient": "Merchant: SMARTBAZAAR",
+    "category": "other",
+    "remarks": "UPI/317816241937/Payment from Ph/SMARTBAZAAR.272/HDFC BANK LTD/YBLb9ba5650667c4",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 30,
+    "balance": 382765.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317839640162/Payment from Ph/paytmqr28100505/Paytm Payments /YBL7c209f738d9",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 30,
+    "balance": 382735.47,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q364620701",
+    "category": "other",
+    "remarks": "UPI/354418751772/Payment from Ph/Q364620701@ybl/Yes Bank Ltd/YBLadc0f7229d9c4b8",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-26T18:30:00.000Z",
+    "amount": 17,
+    "balance": 382718.47,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/317821430764/Pay to BharatPe/BHARATPE9072623/Yes Bank Ltd/YBL5c4f2ab5873e47",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-27T18:30:00.000Z",
+    "amount": 7685.6,
+    "balance": 375032.87,
+    "mode": "UPI",
+    "recipient": "Merchant: BBPSBP",
+    "category": "other",
+    "remarks": "UPI/354586656567/Payment from Ph/BBPSBP@ybl/Yes Bank Ltd/YBL2157aa6545c24f90b53",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-27T18:30:00.000Z",
+    "amount": 1198,
+    "balance": 373834.87,
+    "mode": "UPI",
+    "recipient": "Merchant: TRENTZUDIO",
+    "category": "other",
+    "remarks": "UPI/354577481640/Payment for 501/TRENTZUDIO@ybl/Yes Bank Ltd/YBL5000e3816816499",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-27T18:30:00.000Z",
+    "amount": 1019,
+    "balance": 372815.87,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/354520916862/Payment from Ph/Q61708352@ybl/Yes Bank Ltd/YBLe5cbc72337854a3a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 60,
+    "balance": 372755.87,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318089509510/Payment from Ph/paytmqr28100505/Paytm Payments /YBL2f7b5dd5a74",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 20,
+    "balance": 372735.87,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318011475722/Payment from Ph/paytmqr28100505/Paytm Payments /YBLff9a9a771c1",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 1058,
+    "balance": 371677.87,
+    "mode": "UPI",
+    "recipient": "Merchant: TRENTZUDIO",
+    "category": "other",
+    "remarks": "UPI/354641654881/Payment for 501/TRENTZUDIO@ybl/Yes Bank Ltd/YBLe9f2e34a6f5f48d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 1896,
+    "balance": 369781.87,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318001632777/IntentflowforUP/decathlonsports/ICICI Bank/YBL7dc063cb5998433b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 30,
+    "balance": 369751.87,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318014042334/Payment from Ph/paytmqr28100505/Paytm Payments /YBL8a33b74d76a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 925,
+    "balance": 368826.87,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318097530913/PayviaRazorpay/blusmartmobilit/Axis Bank Ltd./YBLf41e9f15bac54",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-28T18:30:00.000Z",
+    "amount": 249,
+    "balance": 368577.87,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318014760172/Swiggy Order Id/swiggyupi@axisb/Axis Bank Ltd./AXISSDKV34ea5e0",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-29T18:30:00.000Z",
+    "amount": 2544,
+    "balance": 371121.87,
+    "mode": "INTEREST_PAYMENT",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "728101503150:Int.Pd:30-03-2023 to 29-06-2023      ",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-06-29T18:30:00.000Z",
+    "amount": 80,
+    "balance": 371041.87,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q675121197",
+    "category": "other",
+    "remarks": "UPI/354774570603/Payment from Ph/Q675121197@ybl/Yes Bank Ltd/YBL38c4d0f62f9e4fd",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-29T18:30:00.000Z",
+    "amount": 12078.48,
+    "balance": 358963.39,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318118584443/Instamojo Payme/instamojo.8134b/ICICI Bank/ICIeff75b064f854b53",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-30T18:30:00.000Z",
+    "amount": 148957,
+    "balance": 507920.39,
+    "mode": "NEFT",
+    "recipient": "Merchant: BENEFITS",
+    "category": "other",
+    "remarks": "NEFT-CMS1822359940702-PLUM BENEFITS PRIVATE LIMITED-NEFT-PLUMB1-CMS182235994070",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-06-30T18:30:00.000Z",
+    "amount": 94,
+    "balance": 507826.39,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q205576071",
+    "category": "other",
+    "remarks": "UPI/354860341289/Payment from Ph/Q205576071@ybl/Yes Bank Ltd/YBL2888bf8d431b401",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-30T18:30:00.000Z",
+    "amount": 50,
+    "balance": 507776.39,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q869651087",
+    "category": "other",
+    "remarks": "UPI/354841341299/Payment from Ph/Q869651087@ybl/Yes Bank Ltd/YBLcfba1a796e2449b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-30T18:30:00.000Z",
+    "amount": 400,
+    "balance": 507376.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318250903074/Payment from Ph/paytmqr28100505/Paytm Payments /YBL24f859c3709",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-30T18:30:00.000Z",
+    "amount": 500,
+    "balance": 506876.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/354855291606/Payment from Ph/9094495400@ybl/State Bank Of I/YBLadf2ba16577a",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-06-30T18:30:00.000Z",
+    "amount": 95000,
+    "balance": 411876.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/354808283041/Payment from Ph/9094495400@ybl/State Bank Of I/YBLa971b2386c90",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-02T18:30:00.000Z",
+    "amount": 120,
+    "balance": 411756.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318331703069/Payment from Ph/ksandeep72066@o/Punjab National/YBL117d9723004",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-02T18:30:00.000Z",
+    "amount": 70,
+    "balance": 411686.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318317620512/Payment from Ph/9034422813@payt/Paytm Payments /IBL8116c830178",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-02T18:30:00.000Z",
+    "amount": 30,
+    "balance": 411656.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318348966753/Payment from Ph/merchant900848./AU small Financ/YBL1dcd5dee29d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-02T18:30:00.000Z",
+    "amount": 60,
+    "balance": 411596.39,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q110183649",
+    "category": "other",
+    "remarks": "UPI/354965692794/Payment from Ph/Q110183649@ybl/Yes Bank Ltd/YBL3c146fb9e108401",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-02T18:30:00.000Z",
+    "amount": 50,
+    "balance": 411546.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318449794290/Payment from Ph/paytmqrf8a5meg2/Paytm Payments /YBL86a9fb005ba",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-02T18:30:00.000Z",
+    "amount": 302,
+    "balance": 411244.39,
+    "mode": "UPI",
+    "recipient": "Merchant: AIRTELPREDIRECT",
+    "category": "other",
+    "remarks": "UPI/355056033466/Payment from Ph/AIRTELPREDIRECT/Yes Bank Ltd/YBLd2393a5188614c",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-03T18:30:00.000Z",
+    "amount": 50,
+    "balance": 411194.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318506225460/Pay to BharatPe/BHARATPE9072514/Yes Bank Ltd/YBL5dba3e08905b48",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-03T18:30:00.000Z",
+    "amount": 999.62,
+    "balance": 410194.77,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318531132986/Order Id 158419/wintwealth.rzp@/ICICI Bank/ICIec10adfeb74544d2",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-03T18:30:00.000Z",
+    "amount": 999.62,
+    "balance": 411194.39,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/RVSL318531132986/Order Id 158419/wintwealth.rzp@/ICICI Bank/ICIec10adfeb745",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-07-03T18:30:00.000Z",
+    "amount": 999.62,
+    "balance": 410194.77,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318506941554/OrderId158421/wintwealth.rzp@/ICICI Bank/YBLe7c95bf965fd400aa6",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-03T18:30:00.000Z",
+    "amount": 999.62,
+    "balance": 411194.39,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/RVSL318506941554/OrderId158421/wintwealth.rzp@/ICICI Bank/YBLe7c95bf965fd40",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-07-04T18:30:00.000Z",
+    "amount": 9996.2,
+    "balance": 401198.19,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318608237148/OrderId158484/wintwealth.rzp@/ICICI Bank/YBLf48aeb4aa07e40518d",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-04T18:30:00.000Z",
+    "amount": 9996.2,
+    "balance": 411194.39,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/RVSL318608237148/OrderId158484/wintwealth.rzp@/ICICI Bank/YBLf48aeb4aa07e40",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-07-04T18:30:00.000Z",
+    "amount": 50000,
+    "balance": 361194.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/318661076111/Payment from Ph/9094495400@ibl/State Bank Of I/IBLbd4c5f141509",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-05T18:30:00.000Z",
+    "amount": 395,
+    "balance": 360799.39,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q416226586",
+    "category": "other",
+    "remarks": "UPI/355316384754/Payment from Ph/Q416226586@ybl/Yes Bank Ltd/YBLdb9cc9d1ccd0427",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-05T18:30:00.000Z",
+    "amount": 50000,
+    "balance": 310799.39,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318702196742/NA/mobikwikxtra@ic/ICICI Bank/HDFA0C0B204165B4B5297CDDB87A7382",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-05T18:30:00.000Z",
+    "amount": 50000,
+    "balance": 260799.39,
+    "mode": "UPI",
+    "recipient": "Merchant: ICICI",
+    "category": "other",
+    "remarks": "UPI/318702194214/NA/mobikwikxtra@ic/ICICI Bank/HDF32ACDB8D244C4C0FB4D3B05C5D615",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-05T18:30:00.000Z",
+    "amount": 206000,
+    "balance": 54799.39,
+    "mode": "RTGS",
+    "recipient": "Merchant: PYARE",
+    "category": "other",
+    "remarks": "RTGS/ICICR12023070600439708/HDFC0003846/PYARE LAL ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-06T18:30:00.000Z",
+    "amount": 100000,
+    "balance": 154799.39,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/355406306419/Payment from Ph/9094495400@ybl/State Bank Of I/YBLea2d33089ff7",
+    "type": "CREDIT"
+  },
+  {
+    "date": "2023-07-07T18:30:00.000Z",
+    "amount": 145,
+    "balance": 154654.39,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q336447793",
+    "category": "other",
+    "remarks": "UPI/355519022161/Payment from Ph/Q336447793@ybl/Yes Bank Ltd/YBLa2bac8dec55f454",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-07T18:30:00.000Z",
+    "amount": 15,
+    "balance": 154639.39,
+    "mode": "UPI",
+    "recipient": "UPI ID: Q336447793",
+    "category": "other",
+    "remarks": "UPI/355516435019/Payment from Ph/Q336447793@ybl/Yes Bank Ltd/YBL627bd8d586a4472",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-09T18:30:00.000Z",
+    "amount": 2034.66,
+    "balance": 152604.73,
+    "mode": "OTHER",
+    "recipient": "Merchant: CHATGPT",
+    "category": "other",
+    "remarks": "VSI/CHATGPT SUB/202307090146/318920691488/        ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-09T18:30:00.000Z",
+    "amount": 125,
+    "balance": 152479.73,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/355609544930/Payment from Ph/Q74212983@ybl/Yes Bank Ltd/YBL6f493e684fed4d4e",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-12T18:30:00.000Z",
+    "amount": 8000,
+    "balance": 144479.73,
+    "mode": "OTHER",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "NFS/11864001/CASH WDL/13-07-23                    ",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-18T18:30:00.000Z",
+    "amount": 65,
+    "balance": 144414.73,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/320063761382/Payment from Ph/paytmqr28100505/Paytm Payments /YBLf75584fd680",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-18T18:30:00.000Z",
+    "amount": 360,
+    "balance": 144054.73,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/320015153451/Payment from Ph/merchant900847./AU small Financ/YBLf7e595ef58b",
+    "type": "DEBIT"
+  },
+  {
+    "date": "2023-07-18T18:30:00.000Z",
+    "amount": 95000,
+    "balance": 49054.73,
+    "mode": "UPI",
+    "recipient": "UNKNOWN",
+    "category": "other",
+    "remarks": "UPI/356694407915/Payment from Ph/9991234046@ybl/State Bank Of I/YBL2ce3c5375f6d",
+    "type": "DEBIT"
+  }
+]

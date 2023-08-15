@@ -41,8 +41,12 @@ export default function LandingPage() {
         console.error("Failed to extract transactions:", error);
       }
     } else {
-      console.error("No file selected or bank not specified");
+      alert("No file selected or bank not specified");
     }
+  };
+  const onPurge = async () => {
+    const repository = new TransactionRepository();
+    await repository.purgeDatabase();
   };
 
   return (
@@ -58,7 +62,7 @@ export default function LandingPage() {
       >
         <Typography
           variant="h4"
-          style={{ color: "white", marginBottom: "20px" }}
+          style={{ color: "white", marginBottom: "5px" }}
         >
           Upload Transactions
         </Typography>
@@ -68,7 +72,7 @@ export default function LandingPage() {
         <img
           src={image}
           alt="Upload graphic"
-          style={{ marginBottom: "20px" }}
+          style={{ marginBottom: "5px", height: "300px", width: "300px" }}
         />
 
         <FormControl sx={{ m: 1, minWidth: 240 }}>
@@ -84,7 +88,7 @@ export default function LandingPage() {
             value={selectedBank}
             label="SBI"
             onChange={handleBankChange}
-            sx={{ color: "white", marginBottom: "10px" }}
+            sx={{ color: "white", marginBottom: "5px" }}
           >
             <MenuItem value={"SBI"}>
               <em>SBI</em>
@@ -98,7 +102,7 @@ export default function LandingPage() {
           display="flex"
           alignItems="center"
           gap={2}
-          style={{ marginBottom: "20px" }}
+          style={{ marginBottom: "5px" }}
         >
           <input
             type="file"
@@ -132,6 +136,18 @@ export default function LandingPage() {
           onClick={onUpload}
         >
           Upload
+        </Button>
+        <Button
+          variant="contained"
+          style={{
+            width: "calc(100% - 40px)",
+            margin: "10px 20px",
+            color: "white",
+            backgroundColor: "red",
+          }}
+          onClick={onPurge}
+        >
+          Purge Data
         </Button>
       </div>
     </Layout>

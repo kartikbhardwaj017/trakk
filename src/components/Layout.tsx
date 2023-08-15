@@ -14,6 +14,8 @@ export default function Layout({ children, selectedIcon }) {
         height: "100vh",
         overflowY: "scroll",
         paddingBottom: "70px",
+        overflowX: "hidden",
+        width: "100%",
       }}
     >
       <style>
@@ -23,7 +25,7 @@ export default function Layout({ children, selectedIcon }) {
           }
         `}
       </style>
-      <AppBar position="static">
+      <AppBar position="static" style={{ width: "100vh" }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             TRAKK

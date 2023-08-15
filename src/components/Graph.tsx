@@ -1,17 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  LineChart,
-  Line,
-  LabelList,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList } from "recharts";
 import {
   FormControl,
   InputLabel,
@@ -25,12 +14,20 @@ import {
   ITransactionProps,
 } from "../services/ITransactionProps";
 
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import IconButton from "@mui/material/IconButton";
+import { RecipientsPieChart } from "./RecipientChart";
+
 const ExpenseOverview = ({ data }) => {
   const barWidth = 10; // Desired width of each bar
   const [view, setView] = useState("daily");
 
   const scrollRef = useRef(null); // Create a ref for the container
   // ... rest of the code remains same
+
+  const containerRef = useRef(null);
+
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -100,6 +97,43 @@ const ExpenseOverview = ({ data }) => {
     return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
   };
 
+  // const toggleFullScreen = () => {
+  //   const elem = containerRef.current;
+
+  //   if (
+  //     elem &&
+  //     !document.fullscreenElement &&
+  //     !(document as any).webkitIsFullScreen
+  //   ) {
+  //     const requestFullScreen =
+  //       elem.requestFullscreen || (elem as any).webkitRequestFullscreen;
+  //     requestFullScreen.call(elem);
+  //   } else {
+  //     const exitFullscreen =
+  //       document.exitFullscreen || (document as any).webkitExitFullscreen;
+  //     exitFullscreen.call(document);
+  //   }
+  // };
+
+  // const toggleFullScreen = () => {
+  //   setIsFullscreen(!isFullscreen);
+  // };
+  // const containerStyle = isFullscreen
+  //   ? {
+  //       position: "fixed" as "fixed",
+  //       top: 0,
+  //       left: 0,
+  //       width: "100%",
+  //       height: "100%",
+  //       zIndex: 9999,
+  //       color: "white",
+  //     }
+  //   : {
+  //       position: "relative" as "relative",
+  //       paddingTop: "10px",
+  //       color: "white",
+  //     };
+
   // Custom render function for the labels, now using tickFormatter
   const renderCustomizedLabel = (props) => {
     const { x, y, value } = props;
@@ -144,6 +178,7 @@ const ExpenseOverview = ({ data }) => {
         }}
       >
         <h2 style={{ margin: 0 }}>Income</h2>
+
         <FormControl
           variant="standard"
           style={{ minWidth: 120, position: "absolute", right: 0 }}
@@ -229,11 +264,25 @@ const Graph = () => {
   }, []); // Empty dependency array ensures this runs once after mount
 
   return (
-    <ExpenseOverview
-      data={transactions.filter(
-        (transs) => transs.type === ETransactionType.CREDIT
-      )}
-    />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <ExpenseOverview
+        data={transactions.filter(
+          (transs) => transs.type === ETransactionType.CREDIT
+        )}
+      />
+      <RecipientsPieChart
+        data={transactions.filter(
+          (transs) => transs.type === ETransactionType.CREDIT
+        )}
+      />
+    </div>
   );
 };
 

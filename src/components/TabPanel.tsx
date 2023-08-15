@@ -26,9 +26,10 @@ function CustomTabPanel(props: TabPanelProps) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 1 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -42,33 +43,6 @@ function a11yProps(index: number) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-
-// const transactions = [
-//   {
-//     transactionType: "debit",
-//     amount: 90,
-//     category: "groceries",
-//     name: "Tomatoes",
-//   },
-//   {
-//     transactionType: "debit",
-//     amount: 10,
-//     category: "food",
-//     name: "Seawise",
-//   },
-//   {
-//     transactionType: "debit",
-//     amount: 45,
-//     name: "apples",
-//     category: "other",
-//   },
-//   {
-//     transactionType: "credit",
-//     amount: 45,
-//     name: "Vinay",
-//     category: "send",
-//   },
-// ];
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
   const startTransactionArray: ITransactionProps[] = [];
@@ -90,14 +64,6 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
-  // Filter transactions for each tab
-  const allTransactions = transactions;
-  const expenseTransactions = transactions.filter(
-    (transaction) => transaction.type === ETransactionType.DEBIT
-  );
-  const incomeTransactions = transactions.filter(
-    (transaction) => transaction.type === ETransactionType.CREDIT
-  );
 
   return (
     <Box sx={{ width: "100%" }}>

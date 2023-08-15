@@ -15,9 +15,38 @@ type ISBITransaction = {
   "Transaction Remarks"?: string;
   "Balance (INR )": string;
 };
+
 export class SBITransactionExtractService implements ITransactionExtractor {
   // Given the code structure, I'm making an assumption that the transaction details can be determined
   // based on column headers. You might need to modify this to suit your actual Excel structure.
+
+  extractRecipient(remarks: string, mode: EPaymentMode): string {
+    if (!remarks) {
+      return "UNKNOWN";
+    }
+    let recipient = "";
+
+    if (mode === EPaymentMode.UPI) {
+      const parts = remarks.split("/");
+      if (parts.length >= 4) {
+        recipient = parts[3];
+      }
+    } else if (mode === EPaymentMode.NEFT) {
+      const parts = remarks.split("-");
+      if (parts.length >= 3) {
+        recipient = parts[2];
+      }
+    } else if (mode === EPaymentMode.RTGS) {
+      const parts = remarks.split("/");
+      if (parts.length >= 2) {
+        recipient = parts[parts.length - 1];
+      }
+    } else {
+      recipient = "UNKNOWN";
+    }
+
+    return recipient;
+  }
 
   identifyPaymentMode(remarks: string): EPaymentMode {
     if (!remarks) {
@@ -37,17 +66,6 @@ export class SBITransactionExtractService implements ITransactionExtractor {
     return deposit > 0 ? "CREDIT" : "DEBIT";
   }
 
-  extractRecipient(remarks: string): string {
-    if (!remarks) {
-      return "UNKNOWN";
-    }
-    const upiIdMatch = remarks.match(/\bQ\d{9}@/);
-    if (upiIdMatch) return `UPI ID: ${upiIdMatch[0].slice(0, -1)}`;
-    const merchantNameMatch = remarks.match(/\b[A-Z]{5,}\b/);
-    if (merchantNameMatch) return `Merchant: ${merchantNameMatch[0]}`;
-    return "UNKNOWN";
-  }
-
   cleanAndTransformTransaction(transaction: ISBITransaction): object {
     const depositAmount = transaction["Deposit Amount (INR )"] || 0;
     const withdrawalAmount = transaction["Withdrawal Amount (INR )"] || 0;
@@ -58,7 +76,7 @@ export class SBITransactionExtractService implements ITransactionExtractor {
       depositAmount,
       withdrawalAmount
     );
-    const recipientInfo = this.extractRecipient(remarks);
+    const recipientInfo = this.extractRecipient(remarks, paymentMode);
 
     return {
       date: DateTime.fromFormat(transaction["Transaction Date"], "dd/MM/yyyy"),
@@ -118,6 +136,14 @@ export class SBITransactionExtractService implements ITransactionExtractor {
             if (!obj["Transaction Date"]) {
               return;
             }
+            const paymentMode = this.identifyPaymentMode(
+              obj["Transaction Remarks"]
+            );
+            const recipientInfo = this.extractRecipient(
+              obj["Transaction Remarks"],
+              paymentMode
+            );
+
             const transaction: ITransactionProps = {
               date: DateTime.fromFormat(
                 obj["Transaction Date"],
@@ -128,8 +154,8 @@ export class SBITransactionExtractService implements ITransactionExtractor {
                   ? parseFloat(obj["Withdrawal Amount (INR )"])
                   : parseFloat(obj["Deposit Amount (INR )"]),
               balance: parseFloat(obj["Balance (INR )"]),
-              mode: this.identifyPaymentMode(obj["Transaction Remarks"]), // This is an assumption, modify as required
-              recipient: this.extractRecipient(obj["Transaction Remarks"]), // This is an assumption, modify as required
+              mode: paymentMode, // This is an assumption, modify as required
+              recipient: recipientInfo, // This is an assumption, modify as required
               category: "other", // This is an assumption, modify as required
               remarks: obj["Transaction Remarks"],
               type:
