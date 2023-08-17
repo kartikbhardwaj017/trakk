@@ -1,17 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  LineChart,
-  Line,
-  LabelList,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList } from "recharts";
 import {
   FormControl,
   InputLabel,
@@ -24,6 +13,10 @@ import {
   ETransactionType,
   ITransactionProps,
 } from "../services/ITransactionProps";
+import Chip from "@mui/material/Chip";
+
+import FullscreenIcon from "@mui/icons-material/Fullscreen";
+import IconButton from "@mui/material/IconButton";
 import { RecipientsPieChart } from "./RecipientChart";
 
 const ExpenseOverview = ({ data }) => {
@@ -32,6 +25,10 @@ const ExpenseOverview = ({ data }) => {
 
   const scrollRef = useRef(null); // Create a ref for the container
   // ... rest of the code remains same
+
+  const containerRef = useRef(null);
+
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -46,15 +43,19 @@ const ExpenseOverview = ({ data }) => {
       return groupBy(
         data,
         (item) =>
-          `${item.date.getMonth() + 1} - ${Math.ceil(item.date.getDate() / 7)}`,
+          `${item.date.getFullYear()}-${getMonthName(
+            item.date.getMonth() + 1
+          )}-Week${Math.ceil(item.date.getDate() / 7)}`,
         "amount"
       );
     } else if (view === "monthly") {
       return groupBy(
         data,
-        (item) => item.date.getMonth() + 1,
-        "amount",
-        getMonthName
+        (item) =>
+          `${item.date.getFullYear()} ${getMonthName(
+            item.date.getMonth() + 1
+          )}`,
+        "amount"
       );
     } else if (view === "yearly") {
       return groupBy(data, (item) => item.date.getFullYear(), "amount");
@@ -91,7 +92,7 @@ const ExpenseOverview = ({ data }) => {
     }, {});
 
     return Object.entries(groupedData).map(([key, value]) => ({
-      name: nameFn(key),
+      date: nameFn(key),
       Expenses: value === 0 ? 1 : value,
     }));
   };
@@ -100,6 +101,43 @@ const ExpenseOverview = ({ data }) => {
     if (tickValue === 1) return "0";
     return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
   };
+
+  // const toggleFullScreen = () => {
+  //   const elem = containerRef.current;
+
+  //   if (
+  //     elem &&
+  //     !document.fullscreenElement &&
+  //     !(document as any).webkitIsFullScreen
+  //   ) {
+  //     const requestFullScreen =
+  //       elem.requestFullscreen || (elem as any).webkitRequestFullscreen;
+  //     requestFullScreen.call(elem);
+  //   } else {
+  //     const exitFullscreen =
+  //       document.exitFullscreen || (document as any).webkitExitFullscreen;
+  //     exitFullscreen.call(document);
+  //   }
+  // };
+
+  // const toggleFullScreen = () => {
+  //   setIsFullscreen(!isFullscreen);
+  // };
+  // const containerStyle = isFullscreen
+  //   ? {
+  //       position: "fixed" as "fixed",
+  //       top: 0,
+  //       left: 0,
+  //       width: "100%",
+  //       height: "100%",
+  //       zIndex: 9999,
+  //       color: "white",
+  //     }
+  //   : {
+  //       position: "relative" as "relative",
+  //       paddingTop: "10px",
+  //       color: "white",
+  //     };
 
   // Custom render function for the labels, now using tickFormatter
   const renderCustomizedLabel = (props) => {
@@ -126,21 +164,22 @@ const ExpenseOverview = ({ data }) => {
   const [gData, setGData] = useState([]);
   const [cWidth, setCWidth] = useState(0);
 
-  const handleViewChange = (event: SelectChangeEvent<string>) => {
-    const newView = event.target.value;
+  const handleViewChange = (newView: string) => {
     setView(newView);
     const newGData = formatData(data, newView); // Pass newView directly
+    console.log("newData", newGData);
     setGData(newGData);
     setCWidth(newGData.length * barWidth); // Use newGData
   };
+
   return (
     <div
       style={{
         position: "relative",
-        marginTop: "20px",
+        paddingTop: "10px",
         color: "white",
-        width: "100%",
         overflowX: "auto",
+        width: "100%",
       }}
     >
       <div
@@ -150,36 +189,25 @@ const ExpenseOverview = ({ data }) => {
           alignItems: "center",
           marginBottom: "20px",
           position: "relative",
-          height: "70px",
         }}
       >
         <h2 style={{ margin: 0 }}>Xpenses</h2>
-        <FormControl
-          variant="standard"
-          style={{ minWidth: 120, position: "absolute", right: 0 }}
-        >
-          <InputLabel id="view-select-label" style={{ color: "white" }}>
-            Timeline
-          </InputLabel>
-          <Select
-            labelId="view-select-label"
-            id="view-select"
-            value={view}
-            onChange={handleViewChange}
-            label="Timeline"
-            style={{ color: "white" }}
-          >
-            <MenuItem value="daily">Daily</MenuItem>
-            <MenuItem value="weekly">Weekly</MenuItem>
-            <MenuItem value="monthly">Monthly</MenuItem>
-            <MenuItem value="yearly">Yearly</MenuItem>
-          </Select>
-        </FormControl>
+        <div
+          style={{
+            width: 0,
+            height: 0,
+            borderLeft: "10px solid transparent",
+            borderRight: "10px solid transparent",
+            borderTop: "15px solid red",
+            marginLeft: "10px",
+            animation: "blink 0.5s linear infinite",
+            WebkitAnimation: "blink 1s linear infinite", // For compatibility with Safari
+          }}
+        ></div>
       </div>
       <div
         style={{
           overflowX: "auto",
-          position: "relative",
           width: "100%",
           overflowY: "hidden",
         }}
@@ -196,27 +224,41 @@ const ExpenseOverview = ({ data }) => {
             bottom: 0,
           }}
         >
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          <XAxis dataKey="name" stroke="white" />
+          <XAxis dataKey="date" stroke="white" />
           <YAxis
             scale="log"
             domain={["auto", "auto"]}
             stroke="white"
             tickFormatter={(tickValue) => {
-              // If the tick value is the small positive number, display it as "0"
               if (tickValue === 1) return "0";
               return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
             }}
             style={{ position: "absolute", left: 0, top: 0, zIndex: 1 }}
           />
           <Tooltip
-            contentStyle={{ color: "black", backgroundColor: "wheat" }}
+            contentStyle={{ color: "black", backgroundColor: "white" }}
           />
-          {/* <Legend /> */}
           <Bar dataKey="Expenses" fill="red">
             <LabelList dataKey="Expenses" content={renderCustomizedLabel} />
           </Bar>
         </BarChart>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        {["daily", "weekly", "monthly", "yearly"].map((option) => (
+          <Chip
+            label={option.charAt(0).toUpperCase() + option.slice(1)}
+            clickable
+            color={view === option ? "primary" : "default"}
+            onClick={() => handleViewChange(option)}
+          />
+        ))}
       </div>
     </div>
   );
@@ -253,6 +295,7 @@ const Graph = () => {
         )}
       />
       <RecipientsPieChart
+        topK={5}
         data={transactions.filter(
           (transs) => transs.type === ETransactionType.DEBIT
         )}

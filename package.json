@@ -23,13 +23,14 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
+    "react-swipeable": "^7.0.1",
     "recharts": "^2.7.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "serve":"serve -s prod",
+    "serve": "serve -s prod",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

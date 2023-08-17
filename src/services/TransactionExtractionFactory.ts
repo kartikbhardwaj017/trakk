@@ -1,3 +1,4 @@
+import { ICICITransactionExtractService } from "./ICICITransactionExtractService";
 import { ITransactionExtractor } from "./ITransactionExtractor";
 import { SBITransactionExtractService } from "./SBITransactionExtractService";
 
@@ -6,6 +7,8 @@ export class TransactionExtractionFactory {
     switch (bankName) {
       case "SBI":
         return new SBITransactionExtractService();
+      case "ICICI":
+        return new ICICITransactionExtractService();
       default:
         throw new Error(`Extractor not available for bank: ${bankName}`);
     }

@@ -29,16 +29,48 @@ class TransactionRepository {
     return this.db.table("transactions").bulkPut(transactions);
   }
 
+  async insertUnique(transactions: ITransactionProps[]): Promise<unknown> {
+    // Extract remarks from the incoming transactions
+    const incomingRemarks = transactions
+      .map((transaction) => transaction.remarks)
+      .filter(Boolean);
+
+    console.log("already present", incomingRemarks);
+
+    // Fetch existing remarks that match the incoming ones
+    const existingRemarks = await this.db
+      .table("transactions")
+      .where("remarks")
+      .anyOfIgnoreCase(incomingRemarks)
+      .toArray()
+      .then((txs) => txs.map((tx) => tx.remarks));
+
+    // Create a Set of existing remarks for quick lookup
+    const existingRemarksSet = new Set(existingRemarks);
+
+    // Filter out transactions with remarks that already exist in the DB
+    const newTransactions = transactions.filter(
+      (transaction) => !existingRemarksSet.has(transaction.remarks)
+    );
+
+    console.log("new", newTransactions);
+    // Insert the filtered transactions into the database
+    return this.db.table("transactions").bulkPut(newTransactions);
+  }
+
   // Method to fetch transactions by date range
-  fetchTransactions(
+  async fetchTransactions(
     startDate: string,
     endDate: string
   ): Promise<ITransactionProps[]> {
-    return this.db
+    const transARray = await this.db
       .table("transactions")
       .where("date")
       .between(startDate, endDate)
       .toArray();
+
+    transARray.sort((t1, t2) => (t1.date < t2.date ? 1 : -1));
+    return transARray;
   }
 
   // Method to search transactions by remarks
@@ -61,7 +93,9 @@ class TransactionRepository {
 
   // Inside the TransactionRepository class
 
-  readTransactions(filters: ITransactionFilter): Promise<ITransactionProps[]> {
+  async readTransactions(
+    filters: ITransactionFilter
+  ): Promise<ITransactionProps[]> {
     let query: Dexie.Collection<any, IndexableType> = this.db
       .table("transactions")
       .toCollection();
@@ -109,17 +143,18 @@ class TransactionRepository {
     }
 
     // Convert to a Collection by calling toArray(), then apply custom filter
-    return query
-      .toArray()
-      .then((transactions) =>
-        filters.remarks
-          ? transactions.filter((transaction) =>
-              transaction.remarks
-                .toLowerCase()
-                .includes(filters.remarks.toLowerCase())
-            )
-          : transactions
-      );
+    let transactions = await query.toArray();
+    transactions = filters.remarks
+      ? transactions.filter((transaction) =>
+          transaction.remarks
+            ?.toLowerCase()
+            .includes(filters.remarks.toLowerCase())
+        )
+      : transactions;
+
+    transactions.sort((t1, t2) => (t1.date < t2.date ? 1 : -1));
+    console.log("serted", transactions);
+    return transactions;
   }
   purgeDatabase(): Promise<void> {
     return this.db.table("transactions").clear();

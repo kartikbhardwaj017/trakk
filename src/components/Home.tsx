@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   BottomNavigation,
   BottomNavigationAction,
@@ -13,6 +13,8 @@ import {
   Home as HomeIcon,
   Margin,
   UploadFile,
+  ArrowUpward,
+  ArrowDownward,
 } from "@mui/icons-material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -20,16 +22,65 @@ import Typography from "@mui/material/Typography";
 import BasicTabs from "./TabPanel";
 import Graph from "./Graph";
 import Graph2 from "./Graph2";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Layout from "./Layout";
+import { useSwipeable } from "react-swipeable";
+// import { ArrowUpward, ArrowDownward } from '@material-ui/icons'; // Importing Material-UI icons
 
 export default function Home() {
-  // useEffect(() => {
-  //   // This is a basic check to determine if the device might be a desktop
-  //   if (window.innerWidth > 800 || window.innerHeight > 800) {
-  //     alert("Please open this page on a mobile device.");
-  //   }
-  // }, []);
+  const cardContents = [
+    {
+      greeting: "Welcome,",
+      name: "Kartik",
+      balance: "INR 80000.00",
+      income: "INR 1000",
+      expense: "INR 500",
+    },
+    {
+      greeting: "Welcome,",
+      name: "Rohit",
+      balance: "INR 90000.00",
+      income: "INR 400",
+      expense: "INR 200",
+    },
+    // Add more card contents here
+  ];
+
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const cardContent = cardContents[currentCardIndex];
+  const [swipeDirection, setSwipeDirection] = useState(""); // Define state to track swipe direction
+  const cardRef = useRef(null);
+
+  const handlers = useSwipeable({
+    onSwipedUp: () => {
+      setSwipeDirection("up");
+      setTimeout(() => setSwipeDirection(""), 500); // Reset after 0.5s (same as transition duration)
+      setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cardContents.length);
+    },
+    onSwipedDown: () => {
+      setSwipeDirection("down");
+      setTimeout(() => setSwipeDirection(""), 500); // Reset after 0.5s (same as transition duration)
+      setCurrentCardIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + cardContents.length) % cardContents.length
+      );
+    },
+  });
+
+  useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (e.target.closest(".swipeable-card")) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
 
   return (
     <Layout selectedIcon={"Home"}>
@@ -43,6 +94,7 @@ export default function Home() {
         }}
       >
         <div
+          className="swipeable-card"
           style={{
             flexGrow: 1,
             display: "flex",
@@ -51,6 +103,7 @@ export default function Home() {
             alignItems: "center",
             margin: "10px",
           }}
+          {...handlers}
         >
           <Card variant="outlined">
             <div
@@ -59,8 +112,16 @@ export default function Home() {
                 backgroundColor: "#f0f0f0",
                 color: "black",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "column" as "column",
                 padding: "5px",
+                transition: "all 0.5s ease",
+                opacity: swipeDirection ? 0 : 1, // Animate opacity based on swipe direction
+                transform:
+                  swipeDirection === "up"
+                    ? "translateY(-20px)"
+                    : swipeDirection === "down"
+                    ? "translateY(20px)"
+                    : "translateY(0)", // Translate card based on swipe direction
               }}
             >
               <span>Welcome,</span>
@@ -71,11 +132,11 @@ export default function Home() {
                   marginLeft: "10px",
                 }}
               >
-                Kartik
+                {cardContent.name}
               </span>
               <span>Available balance</span>
               <span style={{ fontWeight: 700, fontSize: "32px" }}>
-                INR 80000.00
+                {cardContent.balance}
               </span>
               <div
                 style={{
@@ -102,7 +163,7 @@ export default function Home() {
                 >
                   <span>income</span>
                   <br />
-                  <span>INR 1000</span>
+                  <span>{cardContent.income}</span>
                 </div>
                 <div
                   style={{
@@ -119,11 +180,32 @@ export default function Home() {
                 >
                   <span>expense</span>
                   <br />
-                  <span>INR 500</span>
+                  <span>{cardContent.expense}</span>
                 </div>
               </div>
             </div>
           </Card>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            marginTop: "5px",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {cardContents.map((_, index) => (
+            <div
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor:
+                  index === currentCardIndex ? "black" : "#d1d1d1",
+                margin: "0 3px",
+              }}
+            />
+          ))}
         </div>
         <BasicTabs />
 

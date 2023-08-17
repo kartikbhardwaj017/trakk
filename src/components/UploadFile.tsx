@@ -34,8 +34,9 @@ export default function LandingPage() {
         const extractor =
           TransactionExtractionFactory.getExtractor(selectedBank);
         const transactions = await extractor.extractFromXlsvFile(selectedFile);
+        console.log(transactions);
         const repo = new TransactionRepository();
-        repo.bulkInsert(transactions);
+        repo.insertUnique(transactions);
         console.log(transactions);
       } catch (error) {
         console.error("Failed to extract transactions:", error);

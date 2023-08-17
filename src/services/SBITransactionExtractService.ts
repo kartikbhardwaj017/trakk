@@ -24,7 +24,7 @@ export class SBITransactionExtractService implements ITransactionExtractor {
     if (!remarks) {
       return "UNKNOWN";
     }
-    let recipient = "";
+    let recipient = "UNKNOWN";
 
     if (mode === EPaymentMode.UPI) {
       const parts = remarks.split("/");
@@ -32,15 +32,12 @@ export class SBITransactionExtractService implements ITransactionExtractor {
         recipient = parts[3];
       }
     } else if (mode === EPaymentMode.NEFT) {
-      const parts = remarks.split("-");
-      if (parts.length >= 3) {
-        recipient = parts[2];
-      }
+      const parts = remarks.split("*");
+      console.log(parts);
+      recipient = parts[3];
     } else if (mode === EPaymentMode.RTGS) {
       const parts = remarks.split("/");
-      if (parts.length >= 2) {
-        recipient = parts[parts.length - 1];
-      }
+      recipient = parts[parts.length - 1];
     } else {
       recipient = "UNKNOWN";
     }
@@ -104,18 +101,18 @@ export class SBITransactionExtractService implements ITransactionExtractor {
           let data = XLSX.utils.sheet_to_json(ws, { header: 1 });
 
           let headersIndex = 0;
-          for (let i = 0; i < 15; i++) {
+          console.log(data);
+          for (let i = 0; i < 25; i++) {
             // Check the first 15 rows
             let row = data[i];
             if (
-              (row as string[]).includes("S No.") &&
+              (row as string[]).includes("Txn Date") &&
               (row as string[]).includes("Value Date") &&
-              (row as string[]).includes("Transaction Date") &&
-              (row as string[]).includes("Cheque Number") &&
-              (row as string[]).includes("Transaction Remarks") &&
-              (row as string[]).includes("Withdrawal Amount (INR )") &&
-              (row as string[]).includes("Deposit Amount (INR )") &&
-              (row as string[]).includes("Balance (INR )")
+              (row as string[]).includes("Description") &&
+              (row as string[]).includes("Ref No./Cheque No.") &&
+              (row as string[]).includes("        Debit") &&
+              (row as string[]).includes("Credit") &&
+              (row as string[]).includes("Balance")
             ) {
               headersIndex = i;
               break;
@@ -124,7 +121,7 @@ export class SBITransactionExtractService implements ITransactionExtractor {
           // Get headers
           const headers = data[headersIndex];
           data = data.slice(headersIndex + 1);
-
+          console.log("final data", data);
           //   const rows = data.slice(1);
 
           data.forEach((row) => {
@@ -133,41 +130,34 @@ export class SBITransactionExtractService implements ITransactionExtractor {
               obj[header] = row[i];
             });
 
-            if (!obj["Transaction Date"]) {
+            if (!obj["Txn Date"]) {
               return;
             }
-            const paymentMode = this.identifyPaymentMode(
-              obj["Transaction Remarks"]
-            );
+            const paymentMode = this.identifyPaymentMode(obj["Description"]);
             const recipientInfo = this.extractRecipient(
-              obj["Transaction Remarks"],
+              obj["Description"],
               paymentMode
             );
 
             const transaction: ITransactionProps = {
-              date: DateTime.fromFormat(
-                obj["Transaction Date"],
-                "dd/MM/yyyy"
-              ).toJSDate(),
-              amount:
-                parseFloat(obj["Withdrawal Amount (INR )"]) > 0
-                  ? parseFloat(obj["Withdrawal Amount (INR )"])
-                  : parseFloat(obj["Deposit Amount (INR )"]),
-              balance: parseFloat(obj["Balance (INR )"]),
+              date: this.excelSerialDateToJSDate(obj["Txn Date"]),
+              amount: !Number.isNaN(parseFloat(obj["        Debit"]))
+                ? parseFloat(obj["        Debit"])
+                : parseFloat(obj["Credit"]),
+              balance: parseFloat(obj["Balance"]),
               mode: paymentMode, // This is an assumption, modify as required
               recipient: recipientInfo, // This is an assumption, modify as required
               category: "other", // This is an assumption, modify as required
-              remarks: obj["Transaction Remarks"],
-              type:
-                parseFloat(obj["Withdrawal Amount (INR )"]) > 0
-                  ? ETransactionType.DEBIT
-                  : ETransactionType.CREDIT,
+              remarks: obj["Description"],
+              type: !Number.isNaN(parseFloat(obj["        Debit"]))
+                ? ETransactionType.DEBIT
+                : ETransactionType.CREDIT,
             };
 
             transactions.push(transaction);
-            console.log(transaction.remarks);
           });
 
+          console.log(transactions);
           resolve(transactions);
         } catch (error) {
           reject(error);
@@ -180,5 +170,17 @@ export class SBITransactionExtractService implements ITransactionExtractor {
 
       reader.readAsBinaryString(file);
     });
+  }
+
+  excelSerialDateToJSDate(serial: number) {
+    var daysFrom1900 = serial - 1;
+    var millisecondsBetween1900And1970 = (25569 - 1) * 86400000;
+    var dateMilliseconds = daysFrom1900 * 86400000;
+    var timeMilliseconds = (serial - Math.floor(serial)) * 86400000;
+    var totalMilliseconds =
+      dateMilliseconds - millisecondsBetween1900And1970 + timeMilliseconds;
+
+    var luxonDate = DateTime.fromMillis(totalMilliseconds);
+    return luxonDate.toJSDate();
   }
 }

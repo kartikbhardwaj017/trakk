@@ -48,9 +48,10 @@ export default function TansactionView(props) {
             }}
           >
             <span style={{ fontSize: "16px", color: "#fff" }}>
-              {transaction.remarks.length > 20
+              {/* {transaction.remarks.length > 20
                 ? transaction.remarks.substring(0, 20) + "..."
-                : transaction.remarks}
+                : transaction.remarks} */}
+                {transaction.remarks}
             </span>
 
             <span style={{ fontSize: "14px", color: "#aaa", marginTop: "5px" }}>
