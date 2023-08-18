@@ -2,33 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList } from "recharts";
 import {
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  SelectChangeEvent,
-} from "@mui/material";
-import TransactionRepository from "../services/Dexie/DbService";
-import {
   ETransactionType,
   ITransactionProps,
 } from "../services/ITransactionProps";
 import Chip from "@mui/material/Chip";
-
-import FullscreenIcon from "@mui/icons-material/Fullscreen";
-import IconButton from "@mui/material/IconButton";
 import { RecipientsPieChart } from "./RecipientChart";
+import { useNavigate } from "react-router-dom";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 10; // Desired width of each bar
   const [view, setView] = useState("daily");
 
   const scrollRef = useRef(null); // Create a ref for the container
-  // ... rest of the code remains same
-
-  const containerRef = useRef(null);
-
-  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -99,49 +84,24 @@ const ExpenseOverview = ({ data }) => {
 
   const tickFormatter = (tickValue) => {
     if (tickValue === 1) return "0";
-    return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
+
+    if (tickValue >= 100000) {
+      // If tickValue is greater or equal to 100K, divide by 100000 and show in "L" format with 1 decimal place
+      return `${(tickValue / 100000).toFixed(1)}L`;
+    } else if (tickValue >= 1000) {
+      // If tickValue is greater or equal to 1000, divide by 1000 and show in "k" format with 1 decimal place
+      return `${(tickValue / 1000).toFixed(1)}k`;
+    }
+
+    return tickValue.toFixed(1); // Show 1 decimal place for other values
   };
-
-  // const toggleFullScreen = () => {
-  //   const elem = containerRef.current;
-
-  //   if (
-  //     elem &&
-  //     !document.fullscreenElement &&
-  //     !(document as any).webkitIsFullScreen
-  //   ) {
-  //     const requestFullScreen =
-  //       elem.requestFullscreen || (elem as any).webkitRequestFullscreen;
-  //     requestFullScreen.call(elem);
-  //   } else {
-  //     const exitFullscreen =
-  //       document.exitFullscreen || (document as any).webkitExitFullscreen;
-  //     exitFullscreen.call(document);
-  //   }
-  // };
-
-  // const toggleFullScreen = () => {
-  //   setIsFullscreen(!isFullscreen);
-  // };
-  // const containerStyle = isFullscreen
-  //   ? {
-  //       position: "fixed" as "fixed",
-  //       top: 0,
-  //       left: 0,
-  //       width: "100%",
-  //       height: "100%",
-  //       zIndex: 9999,
-  //       color: "white",
-  //     }
-  //   : {
-  //       position: "relative" as "relative",
-  //       paddingTop: "10px",
-  //       color: "white",
-  //     };
 
   // Custom render function for the labels, now using tickFormatter
   const renderCustomizedLabel = (props) => {
     const { x, y, value } = props;
+    if (value < 10000) {
+      return null;
+    }
     const formattedValue = tickFormatter(value); // Apply the same formatter
     return (
       <text
@@ -170,6 +130,47 @@ const ExpenseOverview = ({ data }) => {
     console.log("newData", newGData);
     setGData(newGData);
     setCWidth(newGData.length * barWidth); // Use newGData
+  };
+
+  // Custom tooltip component
+  const CustomTooltip = ({ active, payload }) => {
+    const navigate = useNavigate();
+
+    if (active && payload && payload.length) {
+      const date = payload[0].payload.date;
+      return (
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "5px",
+            color: "black",
+            border: "1px solid #ccc",
+          }}
+          onClick={(e) => e.stopPropagation()} // Prevent click propagation
+          onMouseOver={(e) => e.stopPropagation()} // Prevent tooltip from disappearing
+        >
+          <span>{`Date: ${date}`}</span>
+          <br />
+          <span>{`Expenses: ${tickFormatter(payload[0].value)}`}</span>
+          <br />
+          <a
+            href={`/community/?date=${date}`} // Replace with your desired path
+            style={{ pointerEvents: "auto" }}
+            onClick={(e) => {
+              e.preventDefault(); // Prevent the default behavior
+              navigate(
+                `/community?date=${encodeURIComponent(
+                  payload[0].payload.date
+                )}&type=${encodeURIComponent("expense")}`
+              );
+            }}
+          >
+            Go to details
+          </a>
+        </div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -235,9 +236,8 @@ const ExpenseOverview = ({ data }) => {
             }}
             style={{ position: "absolute", left: 0, top: 0, zIndex: 1 }}
           />
-          <Tooltip
-            contentStyle={{ color: "black", backgroundColor: "white" }}
-          />
+          <Tooltip trigger="click" content={CustomTooltip} />
+
           <Bar dataKey="Expenses" fill="red">
             <LabelList dataKey="Expenses" content={renderCustomizedLabel} />
           </Bar>
@@ -264,21 +264,7 @@ const ExpenseOverview = ({ data }) => {
   );
 };
 
-const Graph = () => {
-  const startTransactionArray: ITransactionProps[] = [];
-  const [transactions, setTransactions] = useState(startTransactionArray);
-  const transactionRepository = new TransactionRepository();
-
-  // Fetch transactions from database when the component mounts
-  useEffect(() => {
-    transactionRepository
-      .readTransactions({}) // Fetch all transactions, or apply filters as needed
-      .then((loadedTransactions) => {
-        setTransactions(
-          loadedTransactions.filter((trans) => trans.remarks?.length > 0)
-        );
-      });
-  }, []); // Empty dependency array ensures this runs once after mount
+const Graph = ({transactions}) => {
 
   return (
     <div
@@ -299,6 +285,7 @@ const Graph = () => {
         data={transactions.filter(
           (transs) => transs.type === ETransactionType.DEBIT
         )}
+        type={"expense"}
       />
     </div>
   );

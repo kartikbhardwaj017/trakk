@@ -1,33 +1,58 @@
-import React, { useRef } from "react";
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Box,
-  Card,
-  Divider,
-} from "@mui/material";
-import {
-  Restore,
-  Favorite,
-  LocationOn,
-  Home as HomeIcon,
-  Margin,
-  UploadFile,
-  ArrowUpward,
-  ArrowDownward,
-} from "@mui/icons-material";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
+import React, { useEffect, useRef, useState } from "react";
+import { Card } from "@mui/material";
+import Slider from "@mui/material/Slider";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+
+import { useSwipeable } from "react-swipeable";
 import BasicTabs from "./TabPanel";
 import Graph from "./Graph";
 import Graph2 from "./Graph2";
-import { useEffect, useState } from "react";
 import Layout from "./Layout";
-import { useSwipeable } from "react-swipeable";
-// import { ArrowUpward, ArrowDownward } from '@material-ui/icons'; // Importing Material-UI icons
+import TransactionRepository from "../services/Dexie/DbService";
+import { ITransactionProps } from "../services/ITransactionProps";
+import TransactionsTable from "./Table";
 
 export default function Home() {
+  // State & Refs
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [swipeDirection, setSwipeDirection] = useState("");
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [dateRange, setDateRange] = useState({
+    min: new Date(), // Initialize with current date; will update in useEffect
+    max: new Date(),
+  });
+  const [selectedDateRange, setSelectedDateRange] = useState({
+    min: new Date(), // Initialize with current date; will update in useEffect
+    max: new Date(),
+  });
+  const [filteredTransactions, setFilteredTransactions] = useState([]);
+
+  const cardRef = useRef(null);
+
+  const startTransactionArray: ITransactionProps[] = [];
+  const transactionRepository = new TransactionRepository();
+  const [transactions, setTransactions] = useState(startTransactionArray);
+
+  useEffect(() => {
+    transactionRepository.readTransactions({}).then((loadedTransactions) => {
+      setTransactions(
+        loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+      );
+      setFilteredTransactions(
+        loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+      );
+      setDateRange({
+        min: loadedTransactions[loadedTransactions.length - 1]?.date,
+        max: loadedTransactions[0].date,
+      });
+      setSelectedDateRange({
+        min: loadedTransactions[loadedTransactions.length - 1]?.date,
+        max: loadedTransactions[0].date,
+      });
+    });
+  }, []);
+
   const cardContents = [
     {
       greeting: "Welcome,",
@@ -46,26 +71,41 @@ export default function Home() {
     // Add more card contents here
   ];
 
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const cardContent = cardContents[currentCardIndex];
-  const [swipeDirection, setSwipeDirection] = useState(""); // Define state to track swipe direction
-  const cardRef = useRef(null);
+
+  // 3. Event Handlers and Helper Functions
+  const handleScroll = (e) => {
+    const { scrollTop, scrollHeight, clientHeight } = e.target;
+    const scroll = (scrollTop / (scrollHeight - clientHeight)) * 100;
+    setScrollPercentage(scroll);
+  };
 
   const handlers = useSwipeable({
     onSwipedUp: () => {
-      setSwipeDirection("up");
-      setTimeout(() => setSwipeDirection(""), 500); // Reset after 0.5s (same as transition duration)
-      setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cardContents.length);
+      handleSwipe("up");
     },
     onSwipedDown: () => {
-      setSwipeDirection("down");
-      setTimeout(() => setSwipeDirection(""), 500); // Reset after 0.5s (same as transition duration)
-      setCurrentCardIndex(
-        (prevIndex) =>
-          (prevIndex - 1 + cardContents.length) % cardContents.length
-      );
+      handleSwipe("down");
     },
   });
+
+  const handleSwipe = (direction) => {
+    setSwipeDirection(direction);
+    setTimeout(() => setSwipeDirection(""), 500);
+    const newIndex =
+      direction === "up"
+        ? (currentCardIndex + 1) % cardContents.length
+        : (currentCardIndex - 1 + cardContents.length) % cardContents.length;
+    setCurrentCardIndex(newIndex);
+  };
+  const handleDateRangeChange = (minDate, maxDate) => {
+    const filtered = transactions.filter((t) => {
+      const transDate = t.date;
+      console.log(t.date, transDate >= minDate && transDate <= maxDate);
+      return transDate >= minDate && transDate <= maxDate;
+    });
+    setFilteredTransactions(filtered);
+  };
 
   useEffect(() => {
     const handleTouchMove = (e) => {
@@ -75,15 +115,27 @@ export default function Home() {
     };
 
     window.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
+  // 4. JSX Render
+
   return (
     <Layout selectedIcon={"Home"}>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: `${scrollPercentage}%`,
+          height: "5px",
+          backgroundColor: "white",
+          zIndex: 1000,
+        }}
+      />
+
       <div
         style={{
           height: "100vh",
@@ -92,6 +144,7 @@ export default function Home() {
 
           overflowX: "hidden",
         }}
+        onScroll={handleScroll}
       >
         <div
           className="swipeable-card"
@@ -101,14 +154,15 @@ export default function Home() {
             width: "100%",
             justifyContent: "center",
             alignItems: "center",
-            margin: "10px",
+            margin: "auto",
+            marginTop: "10px",
           }}
           {...handlers}
         >
           <Card variant="outlined">
             <div
               style={{
-                width: "400px",
+                width: "380px",
                 backgroundColor: "#f0f0f0",
                 color: "black",
                 display: "flex",
@@ -207,12 +261,66 @@ export default function Home() {
             />
           ))}
         </div>
-        <BasicTabs />
+        <div style={{ padding: "10px" }}>
+          <BasicTabs transactions={[...transactions]} />
+          <Box
+            sx={{
+              width: 300,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              margin: "0 auto",
+            }}
+          >
+            <Typography id="range-slider" gutterBottom>
+              Date Range
+            </Typography>
 
-        <h2>Expense Overview</h2>
-        <Graph />
-        <Graph2 />
+            <Slider
+              value={[
+                selectedDateRange.min.getTime(),
+                selectedDateRange.max.getTime(),
+              ]}
+              onChange={(event, newValue: number[]) => {
+                setSelectedDateRange({
+                  min: new Date(newValue[0]),
+                  max: new Date(newValue[1]),
+                });
+                handleDateRangeChange(
+                  new Date(newValue[0]),
+                  new Date(newValue[1])
+                );
+              }}
+              valueLabelDisplay="on"
+              valueLabelFormat={(value) => new Date(value).toLocaleDateString()}
+              min={new Date(dateRange.min).getTime()}
+              max={new Date(dateRange.max).getTime()}
+              sx={{ width: "100%" }}
+            />
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography>
+                {new Date(dateRange.min).toLocaleDateString()}
+              </Typography>
+              <Typography>
+                {new Date(dateRange.max).toLocaleDateString()}
+              </Typography>
+            </Box>
+          </Box>
+
+          <h2>Expense Overview</h2>
+          <Graph transactions={[...filteredTransactions]} />
+          <Graph2 transactions={[...filteredTransactions]} />
+          <TransactionsTable transactions={[...filteredTransactions]} />
+        </div>
       </div>
     </Layout>
   );
 }
+
+

@@ -103,8 +103,6 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
           const ws = workbook.Sheets[wsname];
           let data = XLSX.utils.sheet_to_json(ws, { header: 1 });
 
-          console.log("Fetch", data);
-
           let headersIndex = 0;
           for (let i = 0; i < 15; i++) {
             // Check the first 15 rows
@@ -126,7 +124,6 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
           // Get headers
           const headers = data[headersIndex];
           data = data.slice(headersIndex + 1);
-          console.log(data);
           //   const rows = data.slice(1);
 
           data.forEach((row) => {
@@ -147,10 +144,9 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
             );
 
             const transaction: ITransactionProps = {
-              date: DateTime.fromFormat(
-                obj["Transaction Date"],
-                "dd/MM/yyyy"
-              ).toJSDate(),
+              date: DateTime.fromFormat(obj["Transaction Date"], "dd/MM/yyyy")
+                .startOf("day")
+                .toJSDate(),
               amount:
                 parseFloat(obj["Withdrawal Amount ( )"]) > 0
                   ? parseFloat(obj["Withdrawal Amount ( )"])
@@ -167,7 +163,6 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
             };
 
             transactions.push(transaction);
-            console.log(transaction.remarks);
           });
 
           resolve(transactions);

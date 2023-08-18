@@ -33,7 +33,6 @@ export class SBITransactionExtractService implements ITransactionExtractor {
       }
     } else if (mode === EPaymentMode.NEFT) {
       const parts = remarks.split("*");
-      console.log(parts);
       recipient = parts[3];
     } else if (mode === EPaymentMode.RTGS) {
       const parts = remarks.split("/");
@@ -101,7 +100,6 @@ export class SBITransactionExtractService implements ITransactionExtractor {
           let data = XLSX.utils.sheet_to_json(ws, { header: 1 });
 
           let headersIndex = 0;
-          console.log(data);
           for (let i = 0; i < 25; i++) {
             // Check the first 15 rows
             let row = data[i];
@@ -121,7 +119,6 @@ export class SBITransactionExtractService implements ITransactionExtractor {
           // Get headers
           const headers = data[headersIndex];
           data = data.slice(headersIndex + 1);
-          console.log("final data", data);
           //   const rows = data.slice(1);
 
           data.forEach((row) => {
@@ -157,7 +154,6 @@ export class SBITransactionExtractService implements ITransactionExtractor {
             transactions.push(transaction);
           });
 
-          console.log(transactions);
           resolve(transactions);
         } catch (error) {
           reject(error);
@@ -181,6 +177,6 @@ export class SBITransactionExtractService implements ITransactionExtractor {
       dateMilliseconds - millisecondsBetween1900And1970 + timeMilliseconds;
 
     var luxonDate = DateTime.fromMillis(totalMilliseconds);
-    return luxonDate.toJSDate();
+    return luxonDate.startOf("day").toJSDate();
   }
 }

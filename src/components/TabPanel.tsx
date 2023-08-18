@@ -42,22 +42,9 @@ function a11yProps(index: number) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-export default function BasicTabs() {
+export default function BasicTabs({ transactions }) {
   const [value, setValue] = React.useState(0);
-  const startTransactionArray: ITransactionProps[] = [];
-  const [transactions, setTransactions] = useState(startTransactionArray);
-  const transactionRepository = new TransactionRepository();
-
   // Fetch transactions from database when the component mounts
-  useEffect(() => {
-    transactionRepository
-      .readTransactions({}) // Fetch all transactions, or apply filters as needed
-      .then((loadedTransactions) => {
-        setTransactions(
-          loadedTransactions.filter((trans) => trans.remarks?.length > 0)
-        );
-      });
-  }); // Empty dependency array ensures this runs once after mount
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -81,7 +68,7 @@ export default function BasicTabs() {
           .sort((t1, t2) => {
             return t1.date < t2.date ? 1 : -1;
           })
-          .splice(0, 10)
+          .splice(0, 5)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}
@@ -89,7 +76,7 @@ export default function BasicTabs() {
       <CustomTabPanel value={value} index={1}>
         {transactions
           .filter((transaction) => transaction.type === ETransactionType.DEBIT)
-          .splice(0, 10)
+          .splice(0, 5)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}
@@ -97,7 +84,7 @@ export default function BasicTabs() {
       <CustomTabPanel value={value} index={2}>
         {transactions
           .filter((transaction) => transaction.type === ETransactionType.CREDIT)
-          .splice(0, 10)
+          .splice(0, 5)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}

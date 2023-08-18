@@ -1,11 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Button, Typography, Box, Input } from "@mui/material";
-import image from "./uploadFile.png";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import React, { useState, useEffect } from "react";
+import { Typography, Box } from "@mui/material";
 import Layout from "./Layout";
+import { useLocation } from "react-router-dom";
 
 import Transaction from "./Tansaction";
 import Filter from "./FIlter";
@@ -23,7 +19,7 @@ export default function Playgoround() {
     startTransactionArray
   );
   const transactionRepository = new TransactionRepository();
-
+  const location = useLocation();
   const onFiltersChange = (filters: ITransactionFilter) => {
     // use repo method to apply filter and fetch transactions
     // update the state
@@ -31,7 +27,6 @@ export default function Playgoround() {
       .readTransactions(filters)
       .then((filteredTransactions) => {
         // Update the state with the filtered transactions
-        console.log(filteredTransactions);
         setCurrentTransactions(
           filteredTransactions.filter((trans) => trans.remarks?.length > 0)
         );
@@ -39,13 +34,43 @@ export default function Playgoround() {
   };
   // Fetch transactions from database when the component mounts
   useEffect(() => {
-    transactionRepository
-      .readTransactions({}) // Fetch all transactions, or apply filters as needed
-      .then((loadedTransactions) => {
-        setCurrentTransactions(
-          loadedTransactions.filter((trans) => trans.remarks?.length > 0)
-        );
-      });
+    const queryParams = new URLSearchParams(location.search);
+    const date = queryParams.get("date");
+    const search = queryParams.get("search");
+    const transactionType = queryParams.get("type") as
+      | "income"
+      | "all"
+      | "expense";
+
+    if (date) {
+      transactionRepository
+        .readTransactions({
+          startDate: date,
+          endDate: date,
+          type: transactionType,
+        }) // Fetch all transactions, or apply filters as needed
+        .then((loadedTransactions) => {
+          setCurrentTransactions(
+            loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+          );
+        });
+    } else if (search) {
+      transactionRepository
+        .readTransactions({ remarks: search, type: transactionType }) // Fetch all transactions, or apply filters as needed
+        .then((loadedTransactions) => {
+          setCurrentTransactions(
+            loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+          );
+        });
+    } else {
+      transactionRepository
+        .readTransactions({}) // Fetch all transactions, or apply filters as needed
+        .then((loadedTransactions) => {
+          setCurrentTransactions(
+            loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+          );
+        });
+    }
   }, []); // Empty dependency array ensures this runs once after mount
 
   const totalIncome = currentTransactions.reduce(

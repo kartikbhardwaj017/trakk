@@ -18,16 +18,8 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <Container>
+      <div>
+        <Container style={{ padding: "0px" }}>
           <Router>
             <Routes>
               <Route path="/" Component={Home} />

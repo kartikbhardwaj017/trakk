@@ -3,6 +3,7 @@ import {
   ETransactionType,
   ITransactionProps,
 } from "../services/ITransactionProps";
+import { useNavigate } from "react-router-dom";
 const getTop5Recipients = (data: ITransactionProps[], topK: number) => {
   const recipients = data.reduce((acc, transaction) => {
     if (!acc[transaction.recipient]) {
@@ -31,7 +32,7 @@ const getTop5Recipients = (data: ITransactionProps[], topK: number) => {
   }));
 };
 
-export const RecipientsPieChart = ({ data, topK }) => {
+export const RecipientsPieChart = ({ data, topK, type }) => {
   const COLORS = [
     "#0088FE",
     "#00C49F",
@@ -41,6 +42,45 @@ export const RecipientsPieChart = ({ data, topK }) => {
     "#abac2a",
   ]; // Customize colors
   const recipientsData = getTop5Recipients(data, topK);
+  const navigate = useNavigate(); // Get the navigate function
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div
+          style={{
+            backgroundColor: "white",
+            padding: "10px",
+            border: "1px solid #ccc",
+            color: "black",
+          }}
+          onClick={(e) => e.stopPropagation()} // Prevent click propagation
+          onMouseOver={(e) => e.stopPropagation()}
+        >
+          <span>{`${payload[0].payload.name}`}</span>
+          <br />
+          <span>{`Amount: ${payload[0].payload.value}`}</span>
+          <br />
+          <a
+            href="/community"
+            style={{ pointerEvents: "auto" }}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(
+                `/community?search=${encodeURIComponent(
+                  payload[0].payload.name
+                )}&type=${encodeURIComponent(type)}`
+              );
+            }}
+          >
+            View Details
+          </a>
+        </div>
+      );
+    }
+
+    return null;
+  };
 
   const renderLabel = ({
     cx,
@@ -115,7 +155,7 @@ export const RecipientsPieChart = ({ data, topK }) => {
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
-      <Tooltip />
+      <Tooltip trigger="click" content={CustomTooltip} />
       <Legend
         wrapperStyle={{ fontSize: "12px" }} // Adjust the font size as needed
       />

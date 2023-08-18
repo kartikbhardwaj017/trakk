@@ -35,8 +35,6 @@ class TransactionRepository {
       .map((transaction) => transaction.remarks)
       .filter(Boolean);
 
-    console.log("already present", incomingRemarks);
-
     // Fetch existing remarks that match the incoming ones
     const existingRemarks = await this.db
       .table("transactions")
@@ -53,7 +51,6 @@ class TransactionRepository {
       (transaction) => !existingRemarksSet.has(transaction.remarks)
     );
 
-    console.log("new", newTransactions);
     // Insert the filtered transactions into the database
     return this.db.table("transactions").bulkPut(newTransactions);
   }
@@ -101,13 +98,20 @@ class TransactionRepository {
       .toCollection();
 
     if (filters.startDate && filters.endDate) {
-      query = query.and(
-        (transaction) =>
+      query = query.and((transaction) => {
+        return (
           transaction.date >=
-            DateTime.fromFormat(filters.startDate, "dd/MM/yyyy").toJSDate() &&
+            DateTime.fromFormat(filters.startDate, "dd/MM/yyyy")
+              .startOf("day")
+              .toJSDate()
+              .getTime() &&
           transaction.date <=
-            DateTime.fromFormat(filters.endDate, "dd/MM/yyyy").toJSDate()
-      );
+            DateTime.fromFormat(filters.endDate, "dd/MM/yyyy")
+              .startOf("day")
+              .toJSDate()
+              .getTime()
+        );
+      });
     }
 
     if (filters.type && filters.type !== "all") {
@@ -153,7 +157,6 @@ class TransactionRepository {
       : transactions;
 
     transactions.sort((t1, t2) => (t1.date < t2.date ? 1 : -1));
-    console.log("serted", transactions);
     return transactions;
   }
   purgeDatabase(): Promise<void> {
