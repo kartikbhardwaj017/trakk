@@ -264,8 +264,7 @@ const ExpenseOverview = ({ data }) => {
   );
 };
 
-const Graph = ({transactions}) => {
-
+const Graph = ({ transactions }) => {
   return (
     <div
       style={{

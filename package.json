@@ -30,7 +30,7 @@
     "xlsx": "^0.18.5"
   },
   "scripts": {
-    "serve": "serve -s prod",
+    "serve": "sudo serve -s -d prod -p 443",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
