@@ -3,7 +3,6 @@ import { Typography, Box } from "@mui/material";
 import Layout from "./Layout";
 import { useLocation } from "react-router-dom";
 
-import Transaction from "./Tansaction";
 import Filter from "./FIlter";
 import {
   ITransactionProps,
@@ -18,6 +17,10 @@ export default function Playgoround() {
   const [currentTransactions, setCurrentTransactions] = useState(
     startTransactionArray
   );
+  const [dateRange, setDateRange] = useState({
+    min: new Date(), // Initialize with current date; will update in useEffect
+    max: new Date(),
+  });
   const transactionRepository = new TransactionRepository();
   const location = useLocation();
   const onFiltersChange = (filters: ITransactionFilter) => {
@@ -32,6 +35,7 @@ export default function Playgoround() {
         );
       });
   };
+
   // Fetch transactions from database when the component mounts
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -90,7 +94,11 @@ export default function Playgoround() {
   const net = totalIncome - totalExpense;
   return (
     <Layout selectedIcon={"Community"}>
-      <Filter onFilterChange={onFiltersChange} />
+      <Filter
+        onFilterChange={onFiltersChange}
+        minDate={dateRange.min}
+        maxDate={dateRange.max}
+      />
       <Box
         paddingX={2}
         paddingY={1}

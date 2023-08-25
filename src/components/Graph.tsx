@@ -9,6 +9,7 @@ import {
 import Chip from "@mui/material/Chip";
 import { RecipientsPieChart } from "./RecipientChart";
 import { useNavigate } from "react-router-dom";
+import { DateTime } from "luxon";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 10; // Desired width of each bar
@@ -23,7 +24,11 @@ const ExpenseOverview = ({ data }) => {
 
   const formatData = (data: ITransactionProps[], view) => {
     if (view === "daily") {
-      return groupBy(data, (item) => item.date.toLocaleDateString(), "amount");
+      return groupBy(
+        data,
+        (item) => DateTime.fromJSDate(item.date).toFormat("dd/MM/yyyy"),
+        "amount"
+      );
     } else if (view === "weekly") {
       return groupBy(
         data,
@@ -295,4 +300,4 @@ const Graph = ({ transactions }) => {
   );
 };
 
-export default Graph;
+export default React.memo(Graph);

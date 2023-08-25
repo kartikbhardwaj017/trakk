@@ -3,7 +3,7 @@ import { Card } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-
+import cloneDeep from "lodash/cloneDeep";
 import { useSwipeable } from "react-swipeable";
 import BasicTabs from "./TabPanel";
 import Graph from "./Graph";
@@ -12,12 +12,12 @@ import Layout from "./Layout";
 import TransactionRepository from "../services/Dexie/DbService";
 import { ITransactionProps } from "../services/ITransactionProps";
 import TransactionsTable from "./Table";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function Home() {
   // State & Refs
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState("");
-  const [scrollPercentage, setScrollPercentage] = useState(0);
   const [dateRange, setDateRange] = useState({
     min: new Date(), // Initialize with current date; will update in useEffect
     max: new Date(),
@@ -27,8 +27,6 @@ export default function Home() {
     max: new Date(),
   });
   const [filteredTransactions, setFilteredTransactions] = useState([]);
-
-  const cardRef = useRef(null);
 
   const startTransactionArray: ITransactionProps[] = [];
   const transactionRepository = new TransactionRepository();
@@ -72,13 +70,6 @@ export default function Home() {
   ];
 
   const cardContent = cardContents[currentCardIndex];
-
-  // 3. Event Handlers and Helper Functions
-  const handleScroll = (e) => {
-    const { scrollTop, scrollHeight, clientHeight } = e.target;
-    const scroll = (scrollTop / (scrollHeight - clientHeight)) * 100;
-    setScrollPercentage(scroll);
-  };
 
   const handlers = useSwipeable({
     onSwipedUp: () => {
@@ -124,18 +115,7 @@ export default function Home() {
 
   return (
     <Layout selectedIcon={"Home"}>
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: `${scrollPercentage}%`,
-          height: "5px",
-          backgroundColor: "white",
-          zIndex: 1000,
-        }}
-      />
-
+      <ScrollIndicator parentId="scrollingConatiner" />;
       <div
         style={{
           height: "100vh",
@@ -144,7 +124,7 @@ export default function Home() {
 
           overflowX: "hidden",
         }}
-        onScroll={handleScroll}
+        id="scrollingConatiner"
       >
         <div
           className="swipeable-card"
@@ -262,7 +242,8 @@ export default function Home() {
           ))}
         </div>
         <div style={{ padding: "10px" }}>
-          <BasicTabs transactions={[...transactions]} />
+          <BasicTabs transactions={cloneDeep(filteredTransactions)} />
+
           <Box
             sx={{
               width: 300,
@@ -314,13 +295,11 @@ export default function Home() {
           </Box>
 
           <h2>Expense Overview</h2>
-          <Graph transactions={[...filteredTransactions]} />
-          <Graph2 transactions={[...filteredTransactions]} />
-          <TransactionsTable transactions={[...filteredTransactions]} />
+          <Graph transactions={cloneDeep(filteredTransactions)} />
+          <Graph2 transactions={cloneDeep(filteredTransactions)} />
+          <TransactionsTable transactions={cloneDeep(filteredTransactions)} />
         </div>
       </div>
     </Layout>
   );
 }
-
-

@@ -97,29 +97,26 @@ class TransactionRepository {
       .table("transactions")
       .toCollection();
 
-    if (filters.startDate && filters.endDate) {
-      query = query.and((transaction) => {
-        return (
-          transaction.date >=
-            DateTime.fromFormat(filters.startDate, "dd/MM/yyyy")
-              .startOf("day")
-              .toJSDate()
-              .getTime() &&
-          transaction.date <=
-            DateTime.fromFormat(filters.endDate, "dd/MM/yyyy")
-              .startOf("day")
-              .toJSDate()
-              .getTime()
-        );
-      });
-    }
-
     if (filters.type && filters.type !== "all") {
       query = query.and((transaction) =>
         filters.type === "income"
           ? transaction.type === ETransactionType.CREDIT
           : transaction.type === ETransactionType.DEBIT
       );
+    }
+    if (filters.startDate && filters.endDate) {
+      query = query.and((transaction) => {
+        return (
+          transaction.date >=
+            DateTime.fromFormat(filters.startDate, "dd/MM/yyyy")
+              .startOf("day")
+              .toJSDate() &&
+          transaction.date <=
+            DateTime.fromFormat(filters.endDate, "dd/MM/yyyy")
+              .startOf("day")
+              .toJSDate()
+        );
+      });
     }
 
     if (filters.category) {

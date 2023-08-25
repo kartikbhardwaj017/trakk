@@ -52,7 +52,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
     .slice(0, topK);
 
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div style={{ marginTop: "20px", overflowX:'auto' }}>
       <Grid container spacing={2} direction="column" alignItems="center">
         <Grid item>
           {[3, 5, 10, 15].map((k) => (
