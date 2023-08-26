@@ -20,6 +20,7 @@ jobs:
         USER: root    # Replace with your droplet's username (e.g., root)
       run: |
         echo "$PRIVATEKEY" > deploy_key.pem
+        cat deploy_key.pem
         chmod 600 deploy_key.pem
         rsync -v -rav  -e "ssh -v -i deploy_key.pem -o StrictHostKeyChecking=no" ./ $USER@$HOST:/myapp/trakk/
         rm -f deploy_key.pem
