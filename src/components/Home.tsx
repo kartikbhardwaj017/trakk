@@ -115,7 +115,7 @@ export default function Home() {
 
   return (
     <Layout selectedIcon={"Home"}>
-      <ScrollIndicator parentId="scrollingConatiner" />;
+      <ScrollIndicator parentId="scrollingConatiner" />
       <div
         style={{
           height: "100vh",
