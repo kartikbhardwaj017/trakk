@@ -42,6 +42,17 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
     return acc;
   }, {});
 
+   const tickFormatter = (tickValue) => {
+     if (tickValue === 1) return "0";
+
+     if (tickValue >= 100000) {
+       return `${(tickValue / 100000).toFixed(1)}L`;
+     } else if (tickValue >= 1000) {
+       return `${(tickValue / 1000).toFixed(1)}k`;
+     }
+
+     return tickValue.toFixed(1); // Show 1 decimal place for other values
+   };
   const sortedRecipients = Object.entries(groupedByRecipient)
     .sort((a, b) => {
       if (rankBy === "frequency") {
@@ -117,7 +128,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                 <TableRow key={recipient}>
                   <TableCell>{recipient}</TableCell>
                   <TableCell align="right">{data.frequency}</TableCell>
-                  <TableCell align="right">{data.totalAmount}</TableCell>
+                  <TableCell align="right">{tickFormatter(data.totalAmount)}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

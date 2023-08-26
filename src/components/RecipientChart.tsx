@@ -43,6 +43,17 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
   ]; // Customize colors
   const recipientsData = getTop5Recipients(data, topK);
   const navigate = useNavigate(); // Get the navigate function
+  const tickFormatter = (tickValue) => {
+    if (tickValue === 1) return "0";
+
+    if (tickValue >= 100000) {
+      return `${(tickValue / 100000).toFixed(1)}L`;
+    } else if (tickValue >= 1000) {
+      return `${(tickValue / 1000).toFixed(1)}k`;
+    }
+
+    return tickValue.toFixed(1); // Show 1 decimal place for other values
+  };
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -59,7 +70,7 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
         >
           <span>{`${payload[0].payload.name}`}</span>
           <br />
-          <span>{`Amount: ${payload[0].payload.value}`}</span>
+          <span>{`Amount: ${tickFormatter(payload[0].payload.value)}`}</span>
           <br />
           <a
             href="/community"
