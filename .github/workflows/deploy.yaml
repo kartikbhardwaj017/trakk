@@ -22,7 +22,7 @@ jobs:
       run: npm ci  # Using `ci` for a cleaner, more reproducible build
 
     - name: Build the app
-      run: npm run build
+      run: CI=false npm run build
 
     - name: Deploy to DigitalOcean Droplet
       env:
