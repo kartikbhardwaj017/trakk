@@ -13,6 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16   # You can specify the version of Node.js you want here
+
+    - name: Install npm dependencies
+      run: npm ci  # Using `ci` for a cleaner, more reproducible build
+
+    - name: Build the app
+      run: npm run build
+
     - name: Deploy to DigitalOcean Droplet
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATEKEY }}
@@ -20,7 +31,6 @@ jobs:
         USER: root    # Replace with your droplet's username (e.g., root)
       run: |
         echo "$PRIVATE_KEY" > deploy_key.pem
-        cat deploy_key.pem
         chmod 600 deploy_key.pem
-        rsync -v -rav  -e "ssh -v -i deploy_key.pem -o StrictHostKeyChecking=no" ./ $USER@$HOST:/myapp/trakk/
+        rsync -v -rav  -e "ssh -v -i deploy_key.pem -o StrictHostKeyChecking=no" ./build/ $USER@$HOST:/myapp/trakk/prod
         rm -f deploy_key.pem

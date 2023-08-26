@@ -28,7 +28,7 @@ export default function Layout({ children, selectedIcon }) {
       <AppBar position="static" style={{ width: "1000px", margin: "auto" }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            TRAKK2
+            TRAKK
           </Typography>
         </Toolbar>
       </AppBar>

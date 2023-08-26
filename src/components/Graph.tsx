@@ -245,7 +245,6 @@ const ExpenseOverview = ({ data }) => {
               if (tickValue === 1) return "0";
               return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
             }}
-            style={{ position: "absolute", left: 0, top: 0, zIndex: 1 }}
           />
           <Tooltip trigger="click" content={CustomTooltip} />
           <Bar dataKey="income" fill="green">
