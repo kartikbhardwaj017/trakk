@@ -15,7 +15,7 @@ jobs:
 
     - name: Deploy to DigitalOcean Droplet
       env:
-        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        PRIVATE_KEY: ${{ secrets.PRIVATEKEY }}
         HOST: 157.245.101.1      # Replace with your droplet's IP address
         USER: root    # Replace with your droplet's username (e.g., root)
       run: |
