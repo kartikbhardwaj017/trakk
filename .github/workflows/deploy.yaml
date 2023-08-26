@@ -21,5 +21,5 @@ jobs:
       run: |
         echo "$TRAKKPRIVATEKEY" > deploy_key.pem
         chmod 600 deploy_key.pem
-        rsync -rav -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./ $USER@$HOST:/myapp/trakk/
+        rsync -rav -v -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./ $USER@$HOST:/myapp/trakk/
         rm -f deploy_key.pem
