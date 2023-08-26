@@ -1,0 +1,25 @@
+name: Deploy SPA to DigitalOcean Droplet
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to DigitalOcean Droplet
+      env:
+        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        HOST: 157.245.101.1      # Replace with your droplet's IP address
+        USER: root    # Replace with your droplet's username (e.g., root)
+      run: |
+        echo "$TRAKKPRIVATEKEY" > deploy_key.pem
+        chmod 600 deploy_key.pem
+        rsync -rav -e "ssh -i deploy_key.pem -o StrictHostKeyChecking=no" ./ $USER@$HOST:/myapp/trakk/
+        rm -f deploy_key.pem
