@@ -19,7 +19,7 @@ jobs:
         HOST: 157.245.101.1      # Replace with your droplet's IP address
         USER: root    # Replace with your droplet's username (e.g., root)
       run: |
-        echo "$PRIVATEKEY" > deploy_key.pem
+        echo "$PRIVATE_KEY" > deploy_key.pem
         cat deploy_key.pem
         chmod 600 deploy_key.pem
         rsync -v -rav  -e "ssh -v -i deploy_key.pem -o StrictHostKeyChecking=no" ./ $USER@$HOST:/myapp/trakk/
