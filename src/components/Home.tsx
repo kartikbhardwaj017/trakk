@@ -3,11 +3,13 @@ import { Card } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import cloneDeep from "lodash/cloneDeep";
 import { useSwipeable } from "react-swipeable";
 import BasicTabs from "./TabPanel";
-import Graph from "./Graph";
-import Graph2 from "./Graph2";
+import Graph from "./IncomeGraph";
+import Graph2 from "./ExpenseGraph";
 import Layout from "./Layout";
 import TransactionRepository from "../services/Dexie/DbService";
 import { ITransactionProps } from "../services/ITransactionProps";
@@ -31,6 +33,11 @@ export default function Home() {
   const startTransactionArray: ITransactionProps[] = [];
   const transactionRepository = new TransactionRepository();
   const [transactions, setTransactions] = useState(startTransactionArray);
+  const [isSliderExpanded, setIsSliderExpanded] = useState(false);
+
+  const toggleSliderExpand = () => {
+    setIsSliderExpanded(!isSliderExpanded);
+  };
 
   useEffect(() => {
     transactionRepository.readTransactions({}).then((loadedTransactions) => {
@@ -294,6 +301,13 @@ export default function Home() {
             </Box>
           </Box>
 
+          <ExpandableSlider
+            selectedDateRange={selectedDateRange}
+            setSelectedDateRange={setSelectedDateRange}
+            handleDateRangeChange={handleDateRangeChange}
+            dateRange={dateRange}
+          />
+
           <h2>Expense Overview</h2>
           <Graph transactions={cloneDeep(filteredTransactions)} />
           <Graph2 transactions={cloneDeep(filteredTransactions)} />
@@ -303,3 +317,103 @@ export default function Home() {
     </Layout>
   );
 }
+
+const ExpandableSlider = ({
+  selectedDateRange,
+  setSelectedDateRange,
+  dateRange,
+  handleDateRangeChange,
+}) => {
+  const [isSliderExpanded, setIsSliderExpanded] = useState(false);
+
+  const toggleSliderExpand = () => {
+    setIsSliderExpanded(!isSliderExpanded);
+  };
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        // top: `${sliderTop}px`,
+        bottom: "60px",
+        left: 0, // or left: 0 if you want it to float on the left
+        zIndex: 10,
+        width: "100%",
+        transition: "width 0.5s ease-in-out",
+      }}
+    >
+      {isSliderExpanded ? (
+        <div style={{ backgroundColor: "black" }}>
+          <div
+            onClick={toggleSliderExpand}
+            style={{
+              position: "absolute",
+              left: 2,
+              bottom: 25,
+              // top: "5px",
+              zIndex: 11,
+            }}
+          >
+            <ArrowBackIosIcon
+              style={{
+                fontSize: 30,
+                color: "white",
+              }}
+            />
+          </div>
+          <Box
+            sx={{
+              width: 320,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              margin: "0 auto",
+              opacity: 1,
+              marginLeft: "40px", // Add margin-left
+            }}
+          >
+            <Typography id="range-slider" gutterBottom>
+              Date Range
+            </Typography>
+
+            <Slider
+              value={[
+                selectedDateRange.min.getTime(),
+                selectedDateRange.max.getTime(),
+              ]}
+              onChange={(event, newValue: number[]) => {
+                setSelectedDateRange({
+                  min: new Date(newValue[0]),
+                  max: new Date(newValue[1]),
+                });
+                handleDateRangeChange(
+                  new Date(newValue[0]),
+                  new Date(newValue[1])
+                );
+              }}
+              valueLabelDisplay="on"
+              valueLabelFormat={(value) => new Date(value).toLocaleDateString()}
+              min={new Date(dateRange.min).getTime()}
+              max={new Date(dateRange.max).getTime()}
+              sx={{ width: "100%" }}
+            />
+          </Box>
+        </div>
+      ) : (
+        <div
+          onClick={toggleSliderExpand}
+          style={{
+            position: "absolute",
+            left: 2,
+            bottom: 25,
+            // top: "5px",
+            zIndex: 11,
+            background: "black",
+          }}
+        >
+          <ArrowForwardIosIcon style={{ fontSize: 30, color: "white" }} />
+        </div>
+      )}
+    </div>
+  );
+};

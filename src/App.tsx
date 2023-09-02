@@ -6,7 +6,7 @@ import LandingPage from "./components/Landing";
 import { Container } from "@mui/material";
 import UploadFile from "./components/UploadFile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Playgoround from "./components/Playground";
+import Playgoround from "./components/Transactions";
 
 const darkTheme = createTheme({
   palette: {

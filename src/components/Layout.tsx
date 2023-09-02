@@ -13,7 +13,7 @@ export default function Layout({ children, selectedIcon }) {
       style={{
         height: "100vh",
         overflowY: "scroll",
-        paddingBottom: "70px",
+        paddingBottom: "150px",
         overflowX: "hidden",
         width: "100%",
       }}
@@ -37,6 +37,7 @@ export default function Layout({ children, selectedIcon }) {
       <BottomNavigation
         showLabels
         style={{
+          height: "60px",
           position: "fixed",
           width: "100%",
           bottom: 0,
