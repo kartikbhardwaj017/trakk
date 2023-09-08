@@ -21,9 +21,8 @@ export interface ITransactionProps {
   category: string;
   remarks: string;
   type: ETransactionType;
+  accountNumber?: string;
 }
-
-
 
 export interface ITransactionFilter {
   startDate?: string;

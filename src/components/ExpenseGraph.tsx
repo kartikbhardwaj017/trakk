@@ -268,7 +268,7 @@ const ExpenseOverview = ({ data }) => {
   );
 };
 
-const Graph = ({ transactions }) => {
+const ExpenseGraph = ({ transactions }) => {
   return (
     <div
       style={{
@@ -294,4 +294,4 @@ const Graph = ({ transactions }) => {
   );
 };
 
-export default Graph;
+export default ExpenseGraph;

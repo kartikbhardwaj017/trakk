@@ -8,13 +8,14 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import cloneDeep from "lodash/cloneDeep";
 import { useSwipeable } from "react-swipeable";
 import BasicTabs from "./TabPanel";
-import Graph from "./IncomeGraph";
-import Graph2 from "./ExpenseGraph";
 import Layout from "./Layout";
 import TransactionRepository from "../services/Dexie/DbService";
 import { ITransactionProps } from "../services/ITransactionProps";
 import TransactionsTable from "./Table";
 import ScrollIndicator from "./ScrollIndicator";
+import IncomeGraph from "./IncomeGraph";
+import ExpenseGraph from "./ExpenseGraph";
+import { CheckCircle } from "@mui/icons-material";
 
 export default function Home() {
   // State & Refs
@@ -28,55 +29,47 @@ export default function Home() {
     min: new Date(), // Initialize with current date; will update in useEffect
     max: new Date(),
   });
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputName, setInputName] = useState("");
   const [filteredTransactions, setFilteredTransactions] = useState([]);
-
   const startTransactionArray: ITransactionProps[] = [];
+
   const transactionRepository = new TransactionRepository();
   const [transactions, setTransactions] = useState(startTransactionArray);
-  const [isSliderExpanded, setIsSliderExpanded] = useState(false);
-
-  const toggleSliderExpand = () => {
-    setIsSliderExpanded(!isSliderExpanded);
-  };
+  const [accounts, setAccounts] = useState([
+    { accountNumber: "Loading", name: "Loading" },
+  ]);
 
   useEffect(() => {
-    transactionRepository.readTransactions({}).then((loadedTransactions) => {
-      setTransactions(
-        loadedTransactions.filter((trans) => trans.remarks?.length > 0)
-      );
-      setFilteredTransactions(
-        loadedTransactions.filter((trans) => trans.remarks?.length > 0)
-      );
-      setDateRange({
-        min: loadedTransactions[loadedTransactions.length - 1]?.date,
-        max: loadedTransactions[0].date,
-      });
-      setSelectedDateRange({
-        min: loadedTransactions[loadedTransactions.length - 1]?.date,
-        max: loadedTransactions[0].date,
-      });
+    transactionRepository.fetchAccounts().then((loadedAccounts) => {
+      console.log("accounts", loadedAccounts);
+      if (loadedAccounts.length > 0) setAccounts(loadedAccounts);
     });
   }, []);
 
-  const cardContents = [
-    {
-      greeting: "Welcome,",
-      name: "Kartik",
-      balance: "INR 80000.00",
-      income: "INR 1000",
-      expense: "INR 500",
-    },
-    {
-      greeting: "Welcome,",
-      name: "Rohit",
-      balance: "INR 90000.00",
-      income: "INR 400",
-      expense: "INR 200",
-    },
-    // Add more card contents here
-  ];
-
-  const cardContent = cardContents[currentCardIndex];
+  useEffect(() => {
+    const transactionRepository = new TransactionRepository();
+    transactionRepository
+      .readTransactions({
+        accountNumber: accounts[currentCardIndex].accountNumber,
+      })
+      .then((loadedTransactions) => {
+        setTransactions(
+          loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+        );
+        setFilteredTransactions(
+          loadedTransactions.filter((trans) => trans.remarks?.length > 0)
+        );
+        setDateRange({
+          min: loadedTransactions[loadedTransactions.length - 1]?.date,
+          max: loadedTransactions[0].date,
+        });
+        setSelectedDateRange({
+          min: loadedTransactions[loadedTransactions.length - 1]?.date,
+          max: loadedTransactions[0].date,
+        });
+      });
+  }, [accounts, currentCardIndex]);
 
   const handlers = useSwipeable({
     onSwipedUp: () => {
@@ -92,8 +85,8 @@ export default function Home() {
     setTimeout(() => setSwipeDirection(""), 500);
     const newIndex =
       direction === "up"
-        ? (currentCardIndex + 1) % cardContents.length
-        : (currentCardIndex - 1 + cardContents.length) % cardContents.length;
+        ? (currentCardIndex + 1) % accounts.length
+        : (currentCardIndex - 1 + accounts.length) % accounts.length;
     setCurrentCardIndex(newIndex);
   };
   const handleDateRangeChange = (minDate, maxDate) => {
@@ -117,8 +110,6 @@ export default function Home() {
       window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
-
-  // 4. JSX Render
 
   return (
     <Layout selectedIcon={"Home"}>
@@ -172,12 +163,44 @@ export default function Home() {
                   fontSize: "32px",
                   marginLeft: "10px",
                 }}
+                onClick={() => {
+                  setIsEditing(true);
+                }}
               >
-                {cardContent.name}
+                {isEditing ? (
+                  <>
+                    <input
+                      type="text"
+                      value={inputName}
+                      onChange={(e) => setInputName(e.target.value)}
+                    />
+                    <CheckCircle
+                      style={{ cursor: "pointer" }}
+                      onClick={async (event) => {
+                        event.stopPropagation();
+                        if (inputName.length > 0) {
+                          // Update the name in accounts at the current index
+                          let updatedAccounts = [...accounts];
+                          updatedAccounts[currentCardIndex].name = inputName;
+                          setAccounts(updatedAccounts);
+                          await transactionRepository.updateAccountHolderName(
+                            inputName,
+                            updatedAccounts[currentCardIndex].accountNumber
+                          );
+                          setIsEditing(false);
+                        }
+                      }}
+                    />
+                  </>
+                ) : accounts[currentCardIndex].name.length > 0 ? (
+                  accounts[currentCardIndex].name
+                ) : (
+                  "Enter your name"
+                )}
               </span>
-              <span>Available balance</span>
+              <span>Account Number</span>
               <span style={{ fontWeight: 700, fontSize: "32px" }}>
-                {cardContent.balance}
+                {`XXXXXX${accounts[currentCardIndex].accountNumber.slice(-4)}`}
               </span>
               <div
                 style={{
@@ -187,6 +210,7 @@ export default function Home() {
                   margin: "2px",
                 }}
               ></div>
+
               <div
                 style={{
                   display: "flex",
@@ -204,7 +228,7 @@ export default function Home() {
                 >
                   <span>income</span>
                   <br />
-                  <span>{cardContent.income}</span>
+                  <span>{"5000 INR"}</span>
                 </div>
                 <div
                   style={{
@@ -221,7 +245,7 @@ export default function Home() {
                 >
                   <span>expense</span>
                   <br />
-                  <span>{cardContent.expense}</span>
+                  <span>{"600 INR"}</span>
                 </div>
               </div>
             </div>
@@ -235,7 +259,7 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          {cardContents.map((_, index) => (
+          {accounts.map((_, index) => (
             <div
               style={{
                 width: "8px",
@@ -309,8 +333,8 @@ export default function Home() {
           />
 
           <h2>Expense Overview</h2>
-          <Graph transactions={cloneDeep(filteredTransactions)} />
-          <Graph2 transactions={cloneDeep(filteredTransactions)} />
+          <IncomeGraph transactions={cloneDeep(filteredTransactions)} />
+          <ExpenseGraph transactions={cloneDeep(filteredTransactions)} />
           <TransactionsTable transactions={cloneDeep(filteredTransactions)} />
         </div>
       </div>
@@ -406,7 +430,6 @@ const ExpandableSlider = ({
             position: "absolute",
             left: 2,
             bottom: 25,
-            // top: "5px",
             zIndex: 11,
             background: "black",
           }}

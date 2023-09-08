@@ -273,7 +273,7 @@ const ExpenseOverview = ({ data }) => {
   );
 };
 
-const Graph = ({ transactions }) => {
+const IncomeGraph = ({ transactions }) => {
   return (
     <div
       style={{
@@ -299,4 +299,4 @@ const Graph = ({ transactions }) => {
   );
 };
 
-export default React.memo(Graph);
+export default React.memo(IncomeGraph);

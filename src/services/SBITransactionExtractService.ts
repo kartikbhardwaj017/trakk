@@ -99,10 +99,16 @@ export class SBITransactionExtractService implements ITransactionExtractor {
           const ws = workbook.Sheets[wsname];
           let data = XLSX.utils.sheet_to_json(ws, { header: 1 });
 
+          let accountNumber = "NA";
           let headersIndex = 0;
+          console.log("data is ", data);
           for (let i = 0; i < 25; i++) {
             // Check the first 15 rows
             let row = data[i];
+            if ((row as string[]).includes("Account Number     :")) {
+              accountNumber = row[1];
+              console.log(accountNumber);
+            }
             if (
               (row as string[]).includes("Txn Date") &&
               (row as string[]).includes("Value Date") &&
@@ -149,6 +155,7 @@ export class SBITransactionExtractService implements ITransactionExtractor {
               type: !Number.isNaN(parseFloat(obj["        Debit"]))
                 ? ETransactionType.DEBIT
                 : ETransactionType.CREDIT,
+              accountNumber,
             };
 
             transactions.push(transaction);

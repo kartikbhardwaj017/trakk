@@ -1,6 +1,7 @@
 import Dexie, { IndexableType } from "dexie";
 import { ETransactionType, ITransactionProps } from "../ITransactionProps";
 import { DateTime } from "luxon";
+import Q from "q";
 
 export interface ITransactionFilter {
   startDate?: string;
@@ -11,6 +12,7 @@ export interface ITransactionFilter {
   recipient?: string;
   amountMin?: number;
   amountMax?: number;
+  accountNumber?: string;
 }
 
 class TransactionRepository {
@@ -20,7 +22,8 @@ class TransactionRepository {
     this.db = new Dexie("TransactionDatabase");
     this.db.version(1).stores({
       transactions:
-        "++id,date,remarks,amount,balance,mode,recipient,category,type",
+        "++id,date,remarks,amount,balance,mode,recipient,category,type,accountNumber",
+      accounts: "++id,accountNumber,name",
     });
   }
 
@@ -29,6 +32,38 @@ class TransactionRepository {
     return this.db.table("transactions").bulkPut(transactions);
   }
 
+  private async insertAccountNumbers(transactions: ITransactionProps[]) {
+    const accountNumbersSet = new Set();
+    const accountNumbersArray = transactions
+      .map((transaction) => transaction.accountNumber)
+      .filter((accountNumber) => {
+        if (accountNumbersSet.has(accountNumber)) {
+          return false;
+        }
+        accountNumbersSet.add(accountNumber);
+        return true;
+      });
+    const existingAccountNumber = await this.db
+      .table("accounts")
+      .where("accountNumber")
+      .anyOfIgnoreCase(accountNumbersArray)
+      .toArray()
+      .then((txs) => txs.map((tx) => tx.remarks));
+
+    const existingAccountNumbersSet = new Set(existingAccountNumber);
+
+    const newAccountNumbers = accountNumbersArray.filter(
+      (accountNumber) => !existingAccountNumbersSet.has(accountNumber)
+    );
+    const accounts = newAccountNumbers.map((accountNumber) => {
+      return {
+        accountNumber: accountNumber,
+        name: "",
+      };
+    });
+
+    return this.db.table("accounts").bulkPut(accounts);
+  }
   async insertUnique(transactions: ITransactionProps[]): Promise<unknown> {
     // Extract remarks from the incoming transactions
     const incomingRemarks = transactions
@@ -51,11 +86,23 @@ class TransactionRepository {
       (transaction) => !existingRemarksSet.has(transaction.remarks)
     );
 
+    await this.insertAccountNumbers(transactions);
     // Insert the filtered transactions into the database
     return this.db.table("transactions").bulkPut(newTransactions);
   }
 
+  async updateAccountHolderName(name: string, accountNumber: string) {
+    const updateName = await this.db
+      .table("accounts")
+      .where("accountNumber")
+      .equalsIgnoreCase(accountNumber)
+      .modify({ name: name });
+  }
   // Method to fetch transactions by date range
+  async fetchAccounts(): Promise<{ accountNumber: string; name: string }[]> {
+    const accountsArray = await this.db.table("accounts").toArray();
+    return accountsArray;
+  }
   async fetchTransactions(
     startDate: string,
     endDate: string
@@ -102,6 +149,11 @@ class TransactionRepository {
         filters.type === "income"
           ? transaction.type === ETransactionType.CREDIT
           : transaction.type === ETransactionType.DEBIT
+      );
+    }
+    if (filters.accountNumber) {
+      query = query.and(
+        (transaction) => transaction.accountNumber === filters.accountNumber
       );
     }
     if (filters.startDate && filters.endDate) {
@@ -156,8 +208,9 @@ class TransactionRepository {
     transactions.sort((t1, t2) => (t1.date < t2.date ? 1 : -1));
     return transactions;
   }
-  purgeDatabase(): Promise<void> {
-    return this.db.table("transactions").clear();
+  async purgeDatabase(): Promise<void> {
+    await this.db.table("transactions").clear();
+    await this.db.table("accounts").clear();
   }
 }
 

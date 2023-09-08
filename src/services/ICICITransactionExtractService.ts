@@ -104,9 +104,15 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
           let data = XLSX.utils.sheet_to_json(ws, { header: 1 });
 
           let headersIndex = 0;
+          let accountNumber = "NA";
+
           for (let i = 0; i < 15; i++) {
             // Check the first 15 rows
             let row = data[i];
+            console.log(row);
+            if ((row as string[]).includes("Account Number")) {
+              accountNumber = row[3].split("-")[0];
+            }
             if (
               (row as string[]).includes("S No.") &&
               (row as string[]).includes("Value Date") &&
@@ -121,7 +127,12 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
               break;
             }
           }
+
+          console.log("accountnumber", accountNumber);
           // Get headers
+          if (accountNumber === "NA") {
+            alert("Account number not detected");
+          }
           const headers = data[headersIndex];
           data = data.slice(headersIndex + 1);
           //   const rows = data.slice(1);
@@ -160,6 +171,7 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
                 parseFloat(obj["Withdrawal Amount ( )"]) > 0
                   ? ETransactionType.DEBIT
                   : ETransactionType.CREDIT,
+              accountNumber,
             };
 
             transactions.push(transaction);
