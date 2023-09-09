@@ -48,7 +48,7 @@ class TransactionRepository {
       .where("accountNumber")
       .anyOfIgnoreCase(accountNumbersArray)
       .toArray()
-      .then((txs) => txs.map((tx) => tx.remarks));
+      .then((txs) => txs.map((tx) => tx.accountNumber));
 
     const existingAccountNumbersSet = new Set(existingAccountNumber);
 

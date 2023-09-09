@@ -61,7 +61,10 @@ export class SBITransactionExtractService implements ITransactionExtractor {
   identifyTransactionType(deposit: number, withdrawal: number): string {
     return deposit > 0 ? "CREDIT" : "DEBIT";
   }
-
+  extractNumber(str: string) {
+    const match = str.match(/(\d+)/);
+    return match ? match[0] : null;
+  }
   cleanAndTransformTransaction(transaction: ISBITransaction): object {
     const depositAmount = transaction["Deposit Amount (INR )"] || 0;
     const withdrawalAmount = transaction["Withdrawal Amount (INR )"] || 0;
@@ -106,7 +109,7 @@ export class SBITransactionExtractService implements ITransactionExtractor {
             // Check the first 15 rows
             let row = data[i];
             if ((row as string[]).includes("Account Number     :")) {
-              accountNumber = row[1];
+              accountNumber = this.extractNumber(row[1]);
               console.log(accountNumber);
             }
             if (
@@ -142,8 +145,14 @@ export class SBITransactionExtractService implements ITransactionExtractor {
               paymentMode
             );
 
+            const date = this.excelSerialDateToJSDate(obj["Txn Date"]);
+            if (!date) {
+              console.log("invalid date");
+              return;
+            }
+
             const transaction: ITransactionProps = {
-              date: this.excelSerialDateToJSDate(obj["Txn Date"]),
+              date: date,
               amount: !Number.isNaN(parseFloat(obj["        Debit"]))
                 ? parseFloat(obj["        Debit"])
                 : parseFloat(obj["Credit"]),
@@ -184,6 +193,8 @@ export class SBITransactionExtractService implements ITransactionExtractor {
       dateMilliseconds - millisecondsBetween1900And1970 + timeMilliseconds;
 
     var luxonDate = DateTime.fromMillis(totalMilliseconds);
-    return luxonDate.startOf("day").toJSDate();
+    if (luxonDate.isValid) {
+      return luxonDate.startOf("day").toJSDate();
+    } else return null;
   }
 }

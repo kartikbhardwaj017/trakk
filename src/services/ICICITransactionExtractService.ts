@@ -65,6 +65,10 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
   identifyTransactionType(deposit: number, withdrawal: number): string {
     return deposit > 0 ? "CREDIT" : "DEBIT";
   }
+  extractNumber(str:string) {
+    const match = str.match(/(\d+)/);
+    return match ? match[0] : null;
+  }
 
   cleanAndTransformTransaction(transaction: ISBITransaction): object {
     const depositAmount = transaction["Deposit Amount (INR )"] || 0;
@@ -111,7 +115,7 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
             let row = data[i];
             console.log(row);
             if ((row as string[]).includes("Account Number")) {
-              accountNumber = row[3].split("-")[0];
+              accountNumber = this.extractNumber(row[3].split("-")[0]);
             }
             if (
               (row as string[]).includes("S No.") &&
@@ -132,6 +136,7 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
           // Get headers
           if (accountNumber === "NA") {
             alert("Account number not detected");
+            return;
           }
           const headers = data[headersIndex];
           data = data.slice(headersIndex + 1);

@@ -266,7 +266,7 @@ export default function Home() {
                 height: "8px",
                 borderRadius: "50%",
                 backgroundColor:
-                  index === currentCardIndex ? "black" : "#d1d1d1",
+                  index === currentCardIndex ? "red" : "#d1d1d1",
                 margin: "0 3px",
               }}
             />

@@ -68,7 +68,7 @@ export default function BasicTabs({ transactions }) {
           .sort((t1, t2) => {
             return t1.date < t2.date ? 1 : -1;
           })
-          .splice(0, 5)
+          .slice(0, 5)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}
@@ -76,7 +76,7 @@ export default function BasicTabs({ transactions }) {
       <CustomTabPanel value={value} index={1}>
         {transactions
           .filter((transaction) => transaction.type === ETransactionType.DEBIT)
-          .splice(0, 5)
+          .slice(0, 5)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}
@@ -84,7 +84,7 @@ export default function BasicTabs({ transactions }) {
       <CustomTabPanel value={value} index={2}>
         {transactions
           .filter((transaction) => transaction.type === ETransactionType.CREDIT)
-          .splice(0, 5)
+          .slice(0, 5)
           .map((transaction) => (
             <TansactionView transaction={transaction} />
           ))}
