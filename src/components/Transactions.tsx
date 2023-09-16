@@ -39,18 +39,19 @@ export default function Playgoround() {
   // Fetch transactions from database when the component mounts
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const date = queryParams.get("date");
+    const startDate = queryParams.get("startDate");
+    const endDate = queryParams.get("endDate");
     const search = queryParams.get("search");
     const transactionType = queryParams.get("type") as
       | "income"
       | "all"
       | "expense";
 
-    if (date) {
+    if (startDate) {
       transactionRepository
         .readTransactions({
-          startDate: date,
-          endDate: date,
+          startDate: startDate,
+          endDate: endDate,
           type: transactionType,
         }) // Fetch all transactions, or apply filters as needed
         .then((loadedTransactions) => {
@@ -130,6 +131,7 @@ export default function Playgoround() {
         .map((transaction) => (
           <TansactionView transaction={transaction} />
         ))}
+      <div style={{ height: "100px" }}></div>
     </Layout>
   );
 }

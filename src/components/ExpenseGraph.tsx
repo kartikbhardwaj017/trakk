@@ -9,6 +9,7 @@ import Chip from "@mui/material/Chip";
 import { RecipientsPieChart } from "./RecipientChart";
 import { useNavigate } from "react-router-dom";
 import { DateTime } from "luxon";
+import { getDateRange } from "../services/getDateRange";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 10; // Desired width of each bar
@@ -143,6 +144,9 @@ const ExpenseOverview = ({ data }) => {
 
     if (active && payload && payload.length) {
       const date = payload[0].payload.date;
+      const [startDate, endDate] = getDateRange(date, view);
+      console.log("dates", startDate, endDate);
+
       return (
         <div
           style={{
@@ -164,8 +168,10 @@ const ExpenseOverview = ({ data }) => {
             onClick={(e) => {
               e.preventDefault(); // Prevent the default behavior
               navigate(
-                `/community?date=${encodeURIComponent(
-                  payload[0].payload.date
+                `/community?startDate=${encodeURIComponent(
+                  startDate
+                )}&endDate=${encodeURIComponent(
+                  endDate
                 )}&type=${encodeURIComponent("expense")}`
               );
             }}

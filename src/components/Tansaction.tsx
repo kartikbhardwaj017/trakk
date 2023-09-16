@@ -6,6 +6,7 @@ import {
   ETransactionType,
   ITransactionProps,
 } from "../services/ITransactionProps";
+import { DateTime } from "luxon";
 
 export default function TansactionView(props) {
   const transaction: ITransactionProps = props.transaction;
@@ -51,11 +52,12 @@ export default function TansactionView(props) {
               {transaction.remarks.length > 20
                 ? transaction.remarks.substring(0, 20) + "..."
                 : transaction.remarks}
-                {/* {transaction.remarks} */}
+              {/* {transaction.remarks} */}
             </span>
 
             <span style={{ fontSize: "14px", color: "#aaa", marginTop: "5px" }}>
-              {transaction.recipient} on {transaction.date.toLocaleDateString()}
+              {transaction.recipient} on{" "}
+              {DateTime.fromJSDate(transaction.date).toFormat("dd/MM/yyyy")}
             </span>
           </div>
         </div>
