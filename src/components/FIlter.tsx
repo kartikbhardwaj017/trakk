@@ -123,6 +123,7 @@ const Filter: React.FC<{
       flexDirection="column"
       alignItems="center"
       maxWidth={500}
+      paddingTop="60px"
       margin="auto"
       marginBottom={2}
       marginTop={2}

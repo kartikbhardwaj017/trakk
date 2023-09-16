@@ -61,7 +61,7 @@ export default function LandingPage() {
       >
         <Typography
           variant="h4"
-          style={{ color: "white", marginBottom: "5px" }}
+          style={{ color: "white", marginBottom: "5px", paddingTop: "60px" }}
         >
           Upload Transactions
         </Typography>
@@ -98,6 +98,7 @@ export default function LandingPage() {
           </Select>
         </FormControl>
         <Box
+          flexDirection="column"
           display="flex"
           alignItems="center"
           gap={2}

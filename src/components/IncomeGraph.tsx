@@ -10,6 +10,7 @@ import Chip from "@mui/material/Chip";
 import { RecipientsPieChart } from "./RecipientChart";
 import { useNavigate } from "react-router-dom";
 import { DateTime } from "luxon";
+import { getDateRange } from "../services/getDateRange";
 
 const ExpenseOverview = ({ data }) => {
   const barWidth = 10; // Desired width of each bar
@@ -70,9 +71,23 @@ const ExpenseOverview = ({ data }) => {
     ];
     return monthNames[parseInt(month)];
   };
+  const monthNames = {
+    JAN: { number: "01", days: 31 },
+    FEB: { number: "02", days: 28 },
+    MAR: { number: "03", days: 31 },
+    APR: { number: "04", days: 30 },
+    MAY: { number: "05", days: 31 },
+    JUN: { number: "06", days: 30 },
+    JUL: { number: "07", days: 31 },
+    AUG: { number: "08", days: 31 },
+    SEP: { number: "09", days: 30 },
+    OCT: { number: "10", days: 31 },
+    NOV: { number: "11", days: 30 },
+    DEC: { number: "12", days: 31 },
+  };
 
   const groupBy = (data, keyFn, valueKey, nameFn = (key) => key) => {
-    const groupedData = data.reduce((acc, item) => {
+    const groupedData = data?.reduce((acc, item) => {
       const key = keyFn(item);
       if (!acc[key]) {
         acc[key] = 0;
@@ -120,7 +135,7 @@ const ExpenseOverview = ({ data }) => {
   };
   const [gData, setGData] = useState([]);
   const [cWidth, setCWidth] = useState(0);
-
+  console.log(gData);
   useEffect(() => {
     console.log("graph data", data);
     const newGData = formatData(data, view);
@@ -141,6 +156,7 @@ const ExpenseOverview = ({ data }) => {
 
     if (active && payload && payload.length) {
       const date = payload[0].payload.date;
+      const [startDate, endDate] = getDateRange(date, view);
       return (
         <div
           style={{
@@ -162,8 +178,10 @@ const ExpenseOverview = ({ data }) => {
             onClick={(e) => {
               e.preventDefault(); // Prevent the default behavior
               navigate(
-                `/community?date=${encodeURIComponent(
-                  payload[0].payload.date
+                `/community?startDate=${encodeURIComponent(
+                  startDate
+                )}&endDate=${encodeURIComponent(
+                  endDate
                 )}&type=${encodeURIComponent("income")}`
               );
             }}

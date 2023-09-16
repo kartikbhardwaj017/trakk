@@ -118,7 +118,7 @@ export default function Home() {
         style={{
           height: "100vh",
           overflowY: "scroll",
-          paddingTop: "2px",
+          paddingTop: "60px",
 
           overflowX: "hidden",
         }}
@@ -265,8 +265,7 @@ export default function Home() {
                 width: "8px",
                 height: "8px",
                 borderRadius: "50%",
-                backgroundColor:
-                  index === currentCardIndex ? "red" : "#d1d1d1",
+                backgroundColor: index === currentCardIndex ? "red" : "#d1d1d1",
                 margin: "0 3px",
               }}
             />
@@ -336,6 +335,7 @@ export default function Home() {
           <IncomeGraph transactions={cloneDeep(filteredTransactions)} />
           <ExpenseGraph transactions={cloneDeep(filteredTransactions)} />
           <TransactionsTable transactions={cloneDeep(filteredTransactions)} />
+          <div style={{ height: "150px" }}></div>
         </div>
       </div>
     </Layout>
