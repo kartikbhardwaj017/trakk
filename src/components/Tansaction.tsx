@@ -7,7 +7,11 @@ import {
   ITransactionProps,
 } from "../services/ITransactionProps";
 
-export default function TansactionView(props) {
+export default function TansactionView({
+  setCurrentTransaction,
+  setShowDrawer,
+  ...props
+}) {
   const transaction: ITransactionProps = props.transaction;
   return (
     <div
@@ -15,6 +19,10 @@ export default function TansactionView(props) {
         display: "flex",
         color: "white",
         overflowX: "auto",
+      }}
+      onClick={() => {
+        setShowDrawer(true);
+        setCurrentTransaction(transaction);
       }}
     >
       <div
@@ -39,6 +47,7 @@ export default function TansactionView(props) {
           }}
         >
           {getCategoryIcon(transaction.category)}
+
           <div
             style={{
               display: "flex",
