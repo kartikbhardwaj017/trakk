@@ -8,11 +8,11 @@ import {
 } from "../services/ITransactionProps";
 
 export default function TansactionView({
-  setCurrentTransaction,
-  setShowDrawer,
-  ...props
+  setCurrentTransaction = null,
+  setShowDrawer = null,
+  transactionProps = null,
 }) {
-  const transaction: ITransactionProps = props.transaction;
+  const transaction: ITransactionProps = transactionProps;
   return (
     <div
       style={{
@@ -60,7 +60,7 @@ export default function TansactionView({
               {transaction.remarks.length > 20
                 ? transaction.remarks.substring(0, 20) + "..."
                 : transaction.remarks}
-                {/* {transaction.remarks} */}
+              {/* {transaction.remarks} */}
             </span>
 
             <span style={{ fontSize: "14px", color: "#aaa", marginTop: "5px" }}>

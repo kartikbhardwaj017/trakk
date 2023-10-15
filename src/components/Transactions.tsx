@@ -128,7 +128,7 @@ export default function Playgoround() {
       {currentTransactions
         .sort((t1, t2) => (t1.date < t2.date ? 1 : -1))
         .map((transaction) => (
-          <TansactionView transaction={transaction} />
+          <TansactionView />
         ))}
     </Layout>
   );
