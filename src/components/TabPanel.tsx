@@ -42,7 +42,11 @@ function a11yProps(index: number) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-export default function BasicTabs({ transactions }) {
+export default function BasicTabs({
+  transactions,
+  setShowDrawer,
+  setCurrentTransaction,
+}) {
   const [value, setValue] = React.useState(0);
   // Fetch transactions from database when the component mounts
 
@@ -70,7 +74,11 @@ export default function BasicTabs({ transactions }) {
           })
           .slice(0, 5)
           .map((transaction) => (
-            <TansactionView transaction={transaction} />
+            <TansactionView
+              transaction={transaction}
+              setShowDrawer={setShowDrawer}
+              setCurrentTransaction={setCurrentTransaction}
+            />
           ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
@@ -78,7 +86,11 @@ export default function BasicTabs({ transactions }) {
           .filter((transaction) => transaction.type === ETransactionType.DEBIT)
           .slice(0, 5)
           .map((transaction) => (
-            <TansactionView transaction={transaction} />
+            <TansactionView
+              transaction={transaction}
+              setShowDrawer={setShowDrawer}
+              setCurrentTransaction={setCurrentTransaction}
+            />
           ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
@@ -86,7 +98,11 @@ export default function BasicTabs({ transactions }) {
           .filter((transaction) => transaction.type === ETransactionType.CREDIT)
           .slice(0, 5)
           .map((transaction) => (
-            <TansactionView transaction={transaction} />
+            <TansactionView
+              transaction={transaction}
+              setShowDrawer={setShowDrawer}
+              setCurrentTransaction={setCurrentTransaction}
+            />
           ))}
       </CustomTabPanel>
     </Box>

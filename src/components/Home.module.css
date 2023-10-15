@@ -1,0 +1,17 @@
+
+.textAreaStyles {
+    background-color: "white";
+    min-height: "48px";
+    height: "auto";
+    width: "90%";
+    color: "black";
+    border-radius: "12px";
+    padding-left: "8px";
+    padding-right: "8px";
+    padding-top: "4px";
+}
+
+input:focus {
+    border-width: "0px";
+    outline: none;
+}

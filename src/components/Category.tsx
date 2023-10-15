@@ -12,7 +12,7 @@ import SendIcon from "@mui/icons-material/Send";
 
 // ... add more imports as needed
 
-const categoryIcons = {
+export const categoryIcons = {
   groceries: <LocalGroceryStoreIcon />,
   travel: <FlightIcon />,
   food: <RestaurantIcon />,
