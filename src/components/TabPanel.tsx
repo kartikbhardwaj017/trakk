@@ -75,7 +75,7 @@ export default function BasicTabs({
           .slice(0, 5)
           .map((transaction) => (
             <TansactionView
-              transaction={transaction}
+              transactionProps={transaction}
               setShowDrawer={setShowDrawer}
               setCurrentTransaction={setCurrentTransaction}
             />
@@ -87,7 +87,7 @@ export default function BasicTabs({
           .slice(0, 5)
           .map((transaction) => (
             <TansactionView
-              transaction={transaction}
+              transactionProps={transaction}
               setShowDrawer={setShowDrawer}
               setCurrentTransaction={setCurrentTransaction}
             />
@@ -99,7 +99,7 @@ export default function BasicTabs({
           .slice(0, 5)
           .map((transaction) => (
             <TansactionView
-              transaction={transaction}
+              transactionProps={transaction}
               setShowDrawer={setShowDrawer}
               setCurrentTransaction={setCurrentTransaction}
             />
