@@ -9,11 +9,11 @@ import {
 import { DateTime } from "luxon";
 
 export default function TansactionView({
-  setCurrentTransaction,
-  setShowDrawer,
-  ...props
+  setCurrentTransaction = null,
+  setShowDrawer = null,
+  transactionProps = null,
 }) {
-  const transaction: ITransactionProps = props.transaction;
+  const transaction: ITransactionProps = transactionProps;
   return (
     <div
       style={{
