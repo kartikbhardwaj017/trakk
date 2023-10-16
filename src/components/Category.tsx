@@ -9,6 +9,7 @@ import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import TrainIcon from "@mui/icons-material/Train";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import SendIcon from "@mui/icons-material/Send";
+import { MonetizationOn, Savings, TrendingUp } from "@mui/icons-material";
 
 // ... add more imports as needed
 
@@ -23,6 +24,10 @@ export const categoryIcons = {
   transport: <TrainIcon />,
   send: <SendIcon />,
   other: <MoreHorizIcon />, // Added "Other" category
+  savings: <Savings />,
+  salary: <MonetizationOn />,
+  investments: <TrendingUp />,
+
   // ... add more categories as needed
 };
 
