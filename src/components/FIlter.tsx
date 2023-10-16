@@ -60,7 +60,15 @@ const Filter: React.FC<{
   };
 
   useEffect(() => {
-    const texts = [" Amazon", " UPI", "NEFT", "Zomato", " Swiggy"];
+    const texts = [
+      "Amazon",
+      "Search by Tags",
+      "UPI",
+      "NEFT",
+      "Search by Tags",
+      "Zomato",
+      "Swiggy",
+    ];
 
     let timer; // Declare a variable to hold the timer reference
 

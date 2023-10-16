@@ -25,7 +25,10 @@ import { useSwipeable } from "react-swipeable";
 import BasicTabs from "./TabPanel";
 import Layout from "./Layout";
 import TransactionRepository from "../services/Dexie/DbService";
-import { ITransactionProps } from "../services/ITransactionProps";
+import {
+  ETransactionType,
+  ITransactionProps,
+} from "../services/ITransactionProps";
 import TransactionsTable from "./Table";
 import ScrollIndicator from "./ScrollIndicator";
 import IncomeGraph from "./IncomeGraph";
@@ -45,6 +48,8 @@ export default function Home() {
     min: new Date(), // Initialize with current date; will update in useEffect
     max: new Date(),
   });
+  const [totalIncome, setTotalIncome] = useState(null);
+  const [totalExpense, setTotalExpense] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [inputName, setInputName] = useState("");
   const [filteredTransactions, setFilteredTransactions] = useState([]);
@@ -55,6 +60,22 @@ export default function Home() {
   const [accounts, setAccounts] = useState([
     { accountNumber: "Loading", name: "Loading" },
   ]);
+  const amountFormatter = (tickValue) => {
+    if (!tickValue) {
+      return "NA";
+    }
+    if (tickValue === 1) return "0";
+
+    if (tickValue >= 100000) {
+      // If tickValue is greater or equal to 100K, divide by 100000 and show in "L" format with 1 decimal place
+      return `${(tickValue / 100000).toFixed(1)}L`;
+    } else if (tickValue >= 1000) {
+      // If tickValue is greater or equal to 1000, divide by 1000 and show in "k" format with 1 decimal place
+      return `${(tickValue / 1000).toFixed(1)}k`;
+    }
+
+    return tickValue.toFixed(1); // Show 1 decimal place for other values
+  };
 
   useEffect(() => {
     transactionRepository.fetchAccounts().then((loadedAccounts) => {
@@ -84,6 +105,24 @@ export default function Home() {
           min: loadedTransactions[loadedTransactions.length - 1]?.date,
           max: loadedTransactions[0].date,
         });
+        const income = loadedTransactions.reduce((acc, transaction) => {
+          return (
+            acc +
+            (transaction.type === ETransactionType.CREDIT
+              ? transaction.amount
+              : 0)
+          );
+        }, 0);
+        const expense = loadedTransactions.reduce((acc, transaction) => {
+          return (
+            acc +
+            (transaction.type === ETransactionType.DEBIT
+              ? transaction.amount
+              : 0)
+          );
+        }, 0);
+        setTotalIncome(income);
+        setTotalExpense(expense);
       });
   }, [accounts, currentCardIndex]);
 
@@ -187,12 +226,13 @@ export default function Home() {
                 {isEditing ? (
                   <>
                     <input
+                      style={{ fontSize: "24px", height: "32px" }}
                       type="text"
                       value={inputName}
                       onChange={(e) => setInputName(e.target.value)}
                     />
                     <CheckCircle
-                      style={{ cursor: "pointer" }}
+                      style={{ cursor: "pointer", marginLeft: "10px" }}
                       onClick={async (event) => {
                         event.stopPropagation();
                         if (inputName.length > 0) {
@@ -245,7 +285,7 @@ export default function Home() {
                 >
                   <span>income</span>
                   <br />
-                  <span>{"5000 INR"}</span>
+                  <span>{amountFormatter(totalIncome)}</span>
                 </div>
                 <div
                   style={{
@@ -262,7 +302,7 @@ export default function Home() {
                 >
                   <span>expense</span>
                   <br />
-                  <span>{"600 INR"}</span>
+                  <span>{amountFormatter(totalExpense)}</span>
                 </div>
               </div>
             </div>

@@ -255,14 +255,35 @@ class TransactionRepository {
 
     // Convert to a Collection by calling toArray(), then apply custom filter
     let transactions = await query.toArray();
+    // transactions = filters.remarks
+    //   ? transactions.filter((transaction) =>
+    //       transaction.remarks
+    //         ?.toLowerCase()
+    //         .includes(filters.remarks.toLowerCase())
+    //     )
+    //   : transactions;
+
     transactions = filters.remarks
-      ? transactions.filter((transaction) =>
-          transaction.remarks
+      ? transactions.filter((transaction) => {
+          const result1 = transaction.remarks
             ?.toLowerCase()
-            .includes(filters.remarks.toLowerCase())
-        )
+            .includes(filters.remarks.toLowerCase());
+          if (result1) {
+            return true;
+          } else {
+            if (transaction.tags) {
+              return transaction.tags
+                .join(" ")
+                .toLowerCase()
+                .includes(filters.remarks.toLowerCase());
+            }
+          }
+
+          return false;
+        })
       : transactions;
 
+    console.log("***", transactions);
     transactions.sort((t1, t2) => (t1.date < t2.date ? 1 : -1));
     let query2: Dexie.Collection<any, IndexableType> = this.db
       .table("recipients")

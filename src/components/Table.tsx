@@ -14,6 +14,7 @@ import {
   ETransactionType,
   ITransactionProps,
 } from "../services/ITransactionProps";
+import { useNavigate } from "react-router-dom";
 
 interface TransactionsTableProps {
   transactions: ITransactionProps[];
@@ -61,6 +62,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
       return b[1].totalAmount - a[1].totalAmount;
     })
     .slice(0, topK);
+  const navigate = useNavigate();
 
   return (
     <div style={{ marginTop: "20px", overflowX: "auto" }}>
@@ -115,9 +117,33 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
             <TableBody>
               {sortedRecipients.map(([recipient, data]) => (
                 <TableRow key={recipient}>
-                  <TableCell>{recipient}</TableCell>
-                  <TableCell align="right">{data.frequency}</TableCell>
-                  <TableCell align="right">
+                  <TableCell
+                    onClick={(event) => {
+                      navigate(
+                        `/community?search=${encodeURIComponent(recipient)}`
+                      );
+                    }}
+                  >
+                    {recipient}
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    onClick={(event) => {
+                      navigate(
+                        `/community?search=${encodeURIComponent(recipient)}`
+                      );
+                    }}
+                  >
+                    {data.frequency}
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    onClick={(event) => {
+                      navigate(
+                        `/community?search=${encodeURIComponent(recipient)}`
+                      );
+                    }}
+                  >
                     {tickFormatter(data.totalAmount)}
                   </TableCell>
                 </TableRow>
