@@ -12,6 +12,7 @@ import {
   SwipeableDrawer,
   OutlinedInput,
   InputBase,
+  Button,
 } from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
@@ -466,17 +467,22 @@ const ExpandableSlider = ({
   );
 };
 
-const CategoryDrawer = ({ showDrawer, setShowDrawer, currentTransaction }) => {
-  const [tabList, setTabList] = useState<Array<string>>([]);
+export const CategoryDrawer = ({
+  showDrawer,
+  setShowDrawer,
+  currentTransaction,
+}) => {
+  const [tabList, setTabList] = useState<Array<string>>(
+    currentTransaction?.tags || []
+  );
   const inputRef = useRef(null);
   const categoriesList = Object.keys(categoryIcons);
-
-  const [selectedCategory, setSelectedCategory] = useState(
-    currentTransaction?.category
-  );
+  const [recipientName, setRecipientName] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState("");
   useEffect(() => {
     setSelectedCategory(currentTransaction?.category);
-  }, [currentTransaction]);
+    setTabList(currentTransaction?.tags || []);
+  }, [currentTransaction?.category, currentTransaction?.tags]);
   const handleSpacePress = (e) => {
     const inputValue = e.target.value;
     if (inputValue.includes(" ")) {
@@ -517,7 +523,19 @@ const CategoryDrawer = ({ showDrawer, setShowDrawer, currentTransaction }) => {
       }
     }
   };
-  console.log("currr", currentTransaction);
+
+  const repo = new TransactionRepository();
+  const updateTransactions = async () => {
+    await repo.addMetaDataToTransaction(
+      currentTransaction,
+      selectedCategory,
+      recipientName,
+      tabList
+    );
+    setShowDrawer(false);
+    setTabList([]);
+  };
+
   return (
     <SwipeableDrawer
       open={showDrawer}
@@ -531,208 +549,226 @@ const CategoryDrawer = ({ showDrawer, setShowDrawer, currentTransaction }) => {
       }}
       PaperProps={{
         sx: {
-          backgroundColor: "#E8BEAC",
+          backgroundColor: "#f0f0f0",
           borderTopLeftRadius: "20px",
           borderTopRightRadius: "20px",
         },
       }}
     >
-      <Box
-        display="flex"
-        flexDirection="column"
-        width="100%"
-        marginBottom="10px"
-        component="div"
-        mt="32px"
-        ml="30px"
-      >
-        <Typography mb="8px" color="black" fontSize="24px" fontWeight="black">
-          {" "}
-          Transaction - {currentTransaction?.type}
-        </Typography>
+      <Box display="flex" flexDirection="column" justifyContent={"center"}>
         <Box
           display="flex"
-          textAlign="left"
-          justifyContent="space-between"
-          width="50%"
+          flexDirection="column"
+          width="100%"
+          marginBottom="10px"
+          component="div"
+          mt="32px"
+          ml="30px"
         >
-          <Typography mb="8px" color="black" mr="24px">
-            Amount:
+          <Typography mb="8px" color="black" fontSize="24px" fontWeight="black">
+            {"Transaction details "}
           </Typography>
-          <Typography mb="8px" color="black">
-            Rs. {currentTransaction?.amount}
-          </Typography>
-        </Box>
-        <Box
-          display="flex"
-          textAlign="left"
-          justifyContent="space-between"
-          width="50%"
-        >
-          <Typography mb="8px" color="black" mr="24px">
-            Recipient:
-          </Typography>
-          <Typography mb="8px" color="black">
-            {currentTransaction?.recipient}
-          </Typography>
-        </Box>
-        <Box
-          display="flex"
-          textAlign="left"
-          justifyContent="space-between"
-          width="50%"
-        >
-          <Typography mb="8px" color="black" mr="24px">
-            Mode:
-          </Typography>
-          <Typography mb="8px" color="black">
-            {currentTransaction?.mode}
-          </Typography>
-        </Box>
-      </Box>
-      <Typography textAlign="center" mb="8px" color="black" mt="12px">
-        Enter tags:
-      </Typography>
-      <Box
-        display="flex"
-        flexDirection="row"
-        width="100%"
-        justifyContent="center"
-        marginBottom="10px"
-        component="div"
-      >
-        <div
-          style={{
-            backgroundColor: "white",
-            minHeight: "48px",
-            height: "auto",
-            width: "90%",
-            color: "black",
-            borderRadius: "12px",
-            paddingLeft: "8px",
-            paddingRight: "8px",
-            paddingTop: "4px",
-            marginBottom: "10px",
-          }}
-          onClick={() => {
-            inputRef.current.focus();
-          }}
-        >
-          <Box display="flex" overflow="scroll" flexWrap="wrap">
-            {tabList?.map((tab, idx) => {
-              return (
-                <>
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    sx={{
-                      backgroundColor: "black",
-                      color: "white",
-                      paddingX: "8px",
-                      paddingY: "6px",
-                      borderColor: "black",
-                      borderWidth: "1px",
-                      width: "fit-content",
-                      borderRadius: "8px",
-                      margin: "2px",
-                    }}
-                  >
-                    {tab}
-                    <div
-                      style={{ height: "24px" }}
-                      onClick={() => {
-                        setTabList((tabs) => {
-                          const newTabs = [...tabs];
-                          if (idx > -1) {
-                            newTabs.splice(idx, 1);
-                          }
-                          return newTabs;
-                        });
-                      }}
-                    >
-                      <CloseIcon />
-                    </div>
-                  </Box>
-                </>
-              );
-            })}
-            <div style={{ flexGrow: 1 }}>
-              <input
-                type="text"
-                ref={inputRef}
-                style={{
-                  display: "inline",
-                  borderWidth: "0px",
-                  marginTop: "8px",
-                  marginBottom: "8px",
-                  fontSize: "20px",
-                  width: "100%",
-                }}
-                onKeyDown={(e) => {
-                  handleKeyPress(e);
-                }}
-                onInput={(e) => handleSpacePress(e)}
-              />
-            </div>
+          <Box
+            display="flex"
+            textAlign="left"
+            justifyContent="space-between"
+            width={"50%"}
+          >
+            <Typography mb="8px" color="black" mr="24px">
+              Amount:
+            </Typography>
+            <Typography mb="8px" color="black">
+              Rs. {currentTransaction?.amount}
+            </Typography>
           </Box>
-        </div>
-      </Box>
-      <Box
-        style={{
-          width: "75%",
-          display: "flex",
-          flexDirection: "column",
-          marginLeft: "20px",
-          marginBottom: "100px",
-        }}
-      >
-        <label style={{ color: "black", textAlign: "left" }}>
-          Enter Display Name for transaction:
-        </label>
-        <input
-          type="text"
-          style={{
-            marginBottom: "10px",
-            borderRadius: "8px",
-            borderWidth: "0px",
-            height: "40px",
-          }}
-        />
-        <FormControl fullWidth>
-          <InputLabel id="category">Category</InputLabel>
-          <Select
-            labelId="category"
-            id="category-select"
-            value={selectedCategory}
-            label="Category"
-            sx={{ color: "black" }}
-            onChange={(e) => {
-              setSelectedCategory(e.target.value);
+          <Box
+            display="flex"
+            textAlign="left"
+            justifyContent="space-between"
+            width="50%"
+          >
+            <Typography mb="8px" color="black" mr="24px">
+              Recipient:
+            </Typography>
+            <Typography mb="8px" color="black">
+              {currentTransaction?.recipient}
+            </Typography>
+          </Box>
+          <Box
+            display="flex"
+            textAlign="left"
+            justifyContent="space-between"
+            width="50%"
+          >
+            <Typography mb="8px" color="black" mr="24px">
+              Mode:
+            </Typography>
+            <Typography mb="8px" color="black">
+              {currentTransaction?.mode}
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+          display="flex"
+          flexDirection="row"
+          width="100%"
+          justifyContent="center"
+          marginBottom="10px"
+          component="div"
+        >
+          <div
+            style={{
+              backgroundColor: "white",
+              minHeight: "48px",
+              height: "auto",
+              width: "90%",
+              color: "black",
+              borderRadius: "12px",
+              paddingLeft: "8px",
+              paddingRight: "8px",
+              paddingTop: "4px",
+              marginBottom: "10px",
             }}
-            renderValue={(selected) => {
-              return (
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  {selected}
-                  {categoryIcons[selected]}
-                </div>
-              );
+            onClick={() => {
+              inputRef.current.focus();
             }}
           >
-            {categoriesList.map((category) => {
-              return (
-                <MenuItem value={category}>
-                  <ListItemText> {category}</ListItemText>
-                  <ListItemIcon>{categoryIcons[category]}</ListItemIcon>
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
+            <Box display="flex" overflow="scroll" flexWrap="wrap">
+              {tabList?.map((tab, idx) => {
+                return (
+                  <>
+                    <Box
+                      display="flex"
+                      alignItems="center"
+                      sx={{
+                        backgroundColor: "black",
+                        color: "white",
+                        paddingX: "8px",
+                        paddingY: "6px",
+                        borderColor: "black",
+                        borderWidth: "1px",
+                        width: "fit-content",
+                        borderRadius: "8px",
+                        margin: "2px",
+                      }}
+                    >
+                      {tab}
+                      <div
+                        style={{ height: "24px" }}
+                        onClick={() => {
+                          setTabList((tabs) => {
+                            const newTabs = [...tabs];
+                            if (idx > -1) {
+                              newTabs.splice(idx, 1);
+                            }
+                            return newTabs;
+                          });
+                        }}
+                      >
+                        <CloseIcon />
+                      </div>
+                    </Box>
+                  </>
+                );
+              })}
+              <div style={{ flexGrow: 1 }}>
+                <input
+                  type="text"
+                  ref={inputRef}
+                  style={{
+                    display: "inline",
+                    borderWidth: "0px",
+                    marginTop: "8px",
+                    marginBottom: "8px",
+                    fontSize: "20px",
+                    width: "100%",
+                  }}
+                  placeholder={
+                    tabList.length === 0 ? "Tag this transaction" : "add more "
+                  }
+                  onKeyDown={(e) => {
+                    handleKeyPress(e);
+                  }}
+                  onInput={(e) => handleSpacePress(e)}
+                />
+              </div>
+            </Box>
+          </div>
+        </Box>
+        <Box
+          style={{
+            width: "75%",
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: "20px",
+            marginBottom: "100px",
+          }}
+        >
+          <input
+            type="text"
+            style={{
+              marginBottom: "10px",
+              borderRadius: "8px",
+              borderWidth: "0px",
+              height: "40px",
+              fontSize: "20px",
+            }}
+            onChange={(event) => {
+              setRecipientName(event.target.value);
+            }}
+            placeholder={currentTransaction?.recipient || ""}
+          />
+          <FormControl fullWidth>
+            <InputLabel sx={{ color: "black" }} id="category">
+              Select category
+            </InputLabel>
+            <Select
+              labelId="category"
+              id="category-select"
+              value={selectedCategory}
+              label="Category"
+              sx={{ color: "black" }}
+              onChange={(e) => {
+                setSelectedCategory(e.target.value);
+              }}
+              renderValue={(selected) => {
+                return (
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    {selected}
+                    {categoryIcons[selected]}
+                  </div>
+                );
+              }}
+            >
+              {categoriesList.map((category) => {
+                return (
+                  <MenuItem value={category}>
+                    <ListItemText> {category}</ListItemText>
+                    <ListItemIcon>{categoryIcons[category]}</ListItemIcon>
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </Box>
+        <Button
+          variant="contained"
+          style={{
+            width: "calc(100% - 40px)",
+            margin: "10px 20px",
+            color: "black",
+            backgroundColor: "white",
+          }}
+          onClick={updateTransactions}
+        >
+          Save
+        </Button>
       </Box>
     </SwipeableDrawer>
   );

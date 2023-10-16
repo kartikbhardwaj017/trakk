@@ -161,15 +161,13 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
         animationBegin={200} // Animation will begin after 200ms
         animationDuration={800} // Animation duration is set to 800ms
         label={renderLabel}
+        innerRadius={60}
       >
         {recipientsData.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
       <Tooltip trigger="click" content={CustomTooltip} />
-      <Legend
-        wrapperStyle={{ fontSize: "12px" }} // Adjust the font size as needed
-      />
     </PieChart>
   );
 };

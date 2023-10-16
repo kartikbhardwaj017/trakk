@@ -22,8 +22,21 @@ export interface ITransactionProps {
   remarks: string;
   type: ETransactionType;
   accountNumber?: string;
+  tags?: string[];
 }
 
+export interface ITransactionWithMetaDataType {
+  date: Date;
+  amount: number;
+  balance: number;
+  mode: EPaymentMode;
+  recipient: string;
+  category: string;
+  remarks: string;
+  type: ETransactionType;
+  accountNumber?: string;
+  recipientName?: string;
+}
 export interface ITransactionFilter {
   startDate?: string;
   endDate?: string;

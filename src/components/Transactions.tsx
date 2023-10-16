@@ -11,6 +11,7 @@ import {
 } from "../services/ITransactionProps";
 import TransactionRepository from "../services/Dexie/DbService";
 import TansactionView from "./Tansaction";
+import { CategoryDrawer } from "./Home";
 
 export default function Playgoround() {
   const startTransactionArray: ITransactionProps[] = [];
@@ -35,6 +36,9 @@ export default function Playgoround() {
         );
       });
   };
+
+  const [currentTransaction, setCurrentTransaction] = useState(null);
+  const [showDrawer, setShowDrawer] = useState(false);
 
   // Fetch transactions from database when the component mounts
   useEffect(() => {
@@ -129,9 +133,18 @@ export default function Playgoround() {
       {currentTransactions
         .sort((t1, t2) => (t1.date < t2.date ? 1 : -1))
         .map((transaction) => (
-          <TansactionView transactionProps={transaction} />
+          <TansactionView
+            transactionProps={transaction}
+            setCurrentTransaction={setCurrentTransaction}
+            setShowDrawer={setShowDrawer}
+          />
         ))}
       <div style={{ height: "100px" }}></div>
+      <CategoryDrawer
+        setShowDrawer={setShowDrawer}
+        showDrawer={showDrawer}
+        currentTransaction={currentTransaction}
+      />
     </Layout>
   );
 }

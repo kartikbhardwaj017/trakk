@@ -5,6 +5,7 @@ import { getCategoryIcon } from "./Category";
 import {
   ETransactionType,
   ITransactionProps,
+  ITransactionWithMetaDataType,
 } from "../services/ITransactionProps";
 import { DateTime } from "luxon";
 
@@ -13,7 +14,7 @@ export default function TansactionView({
   setShowDrawer = null,
   transactionProps = null,
 }) {
-  const transaction: ITransactionProps = transactionProps;
+  const transaction: ITransactionWithMetaDataType = transactionProps;
   return (
     <div
       style={{
@@ -58,7 +59,9 @@ export default function TansactionView({
             }}
           >
             <span style={{ fontSize: "16px", color: "#fff" }}>
-              {transaction.remarks.length > 20
+              {transaction.recipientName
+                ? transaction.recipientName
+                : transaction.remarks.length > 20
                 ? transaction.remarks.substring(0, 20) + "..."
                 : transaction.remarks}
               {/* {transaction.remarks} */}

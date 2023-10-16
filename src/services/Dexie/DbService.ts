@@ -1,5 +1,9 @@
 import Dexie, { IndexableType } from "dexie";
-import { ETransactionType, ITransactionProps } from "../ITransactionProps";
+import {
+  ETransactionType,
+  ITransactionProps,
+  ITransactionWithMetaDataType,
+} from "../ITransactionProps";
 import { DateTime } from "luxon";
 import Q from "q";
 
@@ -20,11 +24,65 @@ class TransactionRepository {
 
   constructor() {
     this.db = new Dexie("TransactionDatabase");
-    this.db.version(1).stores({
+    this.db.version(2).stores({
       transactions:
-        "++id,date,remarks,amount,balance,mode,recipient,category,type,accountNumber",
+        "++id,date,remarks,amount,balance,mode,recipient,category,type,accountNumber,tags",
       accounts: "++id,accountNumber,name",
+      recipients: "++id,recipientId,recipientName,category",
+      tags: "++id,tag",
     });
+  }
+
+  // update the current transaction with category and tags
+  // add the recipient and display name
+  // store the tags in a new collection
+
+  async addMetaDataToTransaction(
+    transaction: ITransactionProps,
+    category: string,
+    recipientName: string,
+    tags: string[]
+  ) {
+    const { remarks } = transaction;
+    const txToUpdate = await this.db
+      .table("transactions")
+      .where({ remarks })
+      .first();
+
+    if (txToUpdate) {
+      await this.db.table("transactions").update(txToUpdate.id, { tags: tags });
+    }
+
+    const existingRecipient = await this.db
+      .table("recipients")
+      .where("recipientId")
+      .equals(transaction.recipient)
+      .first();
+
+    if (existingRecipient) {
+      await this.db.table("recipients").update(existingRecipient.id, {
+        recipientName: recipientName,
+        category,
+      });
+    } else {
+      await this.db.table("recipients").add({
+        recipientId: transaction.recipient,
+        recipientName: recipientName,
+        category,
+      });
+    }
+
+    for (let tag of tags) {
+      const existingTag = await this.db
+        .table("tags")
+        .where("tag")
+        .equals(tag)
+        .first();
+
+      if (!existingTag) {
+        await this.db.table("tags").add({ tag: tag });
+      }
+    }
   }
 
   // Method to insert multiple transactions
@@ -139,7 +197,7 @@ class TransactionRepository {
 
   async readTransactions(
     filters: ITransactionFilter
-  ): Promise<ITransactionProps[]> {
+  ): Promise<ITransactionWithMetaDataType[]> {
     let query: Dexie.Collection<any, IndexableType> = this.db
       .table("transactions")
       .toCollection();
@@ -206,6 +264,26 @@ class TransactionRepository {
       : transactions;
 
     transactions.sort((t1, t2) => (t1.date < t2.date ? 1 : -1));
+    let query2: Dexie.Collection<any, IndexableType> = this.db
+      .table("recipients")
+      .toCollection();
+    let recipients = await query2.toArray();
+    transactions = transactions.map((transaction) => {
+      const recipientFilterArray = recipients.filter((recipient) => {
+        return recipient.recipientId === transaction.recipient;
+      });
+
+      if (recipientFilterArray.length === 0) {
+        return {
+          ...transaction,
+        };
+      } else
+        return {
+          ...transaction,
+          category: recipientFilterArray[0].category,
+          recipientName: recipientFilterArray[0].recipientName,
+        };
+    });
     return transactions;
   }
   async purgeDatabase(): Promise<void> {

@@ -42,17 +42,17 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
     return acc;
   }, {});
 
-   const tickFormatter = (tickValue) => {
-     if (tickValue === 1) return "0";
+  const tickFormatter = (tickValue) => {
+    if (tickValue === 1) return "0";
 
-     if (tickValue >= 100000) {
-       return `${(tickValue / 100000).toFixed(1)}L`;
-     } else if (tickValue >= 1000) {
-       return `${(tickValue / 1000).toFixed(1)}k`;
-     }
+    if (tickValue >= 100000) {
+      return `${(tickValue / 100000).toFixed(1)}L`;
+    } else if (tickValue >= 1000) {
+      return `${(tickValue / 1000).toFixed(1)}k`;
+    }
 
-     return tickValue.toFixed(1); // Show 1 decimal place for other values
-   };
+    return tickValue.toFixed(1); // Show 1 decimal place for other values
+  };
   const sortedRecipients = Object.entries(groupedByRecipient)
     .sort((a, b) => {
       if (rankBy === "frequency") {
@@ -63,19 +63,8 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
     .slice(0, topK);
 
   return (
-    <div style={{ marginTop: "20px", overflowX:'auto' }}>
+    <div style={{ marginTop: "20px", overflowX: "auto" }}>
       <Grid container spacing={2} direction="column" alignItems="center">
-        <Grid item>
-          {[3, 5, 10, 15].map((k) => (
-            <Chip
-              label={`Top ${k}`}
-              clickable
-              onClick={() => setTopK(k)}
-              color={topK === k ? "primary" : "default"}
-              style={{ marginRight: "10px" }}
-            />
-          ))}
-        </Grid>
         <Grid item>
           <Chip
             label="By Frequency"
@@ -128,7 +117,9 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                 <TableRow key={recipient}>
                   <TableCell>{recipient}</TableCell>
                   <TableCell align="right">{data.frequency}</TableCell>
-                  <TableCell align="right">{tickFormatter(data.totalAmount)}</TableCell>
+                  <TableCell align="right">
+                    {tickFormatter(data.totalAmount)}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
