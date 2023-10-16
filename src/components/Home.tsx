@@ -482,7 +482,11 @@ export const CategoryDrawer = ({
   useEffect(() => {
     setSelectedCategory(currentTransaction?.category);
     setTabList(currentTransaction?.tags || []);
-  }, [currentTransaction?.category, currentTransaction?.tags]);
+  }, [
+    currentTransaction?.category,
+    currentTransaction?.tags,
+    currentTransaction?.recipient,
+  ]);
   const handleSpacePress = (e) => {
     const inputValue = e.target.value;
     if (inputValue.includes(" ")) {
@@ -534,6 +538,7 @@ export const CategoryDrawer = ({
     );
     setShowDrawer(false);
     setTabList([]);
+    window.location.reload();
   };
 
   return (
@@ -717,7 +722,11 @@ export const CategoryDrawer = ({
             onChange={(event) => {
               setRecipientName(event.target.value);
             }}
-            placeholder={currentTransaction?.recipient || ""}
+            placeholder={
+              currentTransaction?.recipientName ||
+              currentTransaction?.recipient ||
+              ""
+            }
           />
           <FormControl fullWidth>
             <InputLabel sx={{ color: "black" }} id="category">

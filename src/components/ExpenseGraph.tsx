@@ -227,7 +227,7 @@ const ExpenseOverview = ({ data }) => {
       >
         <BarChart
           width={Math.max(cWidth, 600)}
-          height={300}
+          height={400}
           data={gData}
           margin={{
             top: 0,

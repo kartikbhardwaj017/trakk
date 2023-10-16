@@ -2,14 +2,19 @@ import { PieChart, Pie, Cell, Tooltip, Legend, Label } from "recharts";
 import {
   ETransactionType,
   ITransactionProps,
+  ITransactionWithMetaDataType,
 } from "../services/ITransactionProps";
 import { useNavigate } from "react-router-dom";
-const getTop5Recipients = (data: ITransactionProps[], topK: number) => {
+const getTop5Recipients = (
+  data: ITransactionWithMetaDataType[],
+  topK: number
+) => {
   const recipients = data.reduce((acc, transaction) => {
-    if (!acc[transaction.recipient]) {
-      acc[transaction.recipient] = 0;
+    if (!acc[transaction.recipientName || transaction.recipient]) {
+      acc[transaction.recipientName || transaction.recipient] = 0;
     }
-    acc[transaction.recipient] += transaction.amount;
+    acc[transaction.recipientName || transaction.recipient] +=
+      transaction.amount;
     return acc;
   }, {});
 
@@ -103,7 +108,7 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
     index,
     payload,
   }) => {
-    if (index >= 3) return null;
+    if (index >= 4) return null;
 
     const RADIAN = Math.PI / 180;
     const radius = innerRadius + (outerRadius - innerRadius) * 0.85; // Adjusting the line's distance from the pie
@@ -114,7 +119,7 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
     const x3 = cx > x2 ? x2 - 20 : x2 + 20; // Label's x position
     const y3 = y2; // Label's y position
 
-    if (index === 0) {
+    if (index <= 5) {
       return (
         <>
           <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="white" />
