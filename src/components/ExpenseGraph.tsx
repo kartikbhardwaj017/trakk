@@ -29,7 +29,7 @@ const ExpenseOverview = ({ data }) => {
 
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = 100; // Adjust the value as needed
+      scrollRef.current.scrollLeft = 0; // Adjust the value as needed
     }
   }, []);
 

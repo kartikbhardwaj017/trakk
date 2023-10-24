@@ -1,6 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList, LineChart, Line , Area, ComposedChart, CartesianGrid} from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  LabelList,
+  LineChart,
+  Line,
+  Area,
+  ComposedChart,
+  CartesianGrid,
+} from "recharts";
 import TransactionRepository from "../services/Dexie/DbService";
 import {
   ETransactionType,
@@ -19,7 +31,7 @@ const ExpenseOverview = ({ data }) => {
   const scrollRef = useRef(null);
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = 100;
+      scrollRef.current.scrollLeft = 20;
     }
   }, []);
 
@@ -272,10 +284,18 @@ const ExpenseOverview = ({ data }) => {
             type="monotone"
             dataKey="income"
             fill="url(#colorExpenseShadow)"
+            animationDuration={1500}
+            animationEasing="ease-out"
           />
-          <Line type="monotone" dataKey="income" stroke="green" dot={false} />
+          <Line
+            type="monotone"
+            dataKey="income"
+            stroke="green"
+            dot={false}
+            animationDuration={1500}
+            animationEasing="ease-out"
+          />
         </ComposedChart>
-        
       </div>
       <div
         style={{
