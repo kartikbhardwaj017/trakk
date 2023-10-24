@@ -74,11 +74,11 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
     <div style={{ marginTop: "20px", overflowX: "auto" }}>
       <Grid container spacing={2} direction="column" alignItems="center">
         <Grid item>
-          <h3>
+          <h4>
             {transactionType === ETransactionType.CREDIT
               ? `Top 10 Credit Payees ranked by ${rankBy}`
               : `Top 10 Debit Recipients ranked by ${rankBy}`}
-          </h3>
+          </h4>
         </Grid>
         <Grid item>
           <Chip
