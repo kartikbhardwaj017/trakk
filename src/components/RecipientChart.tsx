@@ -78,12 +78,12 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
           <span>{`Amount: ${tickFormatter(payload[0].payload.value)}`}</span>
           <br />
           <a
-            href="/community"
+            href="/search"
             style={{ pointerEvents: "auto" }}
             onClick={(e) => {
               e.preventDefault();
               navigate(
-                `/community?search=${encodeURIComponent(
+                `/search?search=${encodeURIComponent(
                   payload[0].payload.name
                 )}&type=${encodeURIComponent(type)}`
               );

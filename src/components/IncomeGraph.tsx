@@ -185,12 +185,12 @@ const ExpenseOverview = ({ data }) => {
           <span>{`Income: ${tickFormatter(payload[0].value)}`}</span>
           <br />
           <a
-            href={`/community/?date=${date}`} // Replace with your desired path
+            href={`/search/?date=${date}`} // Replace with your desired path
             style={{ pointerEvents: "auto" }}
             onClick={(e) => {
               e.preventDefault(); // Prevent the default behavior
               navigate(
-                `/community?startDate=${encodeURIComponent(
+                `/search?startDate=${encodeURIComponent(
                   startDate
                 )}&endDate=${encodeURIComponent(
                   endDate

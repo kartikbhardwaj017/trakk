@@ -3,7 +3,7 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Home as HomeIcon, UploadFile, People } from "@mui/icons-material";
+import { Home as HomeIcon, UploadFile, People, Search } from "@mui/icons-material";
 
 export default function Layout({ children, selectedIcon }) {
   const navigate = useNavigate();
@@ -63,10 +63,10 @@ export default function Layout({ children, selectedIcon }) {
           onClick={() => navigate("/upload")}
         />
         <BottomNavigationAction
-          label="Community"
-          value="Community"
-          icon={<People />}
-          onClick={() => navigate("/community")}
+          label="Search"
+          value="Search"
+          icon={<Search />}
+          onClick={() => navigate("/search")}
         />
       </BottomNavigation>
     </div>

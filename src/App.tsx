@@ -26,7 +26,7 @@ function App() {
               <Route path="/home" Component={Home} />
               <Route path="/intro" Component={LandingPage} />
               <Route path="/upload" Component={UploadFile} />
-              <Route path="/community" Component={Playgoround} />
+              <Route path="/search" Component={Playgoround} />
             </Routes>
           </Router>
         </Container>

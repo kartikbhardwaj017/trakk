@@ -133,7 +133,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                   <TableCell
                     onClick={(event) => {
                       navigate(
-                        `/community?search=${encodeURIComponent(data.recipient)}`
+                        `/search?search=${encodeURIComponent(data.recipient)}`
                       );
                     }}
                   >
@@ -143,7 +143,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                     align="right"
                     onClick={(event) => {
                       navigate(
-                        `/community?search=${encodeURIComponent(data.recipient)}`
+                        `/search?search=${encodeURIComponent(data.recipient)}`
                       );
                     }}
                   >
@@ -153,7 +153,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                     align="right"
                     onClick={(event) => {
                       navigate(
-                        `/community?search=${encodeURIComponent(data.recipient)}`
+                        `/search?search=${encodeURIComponent(data.recipient)}`
                       );
                     }}
                   >
