@@ -39,12 +39,12 @@ const getTop5Recipients = (
 
 export const RecipientsPieChart = ({ data, topK, type }) => {
   const COLORS = [
-    "#0088FE",
-    "#00C49F",
-    "#FFBB28",
-    "#FF8042",
     "#a83279",
-    "#abac2a",
+    "#00C49F",
+    "#a8a8a8",
+    "#c2c2c2",
+    "#dcdcdc",
+    "#e6e6e6",
   ]; // Customize colors
   const recipientsData = getTop5Recipients(data, topK);
   const navigate = useNavigate(); // Get the navigate function

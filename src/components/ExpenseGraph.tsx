@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  LabelList,
+  ComposedChart,
+  Area,
+  Line
+} from "recharts";
 import {
   ETransactionType,
   ITransactionProps,
@@ -225,7 +235,7 @@ const ExpenseOverview = ({ data }) => {
         }}
         ref={scrollRef}
       >
-        <BarChart
+        <ComposedChart
           width={Math.max(cWidth, 600)}
           height={400}
           data={gData}
@@ -236,6 +246,13 @@ const ExpenseOverview = ({ data }) => {
             bottom: 0,
           }}
         >
+          <defs>
+            <linearGradient id="colorExpenseShadow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#8B0000" stopOpacity={1} />
+              <stop offset="95%" stopColor="#ffcccc" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+
           <XAxis dataKey="date" stroke="white" />
           <YAxis
             scale="log"
@@ -247,11 +264,13 @@ const ExpenseOverview = ({ data }) => {
             }}
           />
           <Tooltip trigger="click" content={CustomTooltip} />
-
-          <Bar dataKey="Expenses" fill="red">
-            <LabelList dataKey="Expenses" content={renderCustomizedLabel} />
-          </Bar>
-        </BarChart>
+          <Area
+            type="monotone"
+            dataKey="Expenses"
+            fill="url(#colorExpenseShadow)"
+          />
+          <Line type="monotone" dataKey="Expenses" stroke="red" dot={false} />
+        </ComposedChart>
       </div>
       <div
         style={{

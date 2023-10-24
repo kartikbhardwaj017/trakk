@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, LabelList, LineChart, Line , Area, ComposedChart, CartesianGrid} from "recharts";
 import TransactionRepository from "../services/Dexie/DbService";
 import {
   ETransactionType,
@@ -243,7 +243,7 @@ const ExpenseOverview = ({ data }) => {
         }}
         ref={scrollRef}
       >
-        <BarChart
+        <ComposedChart
           width={Math.max(cWidth, 600)}
           height={400}
           data={gData}
@@ -254,21 +254,28 @@ const ExpenseOverview = ({ data }) => {
             bottom: 0,
           }}
         >
+          <defs>
+            <linearGradient id="colorExpenseShadow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="green" stopOpacity={1} />
+              <stop offset="95%" stopColor="#ffcccc" stopOpacity={0.1} />
+            </linearGradient>
+          </defs>
+
           <XAxis dataKey="date" stroke="white" />
           <YAxis
-            scale="log"
             domain={["auto", "auto"]}
             stroke="white"
-            tickFormatter={(tickValue) => {
-              if (tickValue === 1) return "0";
-              return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
-            }}
+            tickFormatter={tickFormatter}
           />
           <Tooltip trigger="click" content={CustomTooltip} />
-          <Bar dataKey="income" fill="green">
-            <LabelList dataKey="income" content={renderCustomizedLabel} />
-          </Bar>
-        </BarChart>
+          <Area
+            type="monotone"
+            dataKey="income"
+            fill="url(#colorExpenseShadow)"
+          />
+          <Line type="monotone" dataKey="income" stroke="green" dot={false} />
+        </ComposedChart>
+        
       </div>
       <div
         style={{
