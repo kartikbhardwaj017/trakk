@@ -25,8 +25,8 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
 }) => {
   const [topK, setTopK] = useState<number>(10);
   const [transactionType, setTransactionType] =
-    useState<ETransactionType | null>(null);
-  const [rankBy, setRankBy] = useState<"frequency" | "amount">("frequency");
+    useState<ETransactionType | null>(ETransactionType.DEBIT);
+  const [rankBy, setRankBy] = useState<"frequency" | "amount">("amount");
 
   const filteredTransactions = transactions.filter((transaction) =>
     transactionType ? transaction.type === transactionType : true
@@ -67,6 +67,13 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
   return (
     <div style={{ marginTop: "20px", overflowX: "auto" }}>
       <Grid container spacing={2} direction="column" alignItems="center">
+        <Grid item>
+          <h3>
+            {transactionType === ETransactionType.CREDIT
+              ? `Top 10 Credit Payees ranked by ${rankBy}`
+              : `Top 10 Debit Recipients ranked by ${rankBy}`}
+          </h3>
+        </Grid>
         <Grid item>
           <Chip
             label="By Frequency"

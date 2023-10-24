@@ -600,7 +600,13 @@ export const CategoryDrawer = ({
         },
       }}
     >
-      <Box display="flex" flexDirection="column" justifyContent={"center"}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent={"center"}
+        alignItems={"center"}
+        width={"90vw"}
+      >
         <Box
           display="flex"
           flexDirection="column"
@@ -617,7 +623,7 @@ export const CategoryDrawer = ({
             display="flex"
             textAlign="left"
             justifyContent="space-between"
-            width={"50%"}
+            width={"100%"}
           >
             <Typography mb="8px" color="black" mr="24px">
               Amount:
@@ -630,7 +636,7 @@ export const CategoryDrawer = ({
             display="flex"
             textAlign="left"
             justifyContent="space-between"
-            width="50%"
+            width="100%"
           >
             <Typography mb="8px" color="black" mr="24px">
               Recipient:
@@ -643,7 +649,7 @@ export const CategoryDrawer = ({
             display="flex"
             textAlign="left"
             justifyContent="space-between"
-            width="50%"
+            width="100%"
           >
             <Typography mb="8px" color="black" mr="24px">
               Mode:
@@ -661,19 +667,19 @@ export const CategoryDrawer = ({
           justifyContent="center"
           marginBottom="10px"
           component="div"
+          marginLeft={"30px"}
         >
           <div
             style={{
               backgroundColor: "white",
-              minHeight: "48px",
+              minHeight: "32px",
               height: "auto",
-              width: "90%",
+              width: "100%",
               color: "black",
               borderRadius: "12px",
               paddingLeft: "8px",
-              paddingRight: "8px",
               paddingTop: "4px",
-              marginBottom: "10px",
+              marginBottom: "5px",
             }}
             onClick={() => {
               inputRef.current.focus();
@@ -743,10 +749,10 @@ export const CategoryDrawer = ({
         </Box>
         <Box
           style={{
-            width: "75%",
+            width: "100%",
             display: "flex",
             flexDirection: "column",
-            marginLeft: "20px",
+            marginLeft: "30px",
             marginBottom: "100px",
           }}
         >
