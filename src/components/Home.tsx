@@ -606,6 +606,7 @@ export const CategoryDrawer = ({
         justifyContent={"center"}
         alignItems={"center"}
         width={"90vw"}
+        alignContent="center"
       >
         <Box
           display="flex"
@@ -759,7 +760,7 @@ export const CategoryDrawer = ({
           <input
             type="text"
             style={{
-              marginBottom: "10px",
+              marginBottom: "15px",
               borderRadius: "8px",
               borderWidth: "0px",
               height: "40px",
@@ -815,10 +816,11 @@ export const CategoryDrawer = ({
         <Button
           variant="contained"
           style={{
-            width: "calc(100% - 40px)",
-            margin: "10px 20px",
+            width: "100%",
             color: "black",
             backgroundColor: "white",
+            marginLeft: "30px",
+            marginBottom: "20px",
           }}
           onClick={updateTransactions}
         >

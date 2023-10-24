@@ -13,11 +13,12 @@ import {
 import {
   ETransactionType,
   ITransactionProps,
+  ITransactionWithMetaDataType,
 } from "../services/ITransactionProps";
 import { useNavigate } from "react-router-dom";
 
 interface TransactionsTableProps {
-  transactions: ITransactionProps[];
+  transactions: ITransactionWithMetaDataType[];
 }
 
 const TransactionsTable: React.FC<TransactionsTableProps> = ({
@@ -33,13 +34,18 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
   );
 
   const groupedByRecipient = filteredTransactions.reduce<{
-    [key: string]: { frequency: number; totalAmount: number };
+    [key: string]: {
+      frequency: number;
+      totalAmount: number;
+      recipient: string;
+    };
   }>((acc, trans) => {
-    if (!acc[trans.recipient]) {
-      acc[trans.recipient] = { frequency: 0, totalAmount: 0 };
+    const name = trans.recipientName || trans.recipient;
+    if (!acc[name]) {
+      acc[name] = { frequency: 0, totalAmount: 0, recipient: trans.recipient };
     }
-    acc[trans.recipient].frequency++;
-    acc[trans.recipient].totalAmount += trans.amount;
+    acc[name].frequency++;
+    acc[name].totalAmount += trans.amount;
     return acc;
   }, {});
 
@@ -127,7 +133,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                   <TableCell
                     onClick={(event) => {
                       navigate(
-                        `/community?search=${encodeURIComponent(recipient)}`
+                        `/community?search=${encodeURIComponent(data.recipient)}`
                       );
                     }}
                   >
@@ -137,7 +143,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                     align="right"
                     onClick={(event) => {
                       navigate(
-                        `/community?search=${encodeURIComponent(recipient)}`
+                        `/community?search=${encodeURIComponent(data.recipient)}`
                       );
                     }}
                   >
@@ -147,7 +153,7 @@ const TransactionsTable: React.FC<TransactionsTableProps> = ({
                     align="right"
                     onClick={(event) => {
                       navigate(
-                        `/community?search=${encodeURIComponent(recipient)}`
+                        `/community?search=${encodeURIComponent(data.recipient)}`
                       );
                     }}
                   >
