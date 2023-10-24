@@ -9,7 +9,7 @@ import {
   LabelList,
   ComposedChart,
   Area,
-  Line
+  Line,
 } from "recharts";
 import {
   ETransactionType,
@@ -238,7 +238,7 @@ const ExpenseOverview = ({ data }) => {
         <ComposedChart
           width={Math.max(cWidth, 600)}
           height={400}
-          data={gData}
+          data={[...gData]}
           margin={{
             top: 0,
             right: 0,
@@ -268,8 +268,17 @@ const ExpenseOverview = ({ data }) => {
             type="monotone"
             dataKey="Expenses"
             fill="url(#colorExpenseShadow)"
+            animationDuration={1500}
+            animationEasing="ease-out"
           />
-          <Line type="monotone" dataKey="Expenses" stroke="red" dot={false} />
+          <Line
+            type="monotone"
+            dataKey="Expenses"
+            stroke="red"
+            dot={false}
+            animationDuration={1500}
+            animationEasing="ease-out"
+          />
         </ComposedChart>
       </div>
       <div

@@ -258,7 +258,7 @@ const ExpenseOverview = ({ data }) => {
         <ComposedChart
           width={Math.max(cWidth, 600)}
           height={400}
-          data={gData}
+          data={[...gData]}
           margin={{
             top: 0,
             right: 0,
