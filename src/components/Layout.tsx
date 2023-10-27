@@ -3,7 +3,13 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Home as HomeIcon, UploadFile, People, Search } from "@mui/icons-material";
+import {
+  Home as HomeIcon,
+  UploadFile,
+  People,
+  Search,
+} from "@mui/icons-material";
+import { TrakkLogo } from "../assets/TrakkLogo";
 
 export default function Layout({ children, selectedIcon }) {
   const navigate = useNavigate();
@@ -26,11 +32,23 @@ export default function Layout({ children, selectedIcon }) {
       </style>
       <AppBar
         position="fixed"
-        style={{ width: "100%", margin: "auto", zIndex: "100" }}
+        style={{
+          width: "100%",
+          margin: "auto",
+          zIndex: "100",
+          fontFamily: "inter",
+        }}
       >
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            TRAKK
+          <div style={{ marginRight: "5px" }}>
+            <TrakkLogo />
+          </div>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, fontWeight: 700 }}
+          >
+            Trakk
           </Typography>
         </Toolbar>
       </AppBar>

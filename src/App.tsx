@@ -11,6 +11,10 @@ import Playgoround from "./components/Transactions";
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
+    primary: { main: "rgb(161, 163, 247)" },
+  },
+  typography: {
+    fontFamily: "Inter, sans-serif", // Specify the "Inter" font here
   },
 });
 
