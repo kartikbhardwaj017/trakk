@@ -39,7 +39,7 @@ export default function Layout({ children, selectedIcon }) {
           fontFamily: "inter",
         }}
       >
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: "#121212" }}>
           <div style={{ marginRight: "5px" }}>
             <TrakkLogo />
           </div>
