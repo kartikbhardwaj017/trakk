@@ -1,22 +1,24 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button, Typography, Box, Input } from "@mui/material";
-import image from "./uploadFile.png";
+import image from "./EmptyTransaction2.svg";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Layout from "./Layout";
+import Joyride, { CallBackProps, STATUS, Step } from "react-joyride";
 
 import { TransactionExtractionFactory } from "../services/TransactionExtractionFactory";
 import TransactionRepository from "../services/Dexie/DbService";
 
 export default function LandingPage() {
   const [selectedBank, setSelectedBank] = useState("");
+  const [runTour, setRunTour] = useState(true);
 
   const handleBankChange = (event: SelectChangeEvent) => {
     setSelectedBank(event.target.value as string);
   };
+
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -24,6 +26,7 @@ export default function LandingPage() {
     const file = event.target.files ? event.target.files[0] : null;
     setSelectedFile(file);
   };
+
   const handleFileButtonClick = () => {
     fileInputRef.current?.click();
   };
@@ -43,11 +46,52 @@ export default function LandingPage() {
       alert("No file selected or bank not specified");
     }
   };
+
   const onPurge = async () => {
     const repository = new TransactionRepository();
     await repository.purgeDatabase();
   };
 
+  const steps: Step[] = [
+    {
+      target: ".bank-select",
+      content: "First, select your bank from this dropdown.",
+      placement: "bottom",
+    },
+    {
+      target: ".file-choose-button",
+      content: "Click here to choose the file from your system.",
+      placement: "bottom",
+    },
+    {
+      target: ".upload-button",
+      content: "After selecting the file, click here to upload it.",
+      placement: "bottom",
+    },
+    {
+      target: ".purge-button",
+      content: "Use this button to clear all data from the database.",
+      placement: "bottom",
+    },
+  ];
+
+  const handleJoyrideCallback = (data: CallBackProps) => {
+    const { status } = data;
+    //@ts-ignore
+    if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+      setRunTour(false);
+      localStorage.setItem("tourCompleted", "true");
+    }
+  };
+
+  useEffect(() => {
+    // Check if the tour has already been completed
+    const tourCompleted = localStorage.getItem("tourCompleted") === "true";
+    if (!tourCompleted) {
+      // If not, start the tour
+      setRunTour(true);
+    }
+  }, []);
   return (
     <Layout selectedIcon={"add"}>
       <div
@@ -74,7 +118,7 @@ export default function LandingPage() {
           style={{ marginBottom: "5px", height: "300px", width: "300px" }}
         />
 
-        <FormControl sx={{ m: 1, minWidth: 240 }}>
+        <FormControl sx={{ m: 1, minWidth: 240 }} className="bank-select">
           <InputLabel
             id="demo-simple-select-helper-label"
             style={{ color: "white" }}
@@ -112,8 +156,9 @@ export default function LandingPage() {
           />
           <Button
             variant="contained"
-            color="primary"
+            style={{ backgroundColor: "white" }}
             onClick={handleFileButtonClick}
+            className="file-choose-button"
           >
             Choose File
           </Button>
@@ -128,12 +173,13 @@ export default function LandingPage() {
         </Box>
         <Button
           variant="contained"
-          color="primary"
           style={{
             width: "calc(100% - 40px)",
             margin: "10px 20px",
+            backgroundColor: "white",
           }}
           onClick={onUpload}
+          className="upload-button"
         >
           Upload
         </Button>
@@ -146,10 +192,27 @@ export default function LandingPage() {
             backgroundColor: "red",
           }}
           onClick={onPurge}
+          className="purge-button"
         >
           Purge Data
         </Button>
       </div>
+      <div style={{ height: "60px" }}></div>
+      <Joyride
+        continuous
+        run={runTour}
+        steps={steps}
+        callback={handleJoyrideCallback}
+        showSkipButton
+        styles={{
+          options: {
+            arrowColor: "rgb(99, 102, 241)",
+            primaryColor: "rgb(99, 102, 241)",
+            spotlightShadow: "0 0 15px rgba(125, 233, 155, 1)", // Example: blue shadow with some blur
+            zIndex: 10000,
+          },
+        }}
+      />
     </Layout>
   );
 }

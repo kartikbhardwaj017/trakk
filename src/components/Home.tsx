@@ -36,6 +36,10 @@ import ExpenseGraph from "./ExpenseGraph";
 import { CheckCircle, Widgets } from "@mui/icons-material";
 import "./Home.module.css";
 import { categoryIcons } from "./Category";
+import { TrakkLogo } from "../assets/TrakkLogo";
+import noTransactions from "./EmptyTransaction2.svg";
+import NoTransactions from "./NoTransactions";
+
 export default function Home() {
   // State & Refs
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -170,235 +174,244 @@ export default function Home() {
   return (
     <Layout selectedIcon={"Home"}>
       <ScrollIndicator parentId="scrollingConatiner" />
-      <div
-        style={{
-          height: "100vh",
-          overflowY: "scroll",
-          paddingTop: "60px",
-
-          overflowX: "hidden",
-        }}
-        id="scrollingConatiner"
-      >
+      {transactions.length === 0 ? (
+        <NoTransactions />
+      ) : (
         <div
-          className="swipeable-card"
           style={{
-            flexGrow: 1,
-            display: "flex",
-            width: "100%",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: "auto",
-            marginTop: "10px",
-          }}
-          {...handlers}
-        >
-          <Card variant="outlined">
-            <div
-              style={{
-                width: "380px",
-                backgroundColor: "#f0f0f0",
-                color: "black",
-                display: "flex",
-                flexDirection: "column" as "column",
-                padding: "5px",
-                transition: "all 0.5s ease",
-                opacity: swipeDirection ? 0 : 1, // Animate opacity based on swipe direction
-                transform:
-                  swipeDirection === "up"
-                    ? "translateY(-20px)"
-                    : swipeDirection === "down"
-                    ? "translateY(20px)"
-                    : "translateY(0)", // Translate card based on swipe direction
-              }}
-            >
-              <span>Welcome,</span>
-              <span
-                style={{
-                  fontWeight: 700,
-                  fontSize: "32px",
-                  marginLeft: "10px",
-                }}
-                onClick={() => {
-                  setIsEditing(true);
-                }}
-              >
-                {isEditing ? (
-                  <>
-                    <input
-                      style={{ fontSize: "24px", height: "32px" }}
-                      type="text"
-                      value={inputName}
-                      onChange={(e) => setInputName(e.target.value)}
-                    />
-                    <CheckCircle
-                      style={{ cursor: "pointer", marginLeft: "10px" }}
-                      onClick={async (event) => {
-                        event.stopPropagation();
-                        if (inputName.length > 0) {
-                          // Update the name in accounts at the current index
-                          let updatedAccounts = [...accounts];
-                          updatedAccounts[currentCardIndex].name = inputName;
-                          setAccounts(updatedAccounts);
-                          await transactionRepository.updateAccountHolderName(
-                            inputName,
-                            updatedAccounts[currentCardIndex].accountNumber
-                          );
-                          setIsEditing(false);
-                        }
-                      }}
-                    />
-                  </>
-                ) : accounts[currentCardIndex].name.length > 0 ? (
-                  accounts[currentCardIndex].name
-                ) : (
-                  "Enter your name"
-                )}
-              </span>
-              <span>Account Number</span>
-              <span style={{ fontWeight: 700, fontSize: "32px" }}>
-                {`XXXXXX${accounts[currentCardIndex].accountNumber.slice(-4)}`}
-              </span>
-              <div
-                style={{
-                  width: "100%",
-                  backgroundColor: "#d1d1d1",
-                  height: "3px",
-                  margin: "2px",
-                }}
-              ></div>
+            height: "100vh",
+            overflowY: "scroll",
+            paddingTop: "60px",
 
+            overflowX: "hidden",
+          }}
+          id="scrollingConatiner"
+        >
+          <div
+            className="swipeable-card"
+            style={{
+              flexGrow: 1,
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "auto",
+              marginTop: "10px",
+            }}
+            {...handlers}
+          >
+            <Card variant="outlined">
               <div
                 style={{
+                  width: "380px",
+                  backgroundColor: "#f0f0f0",
+                  color: "black",
                   display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  padding: "10px",
+                  flexDirection: "column" as "column",
+                  padding: "5px",
+                  transition: "all 0.5s ease",
+                  opacity: swipeDirection ? 0 : 1, // Animate opacity based on swipe direction
+                  transform:
+                    swipeDirection === "up"
+                      ? "translateY(-20px)"
+                      : swipeDirection === "down"
+                      ? "translateY(20px)"
+                      : "translateY(0)", // Translate card based on swipe direction
                 }}
               >
-                <div
+                <span>Welcome,</span>
+                <span
                   style={{
-                    flex: 1,
-                    textAlign: "right",
-                    paddingRight: "15px",
+                    fontWeight: 700,
+                    fontSize: "32px",
+                    marginLeft: "10px",
+                  }}
+                  onClick={() => {
+                    setIsEditing(true);
                   }}
                 >
-                  <span>income</span>
-                  <br />
-                  <span>{amountFormatter(totalIncome)}</span>
-                </div>
+                  {isEditing ? (
+                    <>
+                      <input
+                        style={{ fontSize: "24px", height: "32px" }}
+                        type="text"
+                        value={inputName}
+                        onChange={(e) => setInputName(e.target.value)}
+                      />
+                      <CheckCircle
+                        style={{ cursor: "pointer", marginLeft: "10px" }}
+                        onClick={async (event) => {
+                          event.stopPropagation();
+                          if (inputName.length > 0) {
+                            // Update the name in accounts at the current index
+                            let updatedAccounts = [...accounts];
+                            updatedAccounts[currentCardIndex].name = inputName;
+                            setAccounts(updatedAccounts);
+                            await transactionRepository.updateAccountHolderName(
+                              inputName,
+                              updatedAccounts[currentCardIndex].accountNumber
+                            );
+                            setIsEditing(false);
+                          }
+                        }}
+                      />
+                    </>
+                  ) : accounts[currentCardIndex].name.length > 0 ? (
+                    accounts[currentCardIndex].name
+                  ) : (
+                    "Enter your name"
+                  )}
+                </span>
+                <span>Account Number</span>
+                <span style={{ fontWeight: 700, fontSize: "32px" }}>
+                  {`XXXXXX${accounts[currentCardIndex].accountNumber.slice(
+                    -4
+                  )}`}
+                </span>
                 <div
                   style={{
-                    width: "1px",
-                    height: "40px",
+                    width: "100%",
                     backgroundColor: "#d1d1d1",
+                    height: "3px",
+                    margin: "2px",
                   }}
                 ></div>
+
                 <div
                   style={{
-                    flex: 1,
-                    paddingLeft: "15px",
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    padding: "10px",
                   }}
                 >
-                  <span>expense</span>
-                  <br />
-                  <span>{amountFormatter(totalExpense)}</span>
+                  <div
+                    style={{
+                      flex: 1,
+                      textAlign: "right",
+                      paddingRight: "15px",
+                    }}
+                  >
+                    <span>income</span>
+                    <br />
+                    <span>{amountFormatter(totalIncome)}</span>
+                  </div>
+                  <div
+                    style={{
+                      width: "1px",
+                      height: "40px",
+                      backgroundColor: "#d1d1d1",
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      flex: 1,
+                      paddingLeft: "15px",
+                    }}
+                  >
+                    <span>expense</span>
+                    <br />
+                    <span>{amountFormatter(totalExpense)}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            marginTop: "5px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {accounts.map((_, index) => (
-            <div
-              style={{
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                backgroundColor: index === currentCardIndex ? "red" : "#d1d1d1",
-                margin: "0 3px",
-              }}
-            />
-          ))}
-        </div>
-        <div style={{ padding: "10px" }}>
-          <BasicTabs
-            transactions={cloneDeep(filteredTransactions)}
-            setShowDrawer={setShowDrawer}
-            setCurrentTransaction={setCurrentTransaction}
-          />
-
-          <Box
-            sx={{
-              width: 300,
+            </Card>
+          </div>
+          <div
+            style={{
               display: "flex",
-              flexDirection: "column",
+              marginTop: "5px",
+              justifyContent: "center",
               alignItems: "center",
-              margin: "0 auto",
             }}
           >
-            <Typography id="range-slider" gutterBottom>
-              Date Range
-            </Typography>
-
-            <Slider
-              value={[
-                selectedDateRange.min.getTime(),
-                selectedDateRange.max.getTime(),
-              ]}
-              onChange={(event, newValue: number[]) => {
-                setSelectedDateRange({
-                  min: new Date(newValue[0]),
-                  max: new Date(newValue[1]),
-                });
-                handleDateRangeChange(
-                  new Date(newValue[0]),
-                  new Date(newValue[1])
-                );
-              }}
-              valueLabelDisplay="on"
-              valueLabelFormat={(value) => new Date(value).toLocaleDateString()}
-              min={new Date(dateRange.min).getTime()}
-              max={new Date(dateRange.max).getTime()}
-              sx={{ width: "100%" }}
+            {accounts.map((_, index) => (
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  backgroundColor:
+                    index === currentCardIndex ? "red" : "#d1d1d1",
+                  margin: "0 3px",
+                }}
+              />
+            ))}
+          </div>
+          <div style={{ padding: "10px" }}>
+            <BasicTabs
+              transactions={cloneDeep(filteredTransactions)}
+              setShowDrawer={setShowDrawer}
+              setCurrentTransaction={setCurrentTransaction}
             />
+
             <Box
               sx={{
-                width: "100%",
+                width: 300,
                 display: "flex",
-                justifyContent: "space-between",
+                flexDirection: "column",
+                alignItems: "center",
+                margin: "0 auto",
               }}
             >
-              <Typography>
-                {new Date(dateRange.min).toLocaleDateString()}
+              <Typography id="range-slider" gutterBottom>
+                Date Range
               </Typography>
-              <Typography>
-                {new Date(dateRange.max).toLocaleDateString()}
-              </Typography>
+
+              <Slider
+                value={[
+                  selectedDateRange.min.getTime(),
+                  selectedDateRange.max.getTime(),
+                ]}
+                onChange={(event, newValue: number[]) => {
+                  setSelectedDateRange({
+                    min: new Date(newValue[0]),
+                    max: new Date(newValue[1]),
+                  });
+                  handleDateRangeChange(
+                    new Date(newValue[0]),
+                    new Date(newValue[1])
+                  );
+                }}
+                valueLabelDisplay="on"
+                valueLabelFormat={(value) =>
+                  new Date(value).toLocaleDateString()
+                }
+                min={new Date(dateRange.min).getTime()}
+                max={new Date(dateRange.max).getTime()}
+                sx={{ width: "100%" }}
+              />
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography>
+                  {new Date(dateRange.min).toLocaleDateString()}
+                </Typography>
+                <Typography>
+                  {new Date(dateRange.max).toLocaleDateString()}
+                </Typography>
+              </Box>
             </Box>
-          </Box>
 
-          <ExpandableSlider
-            selectedDateRange={selectedDateRange}
-            setSelectedDateRange={setSelectedDateRange}
-            handleDateRangeChange={handleDateRangeChange}
-            dateRange={dateRange}
-          />
+            <ExpandableSlider
+              selectedDateRange={selectedDateRange}
+              setSelectedDateRange={setSelectedDateRange}
+              handleDateRangeChange={handleDateRangeChange}
+              dateRange={dateRange}
+            />
 
-          <h2>Expense Overview</h2>
-          <IncomeGraph transactions={cloneDeep(filteredTransactions)} />
-          <ExpenseGraph transactions={cloneDeep(filteredTransactions)} />
-          <TransactionsTable transactions={cloneDeep(filteredTransactions)} />
-          <div style={{ height: "150px" }}></div>
+            <h2>Expense Overview</h2>
+            <IncomeGraph transactions={cloneDeep(filteredTransactions)} />
+            <ExpenseGraph transactions={cloneDeep(filteredTransactions)} />
+            <TransactionsTable transactions={cloneDeep(filteredTransactions)} />
+            <div style={{ height: "150px" }}></div>
+          </div>
         </div>
-      </div>
+      )}
       <CategoryDrawer
         setShowDrawer={setShowDrawer}
         showDrawer={showDrawer}
