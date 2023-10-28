@@ -174,7 +174,7 @@ export default function Home() {
   return (
     <Layout selectedIcon={"Home"}>
       <ScrollIndicator parentId="scrollingConatiner" />
-      {transactions.length === 0 ? (
+      {accounts[0].name === "Loading" ? (
         <NoTransactions />
       ) : (
         <div
