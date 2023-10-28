@@ -5,6 +5,7 @@ export enum EPaymentMode {
   INTEREST_PAYMENT = "INTEREST_PAYMENT",
   RTGS = "RTGS",
   OTHER = "OTHER",
+  SWIPE = "SWIPE",
 }
 
 export enum ETransactionType {
