@@ -61,13 +61,11 @@ const Filter: React.FC<{
 
   useEffect(() => {
     const texts = [
-      "Amazon",
+      "This is your search bar",
+      "Search your swiggy, amazon transactions",
+      "Search by payment mode ie UPI, NEFT",
       "Search by Tags",
-      "UPI",
-      "NEFT",
-      "Search by Tags",
-      "Zomato",
-      "Swiggy",
+      "Search by Merchants",
     ];
 
     let timer; // Declare a variable to hold the timer reference
@@ -79,7 +77,7 @@ const Filter: React.FC<{
         timer = setTimeout(() => {
           setAnimationText((prev) => prev + texts[textIndex][currentIndex]);
           setCurrentIndex((prev) => prev + 1);
-        }, 100);
+        }, 75);
       } else {
         // When text is fully "typed", wait for a bit, then move to the next text or restart
         timer = setTimeout(() => {
@@ -137,30 +135,6 @@ const Filter: React.FC<{
       marginTop={2}
     >
       {/* Search Bar and Filter Icon */}
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        width="100%"
-        marginBottom={2}
-      >
-        <TextField
-          placeholder={animationText}
-          onChange={(e) => handleFilterChange("remarks", e.target.value)}
-          style={{ flex: 1, minWidth: "100px" }}
-          onFocus={() => {
-            setAnimationText("");
-            setIsFocused(true);
-          }} // Set focused state to true on focus
-          onBlur={() => {
-            // Reset to the first animation text and state on blur
-            setIsFocused(false);
-            setAnimationText("");
-            setCurrentIndex(0);
-            setTextIndex(0);
-          }}
-        />
-      </Box>
 
       {/* Filter Options (Collapsed) */}
 
@@ -248,6 +222,30 @@ const Filter: React.FC<{
             onClick={() => handleChipClick("expense")}
           />
         </Box>
+      </Box>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        marginBottom={2}
+      >
+        <TextField
+          placeholder={animationText}
+          onChange={(e) => handleFilterChange("remarks", e.target.value)}
+          style={{ flex: 1, minWidth: "100px" }}
+          onFocus={() => {
+            setAnimationText("");
+            setIsFocused(true);
+          }} // Set focused state to true on focus
+          onBlur={() => {
+            // Reset to the first animation text and state on blur
+            setIsFocused(false);
+            setAnimationText("");
+            setCurrentIndex(0);
+            setTextIndex(0);
+          }}
+        />
       </Box>
     </Box>
   );

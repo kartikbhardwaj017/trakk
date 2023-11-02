@@ -31,10 +31,18 @@ const getTop5Recipients = (
     sortedRecipients.push(["Others", others]);
   }
 
-  return sortedRecipients.map(([name, value]) => ({
-    name,
-    value,
-  }));
+  return [
+    { name: "Salary", value: 500 },
+    { name: "Dividends", value: 150 },
+    { name: "Famliy", value: 100 },
+    { name: "Investments", value: 100 },
+    { name: "others", value: 10 },
+  ];
+
+  // return sortedRecipients.map(([name, value]) => ({
+  //   name,
+  //   value,
+  // }));
 };
 
 export const RecipientsPieChart = ({ data, topK, type }) => {
@@ -47,6 +55,7 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
     "#e6e6e6",
   ]; // Customize colors
   const recipientsData = getTop5Recipients(data, topK);
+  console.log("pieChart", recipientsData);
   const navigate = useNavigate(); // Get the navigate function
   const tickFormatter = (tickValue) => {
     if (tickValue === 1) return "0";
@@ -131,7 +140,7 @@ export const RecipientsPieChart = ({ data, topK, type }) => {
             textAnchor={cx > x2 ? "end" : "start"}
             dominantBaseline="central"
           >
-            {`${payload.name.substring(0, 5)}${(percent * 100).toFixed(0)}%`}
+            {`${payload.name.substring(0, 10)}${(percent * 100).toFixed(0)}%`}
           </text>
         </>
       );

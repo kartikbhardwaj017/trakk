@@ -102,10 +102,8 @@ const ExpenseOverview = ({ data }) => {
     if (tickValue === 1) return "0";
 
     if (tickValue >= 100000) {
-      // If tickValue is greater or equal to 100K, divide by 100000 and show in "L" format with 1 decimal place
       return `${(tickValue / 100000).toFixed(1)}L`;
     } else if (tickValue >= 1000) {
-      // If tickValue is greater or equal to 1000, divide by 1000 and show in "k" format with 1 decimal place
       return `${(tickValue / 1000).toFixed(1)}k`;
     }
 
@@ -258,10 +256,7 @@ const ExpenseOverview = ({ data }) => {
             scale="log"
             domain={["auto", "auto"]}
             stroke="white"
-            tickFormatter={(tickValue) => {
-              if (tickValue === 1) return "0";
-              return tickValue >= 1000 ? `${tickValue / 1000}k` : tickValue;
-            }}
+            tickFormatter={tickFormatter}
           />
           <Tooltip trigger="click" content={CustomTooltip} />
           <Area
