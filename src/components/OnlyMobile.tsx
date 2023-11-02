@@ -3,12 +3,13 @@ import { Button } from "@mui/material"; // Import the Button component if you're
 import noTransactions from "./EmptyTransaction2.svg";
 import { useNavigate } from "react-router-dom";
 
-const NoTransactions = () => {
+const OnlyMobile = () => {
   const navigate = useNavigate();
 
   return (
     <div
       style={{
+        marginTop: "-40px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -17,13 +18,12 @@ const NoTransactions = () => {
         textAlign: "center", // Center align text for all children
       }}
     >
-      <h2>No Transaction Data !</h2>
-
       <img
         style={{ height: "400px", width: "300px" }}
         src={noTransactions}
         alt="No transactions page"
       />
+      <h2>No Transaction Data !</h2>
       <p style={{ margin: 0 }}>
         {" "}
         {/* Remove default paragraph margins */}
@@ -48,4 +48,4 @@ const NoTransactions = () => {
   );
 };
 
-export default NoTransactions;
+export default OnlyMobile;
