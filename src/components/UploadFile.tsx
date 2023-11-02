@@ -101,22 +101,26 @@ export default function LandingPage() {
           flexDirection: "column",
           alignItems: "center",
           padding: "20px",
+          justifyContent: "center",
+          justifyItems: "center",
         }}
       >
         <Typography
           variant="h4"
           style={{ color: "white", marginBottom: "5px", paddingTop: "60px" }}
+          fontWeight="700"
         >
           Upload Transactions
         </Typography>
-        <Typography style={{ color: "#B0B0B0", marginBottom: "20px" }}>
-          Select your bank and upload the file to process transaction data.
-        </Typography>
+
         <img
           src={image}
           alt="Upload graphic"
           style={{ marginBottom: "5px", height: "300px", width: "300px" }}
         />
+        <Typography style={{ color: "#B0B0B0", marginBottom: "20px" }}>
+          Select your bank and upload the file to process transaction data.
+        </Typography>
 
         <FormControl sx={{ m: 1, minWidth: 240 }} className="bank-select">
           <InputLabel
