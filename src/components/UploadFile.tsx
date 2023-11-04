@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Button, Typography, Box, Input } from "@mui/material";
+import { Button, Typography, Box, Input, Alert, Link } from "@mui/material";
 import image from "./EmptyTransaction2.svg";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,7 +13,7 @@ import TransactionRepository from "../services/Dexie/DbService";
 
 export default function LandingPage() {
   const [selectedBank, setSelectedBank] = useState("");
-  const [runTour, setRunTour] = useState(true);
+  const [runTour, setRunTour] = useState(false);
 
   const handleBankChange = (event: SelectChangeEvent) => {
     setSelectedBank(event.target.value as string);
@@ -144,7 +144,13 @@ export default function LandingPage() {
             <MenuItem value={"HDFC"}>HDFC</MenuItem>
             <MenuItem value={"AXIS"}>AXIS</MenuItem>
           </Select>
+          <Alert style={{ color: "white" }} severity="info">
+            <Link style={{ color: "white" }} href="">
+              Which file to upload?
+            </Link>
+          </Alert>
         </FormControl>
+
         <Box
           flexDirection="column"
           display="flex"
