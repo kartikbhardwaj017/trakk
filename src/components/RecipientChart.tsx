@@ -31,18 +31,11 @@ const getTop5Recipients = (
     sortedRecipients.push(["Others", others]);
   }
 
-  return [
-    { name: "Salary", value: 500 },
-    { name: "Dividends", value: 150 },
-    { name: "Famliy", value: 100 },
-    { name: "Investments", value: 100 },
-    { name: "others", value: 10 },
-  ];
 
-  // return sortedRecipients.map(([name, value]) => ({
-  //   name,
-  //   value,
-  // }));
+  return sortedRecipients.map(([name, value]) => ({
+    name,
+    value,
+  }));
 };
 
 export const RecipientsPieChart = ({ data, topK, type }) => {

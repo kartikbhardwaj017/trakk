@@ -171,10 +171,10 @@ const ExpenseOverview = ({ data }) => {
           <span>{`Expenses: ${tickFormatter(payload[0].value)}`}</span>
           <br />
           <a
-            href={`/search/?date=${date}`} // Replace with your desired path
+            href={`/search/?date=${date}`}
             style={{ pointerEvents: "auto" }}
             onClick={(e) => {
-              e.preventDefault(); // Prevent the default behavior
+              e.preventDefault();
               navigate(
                 `/search?startDate=${encodeURIComponent(
                   startDate
