@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material"; // Import the Button component if you're using Material-UI
-import noTransactions from "./EmptyTransaction2.svg";
+import noTransactions from "../assets/EmptyTransaction2.svg";
 import { useNavigate } from "react-router-dom";
 
 const NoTransactions = () => {

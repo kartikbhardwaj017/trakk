@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Typography, Box, Input, Alert, Link } from "@mui/material";
-import image from "./EmptyTransaction2.svg";
+import image from "../assets/EmptyTransaction2.svg";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";

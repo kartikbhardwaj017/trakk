@@ -13,7 +13,7 @@ import TransactionRepository from "../services/Dexie/DbService";
 import TansactionView from "./Tansaction";
 import { CategoryDrawer } from "./Home";
 
-export default function Playgoround() {
+export default function Search() {
   const startTransactionArray: ITransactionProps[] = [];
   const [currentTransactions, setCurrentTransactions] = useState(
     startTransactionArray

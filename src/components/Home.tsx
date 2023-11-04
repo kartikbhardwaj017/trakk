@@ -36,8 +36,6 @@ import ExpenseGraph from "./ExpenseGraph";
 import { CheckCircle, Widgets } from "@mui/icons-material";
 import "./Home.module.css";
 import { categoryIcons } from "./Category";
-import { TrakkLogo } from "../assets/TrakkLogo";
-import noTransactions from "./EmptyTransaction2.svg";
 import NoTransactions from "./NoTransactions";
 
 export default function Home() {

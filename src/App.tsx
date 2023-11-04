@@ -2,11 +2,10 @@ import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Home from "./components/Home";
-import LandingPage from "./components/Landing";
 import { Container } from "@mui/material";
 import UploadFile from "./components/UploadFile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Playgoround from "./components/Transactions";
+import Search from "./components/Search";
 
 const darkTheme = createTheme({
   palette: {
@@ -28,9 +27,8 @@ function App() {
             <Routes>
               <Route path="/" Component={Home} />
               <Route path="/home" Component={Home} />
-              <Route path="/intro" Component={LandingPage} />
               <Route path="/upload" Component={UploadFile} />
-              <Route path="/search" Component={Playgoround} />
+              <Route path="/search" Component={Search} />
             </Routes>
           </Router>
         </Container>
