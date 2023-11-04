@@ -10,9 +10,24 @@ import {
   Search,
 } from "@mui/icons-material";
 import { TrakkLogo } from "../assets/TrakkLogo";
+import { useState, useEffect } from "react";
+import OnlyMobile from "./OnlyMobile";
 
 export default function Layout({ children, selectedIcon }) {
   const navigate = useNavigate();
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
 
   return (
     <div
@@ -52,7 +67,7 @@ export default function Layout({ children, selectedIcon }) {
           </Typography>
         </Toolbar>
       </AppBar>
-      {children}
+      {isMobile ? children : <OnlyMobile />}
 
       <BottomNavigation
         showLabels

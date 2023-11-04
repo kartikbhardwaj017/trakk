@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material"; // Import the Button component if you're using Material-UI
-import noTransactions from "./EmptyTransaction2.svg";
+import noTransactions from "./Stop.svg";
 import { useNavigate } from "react-router-dom";
 
 const OnlyMobile = () => {
@@ -18,32 +18,13 @@ const OnlyMobile = () => {
         textAlign: "center", // Center align text for all children
       }}
     >
-      <img
-        style={{ height: "400px", width: "300px" }}
-        src={noTransactions}
-        alt="No transactions page"
-      />
-      <h2>No Transaction Data !</h2>
+      <h2>Only available for Mobile</h2>
+
       <p style={{ margin: 0 }}>
         {" "}
         {/* Remove default paragraph margins */}
-        Trakk could not find transactions, have you uploaded the transactions
-        file?
+        We want you to have the best experience, trakk is optimised for mobile devices.
       </p>
-      <Button
-        variant="contained"
-        style={{
-          width: "90%",
-          color: "black",
-          backgroundColor: "white",
-          margin: "0", // Remove default margins and alignments
-          marginBottom: "20px", // Add bottom margin only
-          marginTop: "10px",
-        }}
-        onClick={() => navigate("/upload")}
-      >
-        Upload Transactions --&gt;
-      </Button>
     </div>
   );
 };
