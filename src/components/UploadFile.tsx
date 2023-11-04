@@ -145,7 +145,12 @@ export default function LandingPage() {
             <MenuItem value={"AXIS"}>AXIS</MenuItem>
           </Select>
           <Alert style={{ color: "white" }} severity="info">
-            <Link style={{ color: "white" }} href="">
+            <Link
+              style={{ color: "white" }}
+              href="https://heliotrope-patch-6dc.notion.site/Trakk-Uploading-Bank-statements-5654aad42d384225b2775ae7d915aa6d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Which file to upload?
             </Link>
           </Alert>
