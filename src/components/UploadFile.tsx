@@ -39,6 +39,7 @@ export default function LandingPage() {
         const transactions = await extractor.extractFromXlsvFile(selectedFile);
         const repo = new TransactionRepository();
         repo.insertUnique(transactions);
+        alert("Transactions extracted successfully");
       } catch (error) {
         console.error("Failed to extract transactions:", error);
       }
@@ -209,7 +210,7 @@ export default function LandingPage() {
           onClick={onPurge}
           className="purge-button"
         >
-          Purge Data
+          Delete data
         </Button>
       </div>
       <div style={{ height: "60px" }}></div>

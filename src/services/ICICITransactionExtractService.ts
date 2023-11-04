@@ -164,16 +164,16 @@ export class ICICITransactionExtractService implements ITransactionExtractor {
                 .startOf("day")
                 .toJSDate(),
               amount:
-                parseFloat(obj["Withdrawal Amount ( )"]) > 0
-                  ? parseFloat(obj["Withdrawal Amount ( )"])
-                  : parseFloat(obj["Deposit Amount ( )"]),
+                parseFloat(obj["Withdrawal Amount (INR )"]) > 0
+                  ? parseFloat(obj["Withdrawal Amount (INR )"])
+                  : parseFloat(obj["Deposit Amount (INR )"]),
               balance: parseFloat(obj["Balance ( )"]),
               mode: paymentMode, // This is an assumption, modify as required
               recipient: recipientInfo, // This is an assumption, modify as required
               category: "other", // This is an assumption, modify as required
               remarks: obj["Transaction Remarks"],
               type:
-                parseFloat(obj["Withdrawal Amount ( )"]) > 0
+                parseFloat(obj["Withdrawal Amount (INR )"]) > 0
                   ? ETransactionType.DEBIT
                   : ETransactionType.CREDIT,
               accountNumber,
