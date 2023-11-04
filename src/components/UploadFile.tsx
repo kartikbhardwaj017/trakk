@@ -27,13 +27,11 @@ export default function LandingPage() {
     if (file) {
       // Check the file type
       if (file.type === "application/pdf") {
-        // If it's a PDF, show an alert and clear the file input
         alert(
-          "PDF files are not supported. Please select a excel bank statement."
+          "PDF file bank statements are not supported. Please select a excel bank statement."
         );
         event.target.value = ""; // Clear the selected file
       } else {
-        // If it's not a PDF, proceed to set the selected file
         setSelectedFile(file);
       }
     }
