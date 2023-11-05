@@ -30,3 +30,6 @@ npm run start
 ## Let's Build Together!
 We're excited to see what you'll contribute to Trakk. Let's work together to make personal finance tracking accessible, private, and fun for everyone.
 
+## Socials
+
+Active on reddit thread on trakk [here](https://www.reddit.com/r/personalfinanceindia/s/KC6mKPviuL)
