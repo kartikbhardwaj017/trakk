@@ -29,7 +29,7 @@ export class IDFCTransactionExtractService implements ITransactionExtractor {
     } else if (mode === EPaymentMode.NEFT) {
       const parts = remarks.split("/");
       if (parts.length >= 3) {
-        recipient = parts[3];
+        recipient = parts[2];
       }
     } else if (mode === EPaymentMode.RTGS) {
       const parts = remarks.split("/");
