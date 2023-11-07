@@ -22,6 +22,9 @@ export class IDFCTransactionExtractService implements ITransactionExtractor {
       const parts = remarks.split("/");
       if (parts.length >= 3) {
         recipient = parts[3];
+        if (recipient === "UPI") {
+          recipient = parts[2];
+        }
       }
     } else if (mode === EPaymentMode.NEFT) {
       const parts = remarks.split("/");
