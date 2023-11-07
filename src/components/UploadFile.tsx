@@ -154,7 +154,7 @@ export default function LandingPage() {
             </MenuItem>
             <MenuItem value={"ICICI"}>ICICI</MenuItem>
             <MenuItem value={"HDFC"}>HDFC</MenuItem>
-            <MenuItem value={"AXIS"}>AXIS</MenuItem>
+            <MenuItem value={"IDFC"}>IDFC</MenuItem>
           </Select>
           <Alert style={{ color: "white" }} severity="info">
             <Link
